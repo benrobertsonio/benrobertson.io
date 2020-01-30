@@ -5,19 +5,19 @@
   "version": "0.1.0",
   "author": "Ben Robertson <hi@benrobertson.io>",
   "dependencies": {
-    "gatsby": "^2.0.107",
-    "gatsby-image": "^2.0.29",
-    "gatsby-plugin-manifest": "^2.0.16",
-    "gatsby-plugin-offline": "^2.0.22",
-    "gatsby-plugin-react-helmet": "^3.0.5",
-    "gatsby-plugin-sharp": "^2.0.19",
+    "gatsby": "^2.19.10",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-manifest": "^2.2.40",
+    "gatsby-plugin-offline": "^3.0.33",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sharp": "^2.4.4",
     "gatsby-source-filesystem": "^2.0.20",
     "gatsby-transformer-remark": "^2.2.3",
     "gatsby-transformer-sharp": "^2.1.13",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-helmet": "^5.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
     "slug": "^0.9.3"
   },
   "keywords": [
@@ -28,6 +28,7 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
+    "clean": "gatsby clean",
     "serve:prod": "gatsby build && gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   }
