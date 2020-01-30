@@ -1,0 +1,95 @@
+.heading__anchorLink {
+  opacity: 0;
+  display: inline-block;
+  font-size: 0.5em;
+  margin-left: 1em;
+  vertical-align: middle;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: translateY(100%);
+  position: absolute;
+  top: 0.5em;
+}
+.heading__anchorLink:focus {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.postContent h2:hover .heading__anchorLink,
+.postContent h3:hover .heading__anchorLink {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.postContent h2,
+.postContent h3 {
+  position: relative;
+  padding-right: 0.5em;
+  margin-right: -0.5em;
+}
+.postContent img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: -2px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.postContent img + em {
+  margin-top: 0.25em;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.canonical {
+  font-style: italic;
+}
+.canonical::before {
+  content: ". . .";
+  display: block;
+  margin: 1em 0 2em;
+  text-align: center;
+}
+
+.body > :first-child,
+.lede {
+  font-size: 1.3em;
+}
+
+.post figure,
+.post img {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+.post figure {
+  margin: 2em 0 1em;
+  padding-bottom: 1em;
+}
+.post figure a {
+  background: none;
+}
+.post figure img {
+  margin-bottom: 0.5em;
+}
+.post .wp-caption-text {
+  font-size: 0.8em;
+  margin-left: 1em;
+}
+.post blockquote {
+  margin: 1em 0 1em 2em;
+  background-color: #eeeeee;
+  padding: 1em 2em;
+  border-left: 10px solid blue;
+}
+
+.responsive-iframe {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+.responsive-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
