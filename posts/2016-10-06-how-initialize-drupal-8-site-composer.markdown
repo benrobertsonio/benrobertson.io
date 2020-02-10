@@ -45,13 +45,13 @@ Now run this command:
 If you want to redirect all url.com/web to just server from url.com, create an .htaccess file in your /app directory with this (Apache only):
 
 
-{% highlight apache %}
+```apache
 <ifmodule Rewrite>
 RewriteEngine on
 RewriteRule ^$ web/ [L]
 RewriteRule (.*) web/$1 [L]
 </ifmodule>
-{% endhighlight %}
+```
 
 ## Bonus: Install modules
 

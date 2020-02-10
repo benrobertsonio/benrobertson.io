@@ -66,50 +66,46 @@ then close the svg tag: `</svg>`.
 
 Inside the `<svg>` tag, create a symbol tag, and give it an id that's descriptive and easy to type, like this:
 
-{% highlight html %}
-
+```svg
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
     <symbol id="arrow">
     </symbol>
 </svg>
-
-{% endhighlight %}
+```
 
 Now open your optimized SVG file for this particular SVG. My `arrow.svg` file looks like this:
 
-{% highlight html %}
-
+```svg
 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 39.4 31.4">
   <style>
     .st0{fill:#FFFFFF;}
   </style>
   <path id="XMLID_3_" d="M23.7 31.4L22.3 30l14.3-14.3L22.3 1.4 23.7 0l15.7 15.7z" class="st0"/>
   <path id="XMLID_2_" d="M0 14.7h38v2H0z" class="st0"/>
-</svg>
+```
 
-{% endhighlight %}
 
 We are going to ignore the SVG wrapper and the style tag, and just copy the two path tags into our `svg-defs.svg` file, so it looks like this now:
 
-{% highlight html %}
+```svg
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
     <symbol id="arrow">
         <path id="XMLID_3_" d="M23.7 31.4L22.3 30l14.3-14.3L22.3 1.4 23.7 0l15.7 15.7z" class="st0"/>
         <path id="XMLID_2_" d="M0 14.7h38v2H0z" class="st0"/>
     </symbol>
 </svg>
-{% endhighlight %}
+```
 
 Then we need to grab the viewBox attribute from our original SVG and add it to the symbol tag. Here's our finished product:
 
-{% highlight html %}
+```svg
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
     <symbol id="arrow" viewBox="0 0 39.4 31.4">
         <path id="XMLID_3_" d="M23.7 31.4L22.3 30l14.3-14.3L22.3 1.4 23.7 0l15.7 15.7z" class="st0"/>
         <path id="XMLID_2_" d="M0 14.7h38v2H0z" class="st0"/>
     </symbol>
 </svg>
-{% endhighlight %}
+```
 
 Add all your SVGs within the same SVG tag, each as their own symbol. Be sure to give them each a unique ID because we will be using that to reference them.
 
@@ -119,41 +115,41 @@ You'll notice that we totally ignored the style tag. For SVGs that are a single 
 
 Now that you have your `svg-defs.svg` file set up, you can start referencing the SVGs in your HTML. You'll need to first include the file on your page. In Wordpress and Drupal, you can go like this:
 
-{% highlight php %}
+```php
 
 <?php include_once("svgs/svg-defs.svg"); ?>
 
-{% endhighlight %}
+```
 
 Do that in your header, before you you need to use any of the SVGs on the page. Now that your SVGs are ready for use, you can reference them. We reference them by creating an `<svg>` tag, and then inside that we place a `<use>` tag with an `xlink:href` attribute. Here's what it looks like:
 
-{% highlight html %}
+```svg
 
 <svg class="arrow-icon" width="30px" height="30px">
     <use xlink:href="#arrow"></use>
 </svg>
 
-{% endhighlight %}
+```
 
 Do it on one line for cleaner code:
 
-{% highlight html %}
+```svg
 
 <svg class="arrow-icon icon" width="30px" height="30px"><use xlink:href="#arrow"></use></svg>
 
-{% endhighlight %}
+```
 
 Your `xlink:href` is just the ID that we defined in the `svg-defs.svg` file, in this case, the ID was 'arrow' so we reference it with `#arrow`. You don't need to add a class to your `<svg>` tag, but it's a good practice to add a class that matches your ID so you can style it later. I like to keep my naming convention the same across all my SVGs.
 
 Since we stripped out all of our styles above, it's a good idea to set some base styles for your SVGs in css. Usually the only one that I define is fill color:
 
-{% highlight scss %}
+```scss
 
 svg{
     fill: white;
 }
 
-{% endhighlight %}
+```
 
 You may find that you have other base styles to apply, but since we set the height and width of the SVG in the HTML you probably won't have that many.
 
@@ -175,11 +171,11 @@ This will make them be all weird on iOS devices. Don't do it. You can use margin
 
 You can switch out SVG icons pretty easily with jQuery by referencing the xlink:href attribute. This code snippet checks to see if the SVG has a class of menu-btn, and if it does, changes the X svg back to a hamburger:
 
-{% highlight javascript %}
+```js
 
 // switches x back to hamburger
 if ($('.btn').hasClass('menu-btn')){
     $('.menu-btn').find('use').attr("xlink:href", "#hamburger");
 }
 
-{% endhighlight %}
+```

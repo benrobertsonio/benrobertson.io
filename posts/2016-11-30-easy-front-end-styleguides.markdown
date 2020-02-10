@@ -22,7 +22,7 @@ Install the necessary packages: `npm install kss michelangelo grunt-kss --save-d
 
 In your `Gruntfile.js`, add a `kss` task. Here is the setup I use:
 
-{% highlight javascript %}
+```js
 kss: {
     options: {
         title: 'Title of the Style Guide',
@@ -41,7 +41,7 @@ kss: {
         dest: "webroot/styleguide/", // path to where the style guide should live. Add this path to your .gitignore
     }
 },
-{% endhighlight %}
+```
 
 I then add the `kss` task to the watch task. This will compile the style guide as you are working on it.
 
@@ -57,7 +57,7 @@ The entire commenting spec is available here, but here are a few of the highligh
 
 Your comment block for a component will look something like this:
 
-{% highlight sass %}
+```sass
 // Buttons
 //
 // A brief description of this component.
@@ -73,18 +73,18 @@ Your comment block for a component will look something like this:
 // .button--large - A large button.
 //
 // Styleguide base.forms.buttons
-{% endhighlight %}
+```
 
 The part that actually includes your comment block in the style guide is the `Styleguide base.forms.buttons`. In the above example, your button component will display in the Base section, in a sub-section called Buttons underneath Forms. For best results, I would also include a block that defines those sections as well. For example:
 
-{% highlight sass %}
+```sass
 // Forms
 //
 // Some info about forms
 //
 // Styleguide base.forms
 
-{% endhighlight %}
+```
 
 Some other important things for consideration from our button example:
 

@@ -34,7 +34,7 @@ Here are the standard things that we should always make sure that we are doing.
 
 This one shows up all the time. It's a really easy fix--just stick this in the `.htaccess` file. If you don't want a certain file type cached for as long, just move it into a different section.
 
-{% highlight apache %}
+```apache
 
     <IfModule mod_headers.c>
          # 1 YEAR
@@ -54,14 +54,13 @@ This one shows up all the time. It's a really easy fix--just stick this in the `
         Header set Cache-Control "max-age=60, private, must-revalidate"
         </FilesMatch>
     </IfModule>
-
-{% endhighlight %}
+```
 
 ### Enable GZIP Compression
 
 This one goes in the `.htaccess` file as well. Usually if this one pops up it's because svgs aren't being compressed. We add the first two lines to add svgs to the compression.
 
-{% highlight apache %}
+```apache
 
     AddType image/svg+xml .svg
     AddOutputFilterByType DEFLATE image/svg+xml
@@ -74,8 +73,7 @@ This one goes in the `.htaccess` file as well. Usually if this one pops up it's 
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
-
-{% endhighlight %}
+```
 
 ### Optimizing SVGs
 
