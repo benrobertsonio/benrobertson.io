@@ -1,6 +1,9 @@
 import React from 'react';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import '../fonts/SourceSansPro/source-sans-pro.css';
 
 import Header from './header';
 import './layout.css';
@@ -18,7 +21,11 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div sx={{
+        borderTop: '5px solid',
+        borderBottom: '5px solid',
+        borderColor: 'primary',
+      }}>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -31,7 +38,7 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <Footer />
         </div>
-      </>
+      </div>
     )}
   />
 );

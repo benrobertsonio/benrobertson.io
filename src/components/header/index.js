@@ -1,4 +1,6 @@
 import { Link, StaticQuery, graphql } from 'gatsby';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
@@ -23,7 +25,7 @@ const Header = ({ siteTitle }) => (
               `}
             render={data => <Img className={styles.siteId__logo} fixed={data.placeholderImage.childImageSharp.fixed} alt="Ben Robertson" />}
           />
-          <div className={styles.siteId__name}>
+          <div className={styles.siteId__name} sx={{ color: 'secondary' }}>
             <span className={styles.siteId__namePart}>Ben</span>
             <span className={styles.siteId__namePart}>Robertson</span>
           </div>
@@ -32,11 +34,11 @@ const Header = ({ siteTitle }) => (
 
       <nav id="nav-main" className={styles.navMain} role="navigation">
         <ul>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/feed.xml">RSS</Link></li>
-          <li><Link to="/blogroll">Blogroll</Link></li>
-          <li><Link to="/courses/common-accessibility-mistakes/">Email Course</Link></li>
+          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/about">About</Link></li>
+          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/blog">Blog</Link></li>
+          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/feed.xml">RSS</Link></li>
+          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/blogroll">Blogroll</Link></li>
+          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/courses/common-accessibility-mistakes/">Email Course</Link></li>
         </ul>
       </nav>
     </div>
