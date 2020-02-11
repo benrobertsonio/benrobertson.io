@@ -27,7 +27,10 @@ const Post = ({ data: { mdx } }) => {
               ttr={timeToRead}
             />
 
-            <TableOfContents items={tableOfContents && tableOfContents.items} />
+            {tableOfContents?.items &&
+              <TableOfContents items={tableOfContents.items} />
+
+            }
             <MDXRenderer>{body}</MDXRenderer>
             {frontmatter.canonical && (
               <>
