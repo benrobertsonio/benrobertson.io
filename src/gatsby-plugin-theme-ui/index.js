@@ -11,10 +11,12 @@ export default {
     heading: '"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     monospace: ''
   },
-  // fontSizes: [
-  //   16, 18, 20, 22, 28, 48
-  // ],
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+  breakpoints: [
+    '544px', '768px', '992px', '1200px',
+  ],
+  fontSizes: [
+    16, 18, 20, 22, 28, 32, 48
+  ],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   lineHeights: {
     body: 1.4,
@@ -27,7 +29,8 @@ export default {
   },
   styles: {
     root: {
-      fontFamily: 'body'
+      fontFamily: 'body',
+      fontSize: [0, 0, 0, 2, 3]
     },
     h1: {
       color: 'headings'
@@ -47,5 +50,12 @@ export default {
     h6: {
       color: 'headings'
     },
+    // a: {
+    //   fontWeight: 'bold',
+    //   textDecoration: 'none',
+    //   backgroundSize: '100% 200%',
+    //   backgroundPositionY: '10%',
+    //   transition: '200ms background-position-y'
+    // }
   }
 };

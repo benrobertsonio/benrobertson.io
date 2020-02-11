@@ -4,13 +4,49 @@ import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
-import styles from './header.module.css';
+import Container from '../container';
+import Nav from '../nav';
 
-const Header = ({ siteTitle }) => (
-  <header className={styles.siteHeader}>
-    <div className={styles.wrap}>
-      <div className={styles.siteId} role="banner">
-        <Link className={styles.siteId__link} to="/" rel="home">
+const menu = [
+  {
+    to: '/about',
+    title: 'About'
+  },
+  {
+    to: '/blog',
+    title: 'Blog'
+  },
+  {
+    to: '/feed.xml',
+    title: 'RSS'
+  },
+  {
+    to: '/courses/common-accessibility-mistakes/',
+    title: 'Email Course'
+  },
+];
+
+const Header = () => (
+  <Container Element="header" large>
+    <div sx={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+      alignItems: 'center',
+      flexWrap: 'wrap'
+    }}>
+      <div role="banner" sx={{
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <Link to="/" rel="home" sx={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          textDecoration: 'none',
+          padding: '0.5em',
+          background: 'none'
+        }}>
           <StaticQuery
             query={graphql`
                 query {
@@ -23,26 +59,43 @@ const Header = ({ siteTitle }) => (
                   }
                 }
               `}
-            render={data => <Img className={styles.siteId__logo} fixed={data.placeholderImage.childImageSharp.fixed} alt="Ben Robertson" />}
+            render={data =>
+              <Img
+                fixed={data.placeholderImage.childImageSharp.fixed}
+                alt="Ben Robertson"
+                sx={{
+                  height: '5rem',
+                  width: '5rem',
+                  marginRight: '1em',
+                  borderRadius: '50%'
+                }}
+              />}
           />
-          <div className={styles.siteId__name} sx={{ color: 'secondary' }}>
-            <span className={styles.siteId__namePart}>Ben</span>
-            <span className={styles.siteId__namePart}>Robertson</span>
+          <div sx={{
+            color: 'secondary',
+            fontFamily: 'body',
+            fontWeight: 'bold',
+            fontSize: 5
+          }}>
+            <span sx={{
+              display: 'block',
+              transform: 'rotate(-3deg) translateY(-2px)',
+              lineHeight: '1'
+
+            }}>Ben</span>
+            <span sx={{
+              display: 'block',
+              transform: 'rotate(-3deg) translateY(-2px)',
+              lineHeight: '1'
+
+            }}>Robertson</span>
           </div>
         </Link>
       </div>
 
-      <nav id="nav-main" className={styles.navMain} role="navigation">
-        <ul>
-          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/about">About</Link></li>
-          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/blog">Blog</Link></li>
-          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/feed.xml">RSS</Link></li>
-          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/blogroll">Blogroll</Link></li>
-          <li><Link sx={{ color: 'secondary', borderBottom: '4px solid', borderColor: 'primary' }} to="/courses/common-accessibility-mistakes/">Email Course</Link></li>
-        </ul>
-      </nav>
+      <Nav links={menu} />
     </div>
-  </header>
+  </Container >
 );
 
 Header.propTypes = {
