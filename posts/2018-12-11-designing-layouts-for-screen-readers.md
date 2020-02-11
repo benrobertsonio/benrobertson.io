@@ -19,7 +19,7 @@ Experiences like this are caused by websites that are built with layouts that ar
 
 I'll walk through how to make use of these indicators to make a simple web page easy to use, navigate and read for users of assistive technology. All the example code is available on [github](https://github.com/mergeweb/screen-reader-layout-post).
 
-<small>*Want to up your accessibility game? Checkout my free email course: <br> ✉️ [Common accessibility mistakes and how to avoid them](/courses/common-accessibility-mistakes/).*</small>
+<small>*Want to up your accessibility game? Checkout my free email course: <br/> ✉️ [Common accessibility mistakes and how to avoid them](/courses/common-accessibility-mistakes/).*</small>
 
 ## Initial Layout
 

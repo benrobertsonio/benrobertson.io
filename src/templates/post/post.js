@@ -1,32 +1,37 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import React from 'react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
+import TableOfContents from '../../components/table-of-contents';
+import PostMeta from './post-meta';
 
-/**
- *
- * @param {*} param0
- */
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data; // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark;
+
+const Post = ({ data: { mdx } }) => {
+  const { frontmatter, body, tableOfContents, timeToRead } = mdx;
   return (
     <Layout>
       <div className="l-contain--center l-contain">
         <article className="post h-entry l-contain--small" itemScope itemType="http://schema.org/BlogPosting">
 
           <header className="post-header">
-            <h1 className="post-title p-name" itemProp="name headline">{frontmatter.title}</h1>
+            <h1 sx={{ color: 'headings', fontSize: [6, 6, 7, 8], lineHeight: 'heading' }} className="post-title p-name" itemProp="name headline">{frontmatter.title}</h1>
           </header>
 
           <div className="post-content e-content" itemProp="articleBody">
-            <p className="post-meta">
-              <time className="dt-published" dateTime={frontmatter.date} itemProp="datePublished">{frontmatter.date}</time>
-              <span itemProp="author" itemScope itemType="http://schema.org/Person"><span itemProp="name">{frontmatter.author}</span></span>
-              • <a href={frontmatter.path} className="u-url">Permalink</a>
-            </p>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <PostMeta
+              date={frontmatter.date}
+              author={frontmatter.author}
+              permalink={frontmatter.path}
+              ttr={timeToRead}
+            />
+
+            {tableOfContents?.items &&
+              <TableOfContents items={tableOfContents.items} />
+
+            }
+            <MDXRenderer>{body}</MDXRenderer>
             {frontmatter.canonical && (
               <>
                 <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <a className="post-canonical__url" href={frontmatter.canonical}>{frontmatter.canonical}</a>.</p>
@@ -41,12 +46,16 @@ export default function Template({
       </div>
     </Layout>
   );
-}
+};
+
+export default Post;
 
 export const pageQuery = graphql`
   query($path: String!) {
-        markdownRemark(frontmatter: {path: {eq: $path } }) {
-        html
+        mdx(frontmatter: {path: {eq: $path } }) {
+        body
+        tableOfContents(maxDepth: 2)
+        timeToRead
       frontmatter {
         title
         layout

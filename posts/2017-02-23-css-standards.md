@@ -68,11 +68,11 @@ Since we aren't using brackets, this keeps the Sass clearer and also is aligned 
 Selectors and properties each get their own line. Do it like this:
 
 
-{% highlight sass %}
+```sass
 .container
     width: 95%
     max-width: 40em
-{% endhighlight %}
+```
 
 ### Meaningful use of white space
 
@@ -81,7 +81,7 @@ White space can give context to class definitions. Include two empty lines betwe
 Example:
 
 
-{% highlight sass %}
+```sass
 .card
     padding: 1rem
     margin: 1rem
@@ -91,7 +91,7 @@ Example:
 
 .card--white // two empty lines above this new class block
     background-color: white
-{% endhighlight %}
+```
 
 
 ### Nesting Depth
@@ -100,11 +100,11 @@ Nesting depth should be limited to 2.
 
 Example:
 
-{% highlight sass %}
+```sass
 .block
     &__element
         &--modifier // Deepest Nest Allowed
-{% endhighlight %}
+```
 
 ### Limit line length to 80 characters
 
@@ -112,29 +112,29 @@ This helps make the code more readable without horizontal scrolling. Because you
 
 Example:
 
-{% highlight sass %}
+```sass
     // This file is where you override default Bootstrap variables. You
     // can find a list of the default Bootstrap variables
     // in _variables.scss
-{% endhighlight %}
+```
 
 ### Use single line comments
 
 Your comments don't have to be on one single line, just don't use `/* These kinds of comments */`, because they will end up in the compiled css. Your comments, even if they are multi-line, should look like this:
 
-{% highlight sass %}
+```sass
 
     // This file is where you override default Bootstrap variables. You
     // can find a list of the default Bootstrap variables
     // in _variables.scss
 
-{% endhighlight %}
+```
 
 ### Clean Import paths
 
 You don't need to include leading underscores or filename extensions in your import paths. To stay consistent, your imports should look like this:
 
-{% highlight sass %}
+```sass
 
     @import "base/typography" // where this file is base/_typography.sass
     @import "base/colors"
@@ -142,7 +142,7 @@ You don't need to include leading underscores or filename extensions in your imp
     @import "layout/grid"
     @import "layout/containers"
 
-{% endhighlight %}
+```
 
 ### Class Name Format
 
@@ -154,7 +154,7 @@ We will use a BEM-style class naming system. BEM stands for Block Element Modifi
 
 Examples:
 
-{% highlight sass %}
+```sass
 
     .block
         .block--modifier
@@ -177,11 +177,11 @@ Examples:
         .site-header__bottom // the bottom portion of the site header
         .site-header--admin // variant of site-header
 
-{% endhighlight %}
+```
 
 Additionally, limit your BEM depth to 1\. This means that blocks should not have nested elements. If there are elements nested inside of elements, start a new block.
 
-{% highlight sass %}
+```sass
 
     // Don't do this
     .block__element__sub-element
@@ -191,7 +191,7 @@ Additionally, limit your BEM depth to 1\. This means that blocks should not have
         &__sub-element
             &__sub-element-2
 
-{% endhighlight %}
+```
 
 Consider name-spacing layout and javascript specific classes.
 

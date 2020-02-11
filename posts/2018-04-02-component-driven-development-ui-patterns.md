@@ -16,7 +16,7 @@ Component driven development is a hot topic right now, and for good reason. A co
 With the [UI Patterns](http://drupal.org/project/ui_patterns) module in Drupal, you can achieve the benefits of a component-driven workflow in Drupal 8 and the design system [holy grail](http://atomicdesign.bradfrost.com/chapter-5/#in-search-of-the-holy-grail):
 
 > The design system holy grail involves creating an environment where the pattern library and live applications are perfectly in sync. The idea is that you should be able to make a change to a UI pattern and see that change automatically reflected in both the pattern library and anywhere the pattern is included in production.
-> <br><i><small>Brad Frost, Atomic Design</small></i>
+> <br/><i><small>Brad Frost, Atomic Design</small></i>
 
 Beyond that, a UI Patterns-based workflow also provides:
 

@@ -13,12 +13,8 @@ Last fall, our dev team wanted to get started with style guides. We had added a 
 
 In deciding on a style guide method, we came up with two main requirements:
 <ol>
- 	<li><strong>Low Friction</strong>The style guide should be easy to find, easy to read, and easy to maintain.
-
-Something that fit into our existing development workflow would be awesome. Adding new directories for sample markup and documentation files would not be awesome.</li>
- 	<li><strong>Platform Agnostic</strong>We work in Wordpress, Drupal, and CakePHP most often, and we wanted something that would work the same way across all three platforms.
-
-We wanted this to be easily maintainable, and for us that meant keeping the documentation alongside the CSS.</li>
+ 	<li><strong>Low Friction</strong>The style guide should be easy to find, easy to read, and easy to maintain. Something that fit into our existing development workflow would be awesome. Adding new directories for sample markup and documentation files would not be awesome.</li>
+ 	<li><strong>Platform Agnostic</strong>We work in Wordpress, Drupal, and CakePHP most often, and we wanted something that would work the same way across all three platforms. We wanted this to be easily maintainable, and for us that meant keeping the documentation alongside the CSS.</li>
 </ol>
 
 <h3>The Basics of Node-KSS</h3>
@@ -323,20 +319,23 @@ Instead of running <code>$ npm run kss</code> every time we make a change to the
 We are already using npm scripts to build the style guide, we just need to add a script that will watch our style guide.
 
 We'll use the <a href="https://github.com/Qard/onchange">onchange package</a>. First install it:
-<pre><code>$ npm install onchange --save-dev</code></pre>
+`<pre><code>$ npm install onchange --save-dev</code></pre>`
 Then add a new script in our scripts object:
-<pre><code class="language-javascript">"scripts": {
+```js"scripts": {
   "watch": "onchange 'sass/**/*.sass' -- npm run kss",
   "kss": "kss --config kss-config.json"
-},</code></pre>
+}
+```
 The watch task tells <code>onchange</code> to watch the files we specified in our glob pattern (<code>'sass/**/*.sass'</code>) and when it detects a change, run the command we specify after the <code>--</code>: <code>npm run kss</code>.
 
 Now running <code>$ npm run watch</code> will watch our <code>.sass</code> files and regenerate our style guide every time it detects a change in our Sass.
 <h4>Grunt</h4>
 There is an official Grunt plugin for KSS, <a href="https://github.com/kss-node/grunt-kss">grunt-kss</a>. You can configure it to watch your <code>.sass</code> or <code>.scss</code> files for changes and recompile the style guide as you develop it.
 
-Here's a sample Grunt configuration. With this setup, you don't need a separate <code>kss-config.json</code> file, all the configuration can happen in your Gruntfile.
-<pre><code class="language-javascript">module.exports = function(grunt) {
+Here's a sample Grunt configuration. With this setup, you don't need a separate `kss-config.json` file, all the configuration can happen in your Gruntfile.
+
+```js
+module.exports = function(grunt) {
   grunt.initConfig({
     kss: {
       options: {
@@ -368,8 +367,10 @@ Here's a sample Grunt configuration. With this setup, you don't need a separate 
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('dev', ['kss', 'watch']);
-}</code></pre>
-Running <code>$ grunt dev</code> will first generate the style guide, and then watch our <code>.sass</code> for changes and regenerate the style guide when it detects a change.
+}
+```
+Running `$ grunt dev` will first generate the style guide, and then watch our `.sass` for changes and regenerate the style guide when it detects a change.
+
 <h3>Wrap Up</h3>
 There are more details regarding the comment parsing and other features I haven't mentioned here at the official <a href="https://github.com/kss-node/kss/blob/spec/SPEC.md">KSS repo</a>. You have more than enough to get started here but there are some things I didn't go into, including a custom home page, experimental/deprecation flags and helpers for preprocessors.
 
