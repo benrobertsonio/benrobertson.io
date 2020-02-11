@@ -5,25 +5,28 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
 import TableOfContents from '../../components/table-of-contents';
+import PostMeta from './post-meta';
 
 
 const Post = ({ data: { mdx } }) => {
-  const { frontmatter, body, tableOfContents } = mdx;
+  const { frontmatter, body, tableOfContents, timeToRead } = mdx;
   return (
     <Layout>
       <div className="l-contain--center l-contain">
         <article className="post h-entry l-contain--small" itemScope itemType="http://schema.org/BlogPosting">
 
           <header className="post-header">
-            <h1 sx={{ color: 'headings', fontSize: 6 }} className="post-title p-name" itemProp="name headline">{frontmatter.title}</h1>
+            <h1 sx={{ color: 'headings', fontSize: [6, 6, 7, 8], lineHeight: 'heading' }} className="post-title p-name" itemProp="name headline">{frontmatter.title}</h1>
           </header>
 
           <div className="post-content e-content" itemProp="articleBody">
-            <p className="post-meta">
-              <time className="dt-published" dateTime={frontmatter.date} itemProp="datePublished">{frontmatter.date}</time>
-              <span itemProp="author" itemScope itemType="http://schema.org/Person"><span itemProp="name">{frontmatter.author}</span></span>
-              • <a href={frontmatter.path} className="u-url">Permalink</a>
-            </p>
+            <PostMeta
+              date={frontmatter.date}
+              author={frontmatter.author}
+              permalink={frontmatter.path}
+              ttr={timeToRead}
+            />
+
             <TableOfContents items={tableOfContents && tableOfContents.items} />
             <MDXRenderer>{body}</MDXRenderer>
             {frontmatter.canonical && (
@@ -49,6 +52,7 @@ export const pageQuery = graphql`
         mdx(frontmatter: {path: {eq: $path } }) {
         body
         tableOfContents(maxDepth: 2)
+        timeToRead
       frontmatter {
         title
         layout

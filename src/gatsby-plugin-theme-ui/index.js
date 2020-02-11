@@ -15,7 +15,7 @@ export default {
     '544px', '768px', '992px', '1200px',
   ],
   fontSizes: [
-    16, 18, 20, 22, 28, 32, 48
+    16, 18, 20, 22, 28, 32, 48, 60, 66
   ],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   lineHeights: {
@@ -33,7 +33,7 @@ export default {
       fontSize: [0, 0, 0, 2, 3]
     },
     h1: {
-      color: 'headings'
+      color: 'headings',
     },
     h2: {
       color: 'headings'
