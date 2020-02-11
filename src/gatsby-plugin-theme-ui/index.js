@@ -60,6 +60,9 @@ export default {
       color: 'secondary',
       '&:hover': {
         backgroundPositionY: '20%'
+      },
+      '&:focus': {
+        backgroundPositionY: '20%'
       }
     }
   }
