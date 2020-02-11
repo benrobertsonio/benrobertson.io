@@ -50,12 +50,17 @@ export default {
     h6: {
       color: 'headings'
     },
-    // a: {
-    //   fontWeight: 'bold',
-    //   textDecoration: 'none',
-    //   backgroundSize: '100% 200%',
-    //   backgroundPositionY: '10%',
-    //   transition: '200ms background-position-y'
-    // }
+    a: {
+      fontWeight: 'bold',
+      textDecoration: 'none',
+      backgroundSize: '100% 200%',
+      backgroundPositionY: '10%',
+      transition: '200ms background-position-y',
+      backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #ed6a5a 50%)',
+      color: 'secondary',
+      '&:hover': {
+        backgroundPositionY: '20%'
+      }
+    }
   }
 };

@@ -4,10 +4,11 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
+import TableOfContents from '../../components/table-of-contents';
 
 
 const Post = ({ data: { mdx } }) => {
-  const { frontmatter, body } = mdx;
+  const { frontmatter, body, tableOfContents } = mdx;
   return (
     <Layout>
       <div className="l-contain--center l-contain">
@@ -23,6 +24,7 @@ const Post = ({ data: { mdx } }) => {
               <span itemProp="author" itemScope itemType="http://schema.org/Person"><span itemProp="name">{frontmatter.author}</span></span>
               • <a href={frontmatter.path} className="u-url">Permalink</a>
             </p>
+            <TableOfContents items={tableOfContents && tableOfContents.items} />
             <MDXRenderer>{body}</MDXRenderer>
             {frontmatter.canonical && (
               <>
@@ -46,6 +48,7 @@ export const pageQuery = graphql`
   query($path: String!) {
         mdx(frontmatter: {path: {eq: $path } }) {
         body
+        tableOfContents(maxDepth: 2)
       frontmatter {
         title
         layout
