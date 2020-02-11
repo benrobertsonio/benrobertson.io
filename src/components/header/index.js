@@ -21,6 +21,10 @@ const menu = [
     title: 'RSS'
   },
   {
+    to: '/blogroll',
+    title: 'Blogroll'
+  },
+  {
     to: '/courses/common-accessibility-mistakes/',
     title: 'Email Course'
   },
