@@ -18,8 +18,8 @@ const IndexPage = ({ data }) => (
         <ThemeLink href="https://www.gatsbyjs.com">Gatsby</ThemeLink>.
       </p>
       <p>
-        ✍️ I write about <Link sx={theme.styles.a} href="/blog">front end development</Link> and{' '}
-        <Link sx={theme.styles.a} href="/accessibility">web accessibility</Link>.
+        ✍️ I write about <Link sx={theme.styles.a} to="/blog">front end development</Link> and{' '}
+        <Link sx={theme.styles.a} to="/accessibility">web accessibility</Link>.
       </p>
       <p>
         ✈️ I help{' '}
