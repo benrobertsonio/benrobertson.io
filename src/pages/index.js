@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => (
             </li>
           ))}
         </ul>
-        <Link sx={theme.styles.a} href="/blog">More Blog Posts →</Link>
+        <Link sx={theme.styles.a} to="/blog">More Blog Posts →</Link>
       </section>
     </Container>
   </Layout >
