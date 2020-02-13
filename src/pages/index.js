@@ -1,61 +1,68 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-
+import { Link as ThemeLink, Heading, Divider } from 'theme-ui';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
+import { Container } from 'theme-ui';
+import theme from '../gatsby-plugin-theme-ui';
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <div>
-      <h1>Hi, I'm Ben Robertson.</h1>
+    <Container>
+      <Heading as="h1" sx={{ mt: 5, mb: 4, fontSize: [6, 6, 7, 8] }}>Hi, I'm Ben Robertson.</Heading>
       <p>
-        🛠 I'm a front end developer at{' '}
-        <a href="https://mediacurrent.com">Mediacurrent</a>.
+        🛠 I'm a senior software engineer at{' '}
+        <ThemeLink href="https://www.gatsbyjs.com">Gatsby</ThemeLink>.
       </p>
       <p>
-        ✍️ I write about <a href="/blog">front end development</a> and{' '}
-        <a href="/accessibility">web accessibility</a>.
+        ✍️ I write about <Link sx={theme.styles.a} to="/blog">front end development</Link> and{' '}
+        <Link sx={theme.styles.a} to="/accessibility">web accessibility</Link>.
       </p>
       <p>
         ✈️ I help{' '}
-        <a href="https://frontendremotejobs.com">
+        <ThemeLink href="https://frontendremotejobs.com">
           front end developers find remote jobs
-        </a>
+        </ThemeLink>
         .
       </p>
-    </div>
-    <div id="mc_embed_signup" className="home-email">
-      <h2>
+    </Container>
+
+    <Container id="mc_embed_signup" sx={{ mt: 6 }}>
+      <Heading>
         Free Email Course: Common Accessibility Mistakes and How to Fix Them
-      </h2>
+      </Heading>
       <p>A month long course to help you simplify web accessibility.</p>
-    </div>
-    <div className="home-grid">
-      <section className="grid-item blog">
-        <header className="section-header">
-          <h2>Recent Writing</h2>
-          <hr />
+    </Container>
+    <Container>
+      <section>
+        <header>
+          <Heading>Recent Writing</Heading>
+          <Divider />
         </header>
-        <ul>
+        <ul sx={{ m: 0, p: 0, mt: 4 }}>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <li key={node.frontmatter.title}>
+            <li sx={{ listStyle: 'none', mb: 3 }} key={node.frontmatter.title}>
               <article key={node.frontmatter.title}>
-                <h3>
-                  <Link to={node.frontmatter.path}>
+                <Heading as="h3">
+                  <Link
+                    sx={theme.styles.a}
+                    to={node.frontmatter.path}
+                  >
                     {node.frontmatter.title}
                   </Link>
-                </h3>
-                <p>{node.frontmatter.snippet}</p>
+                </Heading>
+                <p sx={{ mt: 2 }}>{node.frontmatter.snippet}</p>
               </article>
             </li>
           ))}
         </ul>
-        <a href="/blog">More Blog Posts →</a>
+        <Link sx={theme.styles.a} to="/blog">More Blog Posts →</Link>
       </section>
-    </div>
-  </Layout>
+    </Container>
+  </Layout >
 );
 
 export default IndexPage;

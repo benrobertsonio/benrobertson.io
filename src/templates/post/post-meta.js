@@ -1,17 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'theme-ui';
+import VisuallyHidden from '@reach/visually-hidden';
 
 const PostMeta = ({ date, author, permalink, ttr }) => (
-  <p className="post-meta">
-    <time className="dt-published" dateTime={date} itemProp="datePublished">{date}</time>
-    <span itemProp="author" itemScope itemType="http://schema.org/Person">
-      <span itemProp="name">{author}</span>
-    </span>
-    • <a href={permalink} className="u-url">Permalink</a>
-    <span>
-      {ttr} minute reading time
-    </span>
-  </p>
+  <div>
+    <time
+      className="dt-published"
+      dateTime={date}
+      itemProp="datePublished"
+    >
+      {date}
+    </time>
+    <span> • </span>
+
+    <VisuallyHidden>
+      <span itemProp="author" itemScope itemType="http://schema.org/Person">
+        <span itemProp="name">{author}</span>
+        <span> • </span>
+      </span>
+    </VisuallyHidden>
+    <span>{ttr}min read</span>
+    <span> • </span>
+    <Link href={permalink} className="u-url">Permalink</Link>
+
+  </div>
 );
 
 PostMeta.propTypes = {

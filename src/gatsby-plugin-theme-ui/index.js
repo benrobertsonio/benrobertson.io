@@ -27,6 +27,22 @@ export default {
       color: 'headings'
     }
   },
+  layout: {
+    narrow: {
+      width: '90%',
+      maxWidth: '748px',
+      margin: '0 auto'
+    },
+    container: {
+      width: '90%',
+      maxWidth: '1210px',
+      margin: '0 auto'
+    },
+    narrowLeft: {
+      width: '90%',
+      maxWidth: '748px'
+    }
+  },
   styles: {
     root: {
       fontFamily: 'body',

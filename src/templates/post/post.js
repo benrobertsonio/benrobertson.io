@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Container, Link } from 'theme-ui';
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -8,12 +8,20 @@ import TableOfContents from '../../components/table-of-contents';
 import PostMeta from './post-meta';
 
 
+
 const Post = ({ data: { mdx } }) => {
   const { frontmatter, body, tableOfContents, timeToRead } = mdx;
   return (
     <Layout>
-      <div className="l-contain--center l-contain">
-        <article className="post h-entry l-contain--small" itemScope itemType="http://schema.org/BlogPosting">
+      <Container>
+        <article
+          sx={{
+            maxWidth: '748px'
+          }}
+          className="post h-entry"
+          itemScope
+          itemType="http://schema.org/BlogPosting"
+        >
 
           <header className="post-header">
             <h1 sx={{ color: 'headings', fontSize: [6, 6, 7, 8], lineHeight: 'heading' }} className="post-title p-name" itemProp="name headline">{frontmatter.title}</h1>
@@ -29,21 +37,20 @@ const Post = ({ data: { mdx } }) => {
 
             {tableOfContents?.items &&
               <TableOfContents items={tableOfContents.items} />
-
             }
             <MDXRenderer>{body}</MDXRenderer>
             {frontmatter.canonical && (
               <>
-                <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <a className="post-canonical__url" href={frontmatter.canonical}>{frontmatter.canonical}</a>.</p>
+                <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <Link href={frontmatter.canonical}>{frontmatter.canonical.replace(/https:\/\/|http:\/\/|[/]/g, ' ').split(' ')[1]}</Link >.</p>
                 <br />
               </>)
             }
 
             <br />
-            <p><em>Have any comments or questions about this post? Send them to me via email <a href="mailto:hi@benrobertson.io">hi@benrobertson.io</a> or on Twitter <a href="https://twitter.com/Banquos_Ghost">@banquos_ghost</a>.</em></p>
+            <p><em>Have any comments or questions about this post? Send them to me via email <Link href="mailto:hi@benrobertson.io">hi@benrobertson.io</Link> or on Twitter <Link href="https://twitter.com/Banquos_Ghost">@banquos_ghost</Link>.</em></p>
           </div>
         </article>
-      </div>
+      </Container>
     </Layout>
   );
 };
@@ -55,22 +62,22 @@ export const pageQuery = graphql`
         mdx(frontmatter: {path: {eq: $path } }) {
         body
         tableOfContents(maxDepth: 2)
-        timeToRead
+      timeToRead
       frontmatter {
         title
         layout
-        author
-        date
-        categories
-        snippet
-        path
-        canonical
-        updated
-        listId
-        interestGroup
-        formTitle
-        formContent
-        formCTA
+      author
+      date(formatString: "MMMM DD, YYYY")
+      categories
+      snippet
+      path
+      canonical
+      updated
+      listId
+      interestGroup
+      formTitle
+      formContent
+      formCTA
 }
 }
 }

@@ -8,7 +8,6 @@ import '../fonts/SourceSansPro/source-sans-pro.css';
 import Header from './header';
 import './layout.css';
 import Footer from './footer';
-import Container from './container';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -29,9 +28,7 @@ const Layout = ({ children }) => (
         paddingTop: '5em'
       }}>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Container>
-          <main>{children}</main>
-        </Container>
+        <main>{children}</main>
         <Footer />
       </div>
     )}
