@@ -16,14 +16,6 @@ const menu = [
     title: 'Blog'
   },
   {
-    to: '/feed.xml',
-    title: 'RSS'
-  },
-  {
-    to: '/blogroll',
-    title: 'Blogroll'
-  },
-  {
     to: '/courses/common-accessibility-mistakes/',
     title: 'Email Course'
   },

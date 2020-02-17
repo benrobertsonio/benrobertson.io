@@ -1,33 +1,60 @@
 import React from 'react';
 import styles from './footer.module.css';
+/** @jsx jsx */
+import { jsx, Link, Container, Flex, Box } from 'theme-ui';
+import { Link as GatsbyLink } from 'gatsby';
+import theme from '../../gatsby-plugin-theme-ui';
+
+const links = [
+  {
+    title: '@banquos_ghost',
+    url: 'https://twitter.com/banquos_ghost',
+    icon: 'twitter'
+  },
+  {
+    title: 'benrobertsonio',
+    url: 'https://github.com/benrobertsonio',
+    icon: 'github'
+  },
+  {
+    title: 'rss',
+    url: '/feed.xml',
+    icon: 'rss'
+  },
+];
 
 const Footer = () => (
-  <footer id="footer">
-    <div className={styles.footer}>
-      <div className={styles.wrap}>
-        <div className="profiles">
-          <a className="no-decoration u-url" href="https://twitter.com/banquos_ghost" rel="me">
-            <span className="icon icon--twitter"></span>
-            <span className="username">@banquos_ghost</span>
-          </a>
-          &middot;
-          <a className="no-decoration u-url" href="https://github.com/benrobertsonio" rel="me">
-            <span className="icon icon--github"></span>
-            <span className="username">benrobertsonio</span>
-          </a>
-          &middot;
-          <a className="no-decoration u-url" href="{{ base.url }}/feed.xml" rel="me">
-            <span className="icon icon--rss"></span>
-            <span className="username">rss</span>
-          </a>
-        </div>
+  <footer id="footer" sx={{
+    pt: 5,
+    pb: 3
+  }}>
+    <Container>
+      <Flex sx={{ justifyContent: 'center' }} as="nav" aria-label="Footer">
+        {links.map(({ title, url, icon }) => (
+          <Link
+            key={title}
+            className="u-url"
+            href={url}
+            rel="me"
+            sx={{
+              mr: 3,
+              fontSize: 1
+            }}
+          >
+            {/* <span className="icon icon--twitter"></span> */}
+            <span>{title}</span>
+          </Link>
+        ))}
 
+      </Flex>
+      <Box sx={{ textAlign: 'center', fontSize: 1 }}>
         <p>
-          &copy; {new Date().getFullYear()} <a href="/">Ben Robertson</a>
+          &copy; {new Date().getFullYear()} <GatsbyLink sx={theme.styles.a} href="/">Ben Robertson</GatsbyLink>
         </p>
-        <p>Proudly built with <a href="https://gatsbyjs.com">Gatsby</a>.</p>
-      </div>
-    </div>
+        <p>Proudly built with <Link href="https://www.gatsbyjs.com">Gatsby</Link>.</p>
+      </Box>
+    </Container>
+
   </footer>
 );
 
