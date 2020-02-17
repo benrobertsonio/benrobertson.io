@@ -45,7 +45,7 @@
     "no-unused-vars": [1],
     "one-var": [2, "never"],
     "brace-style": [2, "stroustrup"],
-    "valid-jsdoc": [2],
+    "valid-jsdoc": [0],
     "block-scoped-var": [1],
     "curly": [2],
     "max-len": [2, 80, 2],
@@ -64,7 +64,7 @@
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
-    "require-jsdoc": [2],
+    "require-jsdoc": [0],
     "space-before-blocks": [2]
   }
 }
