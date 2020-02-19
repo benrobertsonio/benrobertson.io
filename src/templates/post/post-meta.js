@@ -20,7 +20,7 @@ const PostMeta = ({ date, author, permalink, ttr }) => (
         <span> • </span>
       </span>
     </VisuallyHidden>
-    <span>{ttr}min read</span>
+    <span>{ttr} min read</span>
     <span> • </span>
     <Link href={permalink} className="u-url">Permalink</Link>
 
