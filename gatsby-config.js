@@ -28,6 +28,9 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
+        defaultLayouts: {
+          default: require.resolve('./src/templates/page.js'),
+        },
         remarkPlugins: [require('remark-slug')]
       },
     },

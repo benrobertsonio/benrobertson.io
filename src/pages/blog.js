@@ -20,7 +20,7 @@ export default function blog({ data: { allMarkdownRemark: { nodes } } }) {
                   <Heading sx={{ mb: 3 }}><Link sx={theme.styles.a} to={path}>{title}</Link></Heading>
                   <Flex sx={{ fontSize: 1 }} mb="3">
                     <Text>{date}&nbsp;&middot;</Text>
-                    <Text>&nbsp;{ttr}min read</Text>
+                    <Text>&nbsp;{ttr} min read</Text>
                   </Flex>
                   <Text>{snippet}</Text>
                 </article>
