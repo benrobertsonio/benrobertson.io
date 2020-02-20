@@ -2,12 +2,12 @@
 import { jsx, Container, Link } from 'theme-ui';
 import React from 'react';
 import Layout from '../components/layout';
-
-
+import SEO from '../components/seo';
 
 const Page = ({ children, pageContext }) => {
   return (
     <Layout>
+      <SEO title={pageContext.frontmatter.title} />
       <Container>
         <article
           sx={{
