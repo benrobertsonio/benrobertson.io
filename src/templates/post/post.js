@@ -6,6 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
 import TableOfContents from '../../components/table-of-contents';
 import PostMeta from './post-meta';
+import SEO from '../../components/seo';
 
 
 
@@ -13,6 +14,16 @@ const Post = ({ data: { mdx } }) => {
   const { frontmatter, body, tableOfContents, timeToRead } = mdx;
   return (
     <Layout>
+      <SEO
+        title={frontmatter.title}
+        desc={frontmatter.snippet}
+        pathname={frontmatter.path}
+        article={true}
+        node={{
+          first_publication_date: frontmatter.date,
+          last_publication_date: frontmatter.updated ? frontmatter.updated : frontmatter.date
+        }}
+      />
       <Container>
         <article
           sx={{
@@ -72,7 +83,7 @@ export const pageQuery = graphql`
       snippet
       path
       canonical
-      updated
+      updated(formatString: "MMMM DD, YYYY")
       listId
       interestGroup
       formTitle

@@ -1,8 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs',
+    title: 'Ben Robertson',
+    titleTemplate: '%s | Ben Robertson',
+    description:
+      'I\'m Ben Robertson, a senior software engineer at Gatsby Inc who writes about front end development and web accessibility.',
+    author: 'Ben Robertson',
+    twitter: '@banquos_ghost',
+    image: '',
+    siteUrl: 'https://benrobertson.io',
+    siteLanguage: 'en-US',
+    banner: '/ben.jpg',
+    headline: ''
   },
   plugins: [
     'gatsby-plugin-react-helmet',

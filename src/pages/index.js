@@ -10,7 +10,7 @@ import theme from '../gatsby-plugin-theme-ui';
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home" desc="I\'m Ben Robertson, a senior software engineer at Gatsby Inc who writes about front end development and web accessibility." />
     <Container>
       <Heading as="h1" sx={{ mt: 5, mb: 4, fontSize: [6, 6, 7, 8] }}>Hi, I'm Ben Robertson.</Heading>
       <p>
