@@ -80,6 +80,18 @@ export default {
       '&:focus': {
         backgroundPositionY: '20%'
       }
+    },
+    blockquote: {
+      my: 3,
+      mr: 0,
+      ml: 4,
+      backgroundColor: '#eeeeee',
+      py: 4,
+      px: 4,
+      borderLeft: '10px solid #ed6a5a',
+      'p:first-of-type': {
+        mt: 0
+      }
     }
   }
 };
