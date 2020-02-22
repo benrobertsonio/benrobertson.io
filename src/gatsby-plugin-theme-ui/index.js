@@ -43,6 +43,31 @@ export default {
       maxWidth: '748px'
     }
   },
+  buttons: {
+    primary: {
+      color: 'background',
+      fontWeight: 'bold',
+      textTransform: 'uppercase',
+      bg: 'primary',
+      borderColor: 'primary',
+      border: '1px solid',
+      transition: '200ms background-color',
+      '&:hover': {
+        bg: 'secondary',
+        cursor: 'pointer',
+      }
+    },
+  },
+  forms: {
+    input: {
+      bg: 'white',
+      border: '2px solid',
+      borderColor: '#777',
+      '&:focus': {
+        borderColor: 'primary'
+      }
+    }
+  },
   styles: {
     root: {
       fontFamily: 'body',

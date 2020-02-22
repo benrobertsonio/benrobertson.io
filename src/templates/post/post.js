@@ -1,12 +1,13 @@
-/** @jsx jsx */
-import { jsx, Container, Link } from 'theme-ui';
 import React from 'react';
+/** @jsx jsx */
+import { jsx, Container, Link, Box, Heading, Text } from 'theme-ui';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
 import TableOfContents from '../../components/table-of-contents';
 import PostMeta from './post-meta';
 import SEO from '../../components/seo';
+import SimpleSubscribe from '../../components/simple-subscribe';
 
 
 
@@ -61,6 +62,16 @@ const Post = ({ data: { mdx } }) => {
             <p><em>Have any comments or questions about this post? Send them to me via email <Link href="mailto:hi@benrobertson.io">hi@benrobertson.io</Link> or on Twitter <Link href="https://twitter.com/Banquos_Ghost">@banquos_ghost</Link>.</em></p>
           </div>
         </article>
+        <Box p="5" my="5" sx={{ bg: '#efefef', border: '5px solid', borderColor: 'primary', maxWidth: "748px" }}>
+          <Heading mb="3">
+            {frontmatter.formTitle
+              ? frontmatter.formTitle
+              : (<span>Free Email Course:<br /> Common Accessibility Mistakes and How to Fix Them</span>)}</Heading>
+          <Text mb="3">
+            {frontmatter.formContent ? frontmatter.formContent : <span>A month long course to help you simplify web accessibility!</span>}
+          </Text>
+          <SimpleSubscribe listId={frontmatter.listId} group={frontmatter.interestGroup} />
+        </Box>
       </Container>
     </Layout>
   );
@@ -70,27 +81,27 @@ export default Post;
 
 export const pageQuery = graphql`
   query($path: String!) {
-        mdx(frontmatter: {path: {eq: $path } }) {
-        body
-        tableOfContents(maxDepth: 2)
+    mdx(frontmatter: {path: {eq: $path } }) {
+      body
+      tableOfContents(maxDepth: 2)
       timeToRead
       frontmatter {
         title
         layout
-      author
-      date(formatString: "MMMM DD, YYYY")
-      categories
-      snippet
-      path
-      canonical
-      updated(formatString: "MMMM DD, YYYY")
-      listId
-      interestGroup
-      formTitle
-      formContent
-      formCTA
-}
-}
+        author
+        date(formatString: "MMMM DD, YYYY")
+        categories
+        snippet
+        path
+        canonical
+        updated(formatString: "MMMM DD, YYYY")
+        listId
+        interestGroup
+        formTitle
+        formContent
+        formCTA
+      }
+    }
 }
 `
   ;
