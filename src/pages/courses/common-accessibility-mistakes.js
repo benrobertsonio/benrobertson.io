@@ -2,7 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SEO from '../../components/seo';
 import Layout from '../../components/layout';
-import { Container, Heading, Link } from 'theme-ui';
+import { Container, Heading, Link, Grid, Text } from 'theme-ui';
+
+const Testimonial = ({ text, name }) => (
+  <blockquote>
+    <Text>{text}</Text>
+    <br />
+    <Text>
+      <cite>{name}</cite>
+    </Text>
+  </blockquote>
+);
 
 const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes and How to Avoid Them' }) => (
   <Layout>
@@ -84,57 +94,11 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
       </Container>
 
       <section className="section l-contain--center">
-        <Heading>What people are saying</Heading>
-        <div className="testimonial-grid">
-          <blockquote className="testimonial">
-            <p>Ben's focus on specific and relevant topics and balance of practical tips and supporting explanations make his accessibility mistakes email course hands down the most clear and digestible resource I've found for concrete accessibility wins.</p>
-            <p>
-              <cite>Matthew M.</cite>
-            </p>
-          </blockquote>
-          <blockquote className="testimonial">
-            <p>This course is super informative, and the content is delivered in easily understandable and digestible chunks. Thanks for the great info!</p>
-            <p>
-              <cite>Angela I.</cite>
-            </p>
-          </blockquote>
-          <blockquote className="testimonial">
-            <p>Very good course – ordered by priority, simple solutions to each problems, if you do nothing else you’ll be way ahead.</p>
-            <p>
-              <cite>Marie-Christine M.</cite>
-            </p>
-          </blockquote>
-          <blockquote className="testimonial">
-            <p>Ben Robertson's a11y email course is the easiest to digest, most sensible material I've read on the subject, it will teach you how to think about solving a11y problems rather than just giving you one-off examples.</p>
-            <p>
-              <cite>Mikael G.</cite>
-            </p>
-          </blockquote>
-          <blockquote className="testimonial">
-            <p>I highly recommended these tips by email. It's a way to consume content about accessibility in a calm way and assimilating content step by step. Thanks Ben!</p>
-            <p>
-              <cite>Raquel</cite>
-            </p>
-          </blockquote>
-          <blockquote className="testimonial">
-            <p>Thanks a lot for your course! Very simple, clear and gets right to it´s goal. Great for the ones that are new to web accessibility and for those who already knew some rules, but need to revisit them.</p>
-            <p>
-              <cite>Bianca M.</cite>
-            </p>
-          </blockquote>
-          <blockquote className="testimonial">
-            <p>You rock! Thanks for contributing to my development!</p>
-            <p>
-              <cite>Tomide A.</cite>
-            </p>
-          </blockquote>
-          <blockquote className="testimonial">
-            <p>Your lessons are fulfilling the void I'm having in pursuing the levels of where I'm heading in web development. All your demonstration are well focused on specificity of every subject. I learn a lot from you.</p>
-            <p>
-              <cite>Lloyd C.</cite>
-            </p>
-          </blockquote>
-        </div>
+        <Heading mb="4">What people are saying</Heading>
+        <Grid gap={2}
+          columns={[2, null, 3]}>
+          {testimonials.map(({ text, name }) => <Testimonial text={text} name={name} />)}
+        </Grid>
       </section>
 
       <section className="section l-contain--center l-contain--small">
@@ -156,3 +120,38 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
 CommonAccessibilityMistakes.propTypes = {};
 
 export default CommonAccessibilityMistakes;
+
+const testimonials = [
+  {
+    'text': 'Ben\'s focus on specific and relevant topics and balance of practical tips and supporting explanations make his accessibility mistakes email course hands down the most clear and digestible resource I\'ve found for concrete accessibility wins.',
+    'name': 'Matthew M.'
+  },
+  {
+    'text': 'This course is super informative, and the content is delivered in easily understandable and digestible chunks. Thanks for the great info!',
+    'name': 'Angela I.'
+  },
+  {
+    'text': 'Very good course – ordered by priority, simple solutions to each problems, if you do nothing else you’ll be way ahead.',
+    'name': 'Marie-Christine M.'
+  },
+  {
+    'text': 'Ben Robertson\'s a11y email course is the easiest to digest, most sensible material I\'ve read on the subject, it will teach you how to think about solving a11y problems rather than just giving you one-off examples.',
+    'name': 'Mikael G.'
+  },
+  {
+    'text': 'I highly recommended these tips by email. It\'s a way to consume content about accessibility in a calm way and assimilating content step by step. Thanks Ben!',
+    'name': 'Raquel'
+  },
+  {
+    'text': 'Thanks a lot for your course! Very simple, clear and gets right to it´s goal. Great for the ones that are new to web accessibility and for those who already knew some rules, but need to revisit them.',
+    'name': 'Bianca M.'
+  },
+  {
+    'text': 'You rock! Thanks for contributing to my development!',
+    'name': 'Tomide A.'
+  },
+  {
+    'text': 'Your lessons are fulfilling the void I\'m having in pursuing the levels of where I\'m heading in web development. All your demonstration are well focused on specificity of every subject. I learn a lot from you.',
+    'name': 'Lloyd C.'
+  }
+];

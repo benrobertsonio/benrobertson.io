@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import { Link as ThemeLink, Heading, Divider } from 'theme-ui';
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
@@ -7,22 +8,36 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Container } from 'theme-ui';
 import theme from '../gatsby-plugin-theme-ui';
+import SimpleSubscribe from '../components/simple-subscribe';
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" desc="I\'m Ben Robertson, a senior software engineer at Gatsby Inc who writes about front end development and web accessibility." />
+    <SEO
+      title="Home"
+      desc="I\'m Ben Robertson, a senior software engineer at Gatsby Inc who
+      writes about front end development and web accessibility."
+    />
     <Container>
-      <Heading as="h1" sx={{ mt: 5, mb: 4, fontSize: [6, 6, 7, 8] }}>Hi, I'm Ben Robertson.</Heading>
+      <Heading
+        as="h1"
+        sx={{ mt: 5, mb: 4, fontSize: [6, 6, 7, 8] }}
+      >
+        Hi, I'm Ben Robertson.
+      </Heading>
       <p>
-        🛠 I'm a senior software engineer at{' '}
+        <span aria-label="Tools" role="img">🛠 </span>
+        I'm a senior software engineer at{' '}
         <ThemeLink href="https://www.gatsbyjs.com">Gatsby</ThemeLink>.
       </p>
       <p>
-        ✍️ I write about <Link sx={theme.styles.a} to="/blog">front end development</Link> and{' '}
+        <span role="img" aria-label="Writing hand">✍️ </span>
+        I write about{' '}
+        <Link sx={theme.styles.a} to="/blog">front end development</Link>
+        {' '}and{' '}
         <Link sx={theme.styles.a} to="/accessibility">web accessibility</Link>.
       </p>
       <p>
-        ✈️ I help{' '}
+        <span role="img" aria-label="airplane">✈️</span> I help{' '}
         <ThemeLink href="https://frontendremotejobs.com">
           front end developers find remote jobs
         </ThemeLink>
@@ -30,11 +45,15 @@ const IndexPage = ({ data }) => (
       </p>
     </Container>
 
-    <Container id="mc_embed_signup" sx={{ mt: 6 }}>
+    <Container id="mc_embed_signup" sx={{ mt: 6, mb: 6 }}>
       <Heading>
-        Free Email Course: Common Accessibility Mistakes and How to Fix Them
+        Free Email Course:<br />
+        Common Accessibility Mistakes and How to Fix Them
       </Heading>
-      <p>A month long course to help you simplify web accessibility.</p>
+      <p sx={{ mb: 4 }}>
+        A month long course to help you simplify web accessibility.
+      </p>
+      <SimpleSubscribe />
     </Container>
     <Container>
       <section>
@@ -64,6 +83,10 @@ const IndexPage = ({ data }) => (
     </Container>
   </Layout >
 );
+
+IndexPage.propTypes = {
+  data: PropTypes.object
+};
 
 export default IndexPage;
 
