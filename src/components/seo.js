@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql, useStaticQuery } from 'gatsby';
+import Twitter from './twitter';
 
 const SEO = ({ title, desc, banner, pathname, article, node }) => {
   const { site } = useStaticQuery(query);
@@ -145,7 +146,6 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
         <html lang={siteLanguage} />
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
-        <meta name="gatsby-starter" content="Gatsby Starter Prismic" />
         {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
         {!article && (
           <script type="application/ld+json">
@@ -166,13 +166,13 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
         type={article ? 'article' : 'website'}
         url={seo.url}
         locale={ogLanguage}
-      />
+      />*/}
       <Twitter
         title={seo.title}
         image={seo.image}
         desc={seo.description}
         username={twitter}
-      /> */}
+      />
     </>
   );
 };
