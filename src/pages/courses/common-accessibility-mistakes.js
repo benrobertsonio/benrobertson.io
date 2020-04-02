@@ -5,13 +5,14 @@ import Layout from '../../components/layout';
 import { Container, Heading, Link, Grid, Text } from 'theme-ui';
 
 const Testimonial = ({ text, name }) => (
-  <blockquote>
-    <Text>{text}</Text>
-    <br />
-    <Text>
-      <cite>{name}</cite>
-    </Text>
-  </blockquote>
+  test
+  < blockquote >
+  <Text>{text}</Text>
+  <br />
+  <Text>
+    <cite>{name}</cite>
+  </Text>
+  </blockquote >
 );
 
 const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes and How to Avoid Them' }) => (
