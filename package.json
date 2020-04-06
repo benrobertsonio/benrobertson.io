@@ -39,5 +39,8 @@
     "clean": "gatsby clean",
     "serve:prod": "gatsby build && gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "devDependencies": {
+    "jest": "^25.2.7"
   }
 }
