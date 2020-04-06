@@ -1,17 +1,17 @@
-import React from 'react';
+oimport React from 'react';
 import PropTypes from 'prop-types';
 import SEO from '../../components/seo';
 import Layout from '../../components/layout';
 import { Container, Heading, Link, Grid, Text } from 'theme-ui';
 
 const Testimonial = ({ text, name }) => (
-  <blockquote>
+  <blockquote >
     <Text>{text}</Text>
     <br />
     <Text>
       <cite>{name}</cite>
     </Text>
-  </blockquote>
+  </blockquote >
 );
 
 const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes and How to Avoid Them' }) => (
