@@ -75,7 +75,6 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
             {/* <Heading as="h3">Lesson 7:<br />" :focus {outline: none; }"</Heading> */}
             <p>Why every site needs focus styles.</p>
           </div>
-
           <div className="lesson">
             <Heading as="h3">Lesson 8:<br /> Keyboard Support with JavaScript</Heading>
             <p>Making sites a joy to use without a mouse.</p>
