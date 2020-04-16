@@ -1,11 +1,10 @@
 import React from 'react';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
 /** @jsx jsx */
 import { jsx, Label, Input, Button, Flex, Box, Text, Spinner } from 'theme-ui';
+import Subscribe from './mailchimp';
 
-const url = '//benjamingrobertson.us15.list-manage.com/subscribe/post?u=aafc0f8e65dbc564446043b15&id=';
 
-const CustomForm = ({ status, message, onValidated, group }) => {
+const ComplexForm = ({ status, message, onValidated, group }) => {
   let email;
   let fname;
   let lname;
@@ -15,27 +14,26 @@ const CustomForm = ({ status, message, onValidated, group }) => {
     onValidated({
       EMAIL: email.value,
       FNAME: fname.value,
-      LNAME: lname.value
+      LNAME: lname.value,
+      group
     });
 
   return (
     <>
       <Flex mb='2'>
         <Box mr="3" sx={{ flexGrow: 1 }}>
-          <Label>First Name</Label>
-          <Input type="text" ref={node => (fname = node)} name="FNAME" />
+          <Label for="fname">First Name</Label>
+          <Input id="fname" type="text" ref={node => (fname = node)} name="FNAME" />
         </Box>
         <Box sx={{ flexGrow: 1 }}>
-          <Label>Last Name</Label>
-          <Input type="text" ref={node => (lname = node)} name="LNAME" />
+          <Label for="lname">Last Name</Label>
+          <Input id="lname" type="text" ref={node => (lname = node)} name="LNAME" />
         </Box>
       </Flex>
       <Flex sx={{ alignItems: 'end', flexWrap: 'wrap' }}>
         <Box sx={{ width: '100%' }}>
-          <Label>Your email</Label>
-          <Input ref={node => (email = node)} type="email" />
-          {group &&
-            <input hidden type="checkbox" checked name={group} value="1" />}
+          <Label for="email">Your email</Label>
+          <Input id="email" ref={node => (email = node)} type="email" />
         </Box>
         <Button onClick={submit} sx={{ mt: 3, width: '100%' }}>
           Start the free course!
@@ -56,19 +54,8 @@ const CustomForm = ({ status, message, onValidated, group }) => {
     </>
   );
 };
-// use the render prop and your custom form
-const ComplexSubscribe = ({ listId }) => (
-  <MailchimpSubscribe
-    url={`${url}${listId ? listId : '6e6d0bd232'}`}
-    render={({ subscribe, status, message }) => (
-      <CustomForm
-        status={status}
-        message={message}
-        onValidated={formData => subscribe(formData)}
-      />
-    )}
-  />
-)
-  ;
+export const ComplexSubscribe = ({ listId, group = 4 }) => (
+  <Subscribe CustomForm={ComplexForm} group={group} listId={listId} />
+);
 
 export default ComplexSubscribe;

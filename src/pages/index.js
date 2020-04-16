@@ -8,7 +8,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Container } from 'theme-ui';
 import theme from '../gatsby-plugin-theme-ui';
-import SimpleSubscribe from '../components/simple-subscribe';
+import SimpleSubscribe from '../components/subscribe/simple';
 
 const IndexPage = ({ data }) => (
   <Layout>
