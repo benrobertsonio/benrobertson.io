@@ -14,6 +14,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-theme-ui',
+    'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-robots-txt',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -28,10 +34,6 @@ module.exports = {
         name: 'posts',
       },
     },
-    'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-theme-ui',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -41,6 +43,61 @@ module.exports = {
         },
         remarkPlugins: [require('remark-slug')]
       },
+    },
+    {
+
+      resolve: 'gatsby-plugin-feed-mdx',
+      options: {
+        query: `
+            {
+              site {
+                siteMetadata {
+                  title
+                  description
+                  siteUrl
+                  site_url: siteUrl
+                }
+              }
+            }
+          `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + '/blog' + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                });
+              });
+            },
+            query: `
+                {
+                  allMdx(
+                    sort: { order: DESC, fields: [frontmatter___date] },
+                  ) {
+                    edges {
+                      node {
+                        excerpt
+                        html
+                        frontmatter {
+                          title
+                          date
+                          path
+                        }
+                      }
+                    }
+                  }
+                }
+              `,
+            output: '/feed.xml',
+            title: 'Ben Robertson\'s RSS Feed',
+          }
+        ]
+      }
+
     },
     {
       resolve: 'gatsby-plugin-manifest',
