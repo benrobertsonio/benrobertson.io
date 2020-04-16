@@ -7,7 +7,7 @@ module.exports = {
     author: 'Ben Robertson',
     twitter: '@benrobertsonio',
     image: '/ben.jpg',
-    siteUrl: 'https://benrobertson.io',
+    siteUrl: 'https://stage.benrobertson.io',
     siteLanguage: 'en-US',
     banner: '/ben.jpg',
     headline: ''
