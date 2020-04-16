@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SEO from '../../components/seo';
 import Layout from '../../components/layout';
-import SimpleSubscribe from '../../components/simple-subscribe';
+import ComplexSubscribe from '../../components/complex-subscribe';
 /** @jsx jsx */
 import { jsx, Container, Heading, Link, Grid, Text, Box, Flex } from 'theme-ui';
 
@@ -47,8 +47,8 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
           <p>A free web accessibility course for web developers.</p>
           <p><em>30 days, 10 lessons, 100% fun!</em></p>
           <p>Ten lessons spread out over a month focused on frequent but easy to fix accessibility mistakes.</p></Box>
-        <Box sx={{ flexBasis: ['100%', null, '50%'], maxWidth: '350px' }}>
-          <SimpleSubscribe />
+        <Box sx={{ flexBasis: ['100%', null, '50%'], maxWidth: '350px', margin: '0 auto' }}>
+          <ComplexSubscribe />
         </Box>
       </Flex>
 
@@ -87,9 +87,9 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
 
 
 
-      <Container variant="narrow">
+      <Container variant="narrow" sx={{ maxWidth: '450px' }} mb="6">
         <Heading sx={{ fontSize: 6, textAlign: 'center' }} mb="4">Ready to start?</Heading>
-        <SimpleSubscribe />
+        <ComplexSubscribe />
       </Container>
 
     </Container>
