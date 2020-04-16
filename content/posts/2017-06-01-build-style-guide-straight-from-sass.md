@@ -207,7 +207,8 @@ With those new documentation blocks, compile your style guide again (`npm run ks
 
 ![Components and article documentation](https://css-tricks.com/wp-content/uploads/2017/05/post-title-update.png)
 
-### Documenting Component States and Variations</h3>
+### Documenting Component States and Variations
+
 Our post title component is very simple, but we'll need to display more complex information in our style guide. KSS can easily handle variations on components as well as interactive states like `:hover` or `:focus`. We'll document a button to show this.
 
 Our button will have different styles for `:focus` and `:hover`, as well as a small variation and a large variation. Here is the CSS we'll start with:
@@ -308,7 +309,7 @@ When using Sass or SCSS, I put my organizational comments inside my `main.sass` 
 @import "base/elements"
 ```
 
-### Color Palettes</h3>
+### Color Palettes
 
 The Michelangelo theme that we are using provides a cool color palette generator. If you are using Sass or SCSS, you can document your color variable names and KSS will format a little color palette block.
 
