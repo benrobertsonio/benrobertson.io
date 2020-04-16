@@ -1,17 +1,17 @@
 import React from 'react';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import Subscribe from './mailchimp';
 /** @jsx jsx */
 import { jsx, Label, Input, Button, Flex, Box, Text, Spinner } from 'theme-ui';
 
-const url = '//benjamingrobertson.us15.list-manage.com/subscribe/post?u=aafc0f8e65dbc564446043b15&id=';
 
-const CustomForm = ({ status, message, onValidated, group }) => {
+const SimpleForm = ({ status, message, onValidated, group }) => {
   let email;
   const submit = () =>
     email &&
     email.value.indexOf('@') > -1 &&
     onValidated({
       EMAIL: email.value,
+      group
     });
 
   return (
@@ -20,8 +20,6 @@ const CustomForm = ({ status, message, onValidated, group }) => {
         <Box mr="3">
           <Label for="email">Your email</Label>
           <Input ref={node => (email = node)} type="email" id="email" />
-          {group &&
-            <input hidden type="checkbox" checked name={group} value="1" />}
         </Box>
         <Button onClick={submit}>
           Send me the emails!
@@ -43,18 +41,8 @@ const CustomForm = ({ status, message, onValidated, group }) => {
   );
 };
 // use the render prop and your custom form
-const SimpleSubscribe = ({ listId }) => (
-  <MailchimpSubscribe
-    url={`${url}${listId ? listId : '6e6d0bd232'}`}
-    render={({ subscribe, status, message }) => (
-      <CustomForm
-        status={status}
-        message={message}
-        onValidated={formData => subscribe(formData)}
-      />
-    )}
-  />
-)
-  ;
+export const SimpleSubscribe = ({ listId, group = 4 }) => (
+  <Subscribe CustomForm={SimpleForm} group={group} listId={listId} />
+);
 
 export default SimpleSubscribe;

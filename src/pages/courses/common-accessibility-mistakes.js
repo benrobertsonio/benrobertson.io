@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SEO from '../../components/seo';
 import Layout from '../../components/layout';
-import ComplexSubscribe from '../../components/complex-subscribe';
+import ComplexSubscribe from '../../components/subscribe/complex';
 /** @jsx jsx */
 import { jsx, Container, Heading, Link, Grid, Text, Box, Flex } from 'theme-ui';
 
