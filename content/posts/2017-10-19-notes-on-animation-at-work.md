@@ -14,8 +14,8 @@ I was **so** glad when I saw that A Book Apart was offering an ebook on the very
 
 Here are some of the things that have helped me the most so far.
 
-* TOC
-{:toc}
+
+
 
 ## Communicating Animations
 > Communication issues and inadequate deliverable documentation can make it hard for teams to design and build out animations quickly, leaving things like motion design and gestures at the bottom of the pile for implementation.

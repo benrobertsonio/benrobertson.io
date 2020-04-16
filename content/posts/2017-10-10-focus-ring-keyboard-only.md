@@ -11,7 +11,7 @@ path: /accessibility/focus-ring-keyboard-only
 One thing that inevitably makes it's way into our QA process on any project is the unexpected appearance of focus rings.
 
 <figure>
-![Example of a focus ring](/assets/img/focus-visible.png)
+![Example of a focus ring](/img/focus-visible.png)
 <figcaption>
 A wild focus ring appeared
 </figcaption>

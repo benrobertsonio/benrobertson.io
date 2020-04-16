@@ -5,8 +5,8 @@ module.exports = {
     description:
       'I\'m Ben Robertson, a senior software engineer at Gatsby Inc who writes about front end development and web accessibility.',
     author: 'Ben Robertson',
-    twitter: '@banquos_ghost',
-    image: '',
+    twitter: '@benrobertsonio',
+    image: '/ben.jpg',
     siteUrl: 'https://benrobertson.io',
     siteLanguage: 'en-US',
     banner: '/ben.jpg',
@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/posts`,
+        path: `${__dirname}/content/posts`,
         name: 'posts',
       },
     },

@@ -7,8 +7,8 @@ import theme from '../../gatsby-plugin-theme-ui';
 
 const links = [
   {
-    title: '@banquos_ghost',
-    url: 'https://twitter.com/banquos_ghost',
+    title: '@benrobertsonio',
+    url: 'https://twitter.com/benrobertsonio',
     icon: 'twitter'
   },
   {

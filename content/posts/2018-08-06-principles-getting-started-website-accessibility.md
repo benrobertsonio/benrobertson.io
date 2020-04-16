@@ -19,7 +19,7 @@ What would have helped me at the beginning were a few practical principles to he
 So let me share with you:
 
 ## Ben's Homegrown Web Accessibility Principles
-{:.no_toc}
+
 
 They're not rules.
 
@@ -27,8 +27,8 @@ They are mental shifts that I had to make when I started developing accessible w
 
 Let's get into it.
 
-* TOC
-{:toc}
+
+
 
 ## Principle 1: Web Design is more than Graphic Design
 
@@ -98,7 +98,7 @@ How do you know if there is a more semantic element to use?
 
 The Mozilla Development Network has a page of [all HTML elements organized by their purpose](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). (This reference is awesome - use it!)
 
-![Screenshot of the content sectioning table from the MDN documentation](/assets/img/content-sectioning.png)
+![Screenshot of the content sectioning table from the MDN documentation](/img/content-sectioning.png)
 
 Let's look at some of the semantic alternatives we have for `<div>`s.
 
@@ -160,13 +160,13 @@ Let's look at an example of this in action.
 
 I think everyone is likely familiar with the Google sign-in form. It's got a title, the email input, and a couple buttons for Forgot Email, Create Account, and Next.
 
-![The Google sign-in form circa July 2018](/assets/img/google-sign-in.png)
+![The Google sign-in form circa July 2018](/img/google-sign-in.png)
 
 So what happens when we look at it naked?
 
 ### Naked Google Sign-in form
 
-![The Google sign-in form circa July 2018, with styles stripped away](/assets/img/google-sign-in-naked.png)
+![The Google sign-in form circa July 2018, with styles stripped away](/img/google-sign-in-naked.png)
 
 After we remove the styles, we still have the nice Sign in heading, so we know what this page is about.
 
@@ -258,7 +258,7 @@ ARIA-live lets the computer know that an area of the page will be updated later.
 Using these attributes, you are giving the browser extra context so it can have a better idea of what functionality a certain element may have and more context to users of screen readers and other assistive technologies.
 
 ## The Principles: A Refresher
-{:.no_toc}
+
 
 That wraps up my four simple principles.
 

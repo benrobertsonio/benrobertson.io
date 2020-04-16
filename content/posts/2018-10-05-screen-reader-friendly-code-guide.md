@@ -13,7 +13,7 @@ If you want to have an accessible website you *have* to make sure it works with 
 What is a screen reader, you ask? A **screen reader** is a piece of software that reads the contents of a computer screen out loud to a person and lets that person interact with the content via their keyboard.
 
 ## Why does it matter?
-{:.no_toc}
+
 
 Why must websites work with a screen reader? Screen reader software gives people with visual impairments access to the wealth of information on the internet. If you want to build the internet the way it was meant to be, then you want your websites to be [accessible to as many people as possible](/accessibility/what-is-website-accessibility). Web design after all, is [so much more than just visual design](/accessibility/principles-getting-started-website-accessibility#principle-1-web-design-is-more-than-graphic-design).
 
@@ -25,8 +25,8 @@ When we developers write bad HTML ([and JavaScript](/accessibility/javascript-ac
 
 Since HTML is accessible to screen readers by default, using semantic HTML will go a long way in making any site usable for people who use screen readers. To ensure an excellent experience for people using screen readers, follow these four tips:
 
-* TOC
-{:toc}
+
+
 
 ## 1. Pay attention to the title tag
 The title tag is the first thing a screen reader user will hear when they reach a page. It helps people know what the page is about, and whether they are in the right place. When they come back to the browser tab later, they will know what page they are on.
@@ -49,7 +49,7 @@ Make sure the link text accurately reflects the linked content so people can fin
 ### Landmarks
 Perhaps one of the neatest navigation options is the landmarks menu. Screen readers will interpret elements like `<header>`, `<footer>`, `<main>`, `<aside>`, and `<nav>` as landmark elements, and let users navigate directly to them. You can see how these landmarks are displayed and read to users in macOS VoiceOver below.
 
-![An example of the landmarks menu in macOS Voiceover](/assets/img/landmarks.png)
+![An example of the landmarks menu in macOS Voiceover](/img/landmarks.png)
 
 A [thoughtful use of landmarks](/accessibility/understanding-layout-for-screen-readers) can give a website extra organization that will help people find information more easily. Beyond making the site more accessible, making decisions about using landmarks on a site can provide clarity about the true purpose of different elements on a site.
 
@@ -63,7 +63,7 @@ If an alt attribute exists and is empty, the screen reader will skip this image 
 ## 4. Role Attributes and Landmarks
 As was mentioned earlier, screen readers allow people to navigate via landmarks. Here is an example landmarks menu from a site that uses a combination of [landmark elements, role attributes](/accessibility/understanding-layout-for-screen-readers#aria-roles-and-landmarks), and [aria-labels](/accessibility/principles-getting-started-website-accessibility#aria-attributes) to create a clean, easily understandable landmarks menu.
 
-![An example of the landmarks menu in macOS Voiceover](/assets/img/landmarks.png)
+![An example of the landmarks menu in macOS Voiceover](/img/landmarks.png)
 
 Take a `<nav>` element for example, which would be used to define navigation element. The screen reader will note to the user by default that this is a navigation element. This can be taken a step further and provide an aria-label (`<nav aria-label=”Primary Menu”>`) which will tell the user that this is the Primary Menu navigation.
 
@@ -93,7 +93,7 @@ There are workarounds for making divs more accessible, but the fastest route is 
 (Need help styling your buttons? [Andy Bell's Button Pal is a great CSS resource](https://codepen.io/hankchizljaw/pen/Vxpjvo)!)
 
 ## It's not too scary, right?
-{:.no_toc}
+
 I hope you see from these 5 tips that starting on accessibility doesn't have to be scary. For the most part, *accessibility is about doing the simple things the right way*. We want to make the web easier to use and understand for everybody, no matter what.
 
 When you get to the bottom of it, this is the core of web accessibility, and really the driving principle of the web in general: ensuring that anybody can access, use, and understand the information, regardless of the method they use to interact with the internet.

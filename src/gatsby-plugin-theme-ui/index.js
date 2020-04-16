@@ -1,3 +1,5 @@
+import preTheme from '@theme-ui/prism/presets/oceanic-next';
+
 export default {
   colors: {
     primary: '#ed6a5a',
@@ -106,6 +108,10 @@ export default {
         backgroundPositionY: '20%'
       }
     },
+    img: {
+      maxWidth: '100%',
+      height: 'auto'
+    },
     blockquote: {
       my: 3,
       mr: 0,
@@ -114,9 +120,20 @@ export default {
       py: 4,
       px: 4,
       borderLeft: '10px solid #ed6a5a',
+      borderRadius: '3px',
       'p:first-of-type': {
         mt: 0
+      },
+      'p:last-of-type': {
+        mb: 0
       }
-    }
+    },
+    pre: {
+      p: 3,
+      overflowX: 'scroll',
+      fontSize: 1,
+      borderRadius: '3px',
+      ...preTheme,
+    },
   }
 };

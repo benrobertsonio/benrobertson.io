@@ -14,8 +14,8 @@ We might not like to admit it but we've all been there: at the end of a project 
 
 While accessibility can be frustrating, you can set yourself, your team, and your client up for success by planning for accessibility from the beginning. Here are 4 techniques to save you time and trouble when building accessible JavaScript-enabled websites and applications.
 
-* TOC
-{:toc}
+
+
 
 ## 1. Use the `<button>` element for anything that users click on.
 
@@ -269,7 +269,7 @@ We need to call `e.preventDefault()` for both of these cases to prevent the defa
 You'll want to make sure you remove your `keyup` event listener when the user closes the modal to let their TAB functionality return to normal.
 
 ## Conclusion
-{:.no_toc}
+
 
 We've covered a lot here, but it should be a really good start for you to start developing accessible interactive JavaScript sites and applications and give you a framework for thinking about how you might program other widgets and components. Remember to:
 
