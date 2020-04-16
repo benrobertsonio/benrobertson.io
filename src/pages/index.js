@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Link as ThemeLink, Heading, Divider } from 'theme-ui';
+import { Link as ThemeLink, Heading, Divider, Box } from 'theme-ui';
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import Layout from '../components/layout';
@@ -56,30 +56,33 @@ const IndexPage = ({ data }) => (
       <SimpleSubscribe />
     </Container>
     <Container>
-      <section>
-        <header>
-          <Heading>Recent Writing</Heading>
-          <Divider />
-        </header>
-        <ul sx={{ m: 0, p: 0, mt: 4 }}>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <li sx={{ listStyle: 'none', mb: 3 }} key={node.frontmatter.title}>
-              <article key={node.frontmatter.title}>
-                <Heading as="h3">
-                  <Link
-                    sx={theme.styles.a}
-                    to={node.frontmatter.path}
-                  >
-                    {node.frontmatter.title}
-                  </Link>
-                </Heading>
-                <p sx={{ mt: 2 }}>{node.frontmatter.snippet}</p>
-              </article>
-            </li>
-          ))}
-        </ul>
-        <Link sx={theme.styles.a} to="/blog">More Blog Posts →</Link>
-      </section>
+      <Box sx={{ maxWidth: '70ch' }}>
+        <section>
+          <header>
+            <Heading>Recent Writing</Heading>
+            <Divider />
+          </header>
+          <ul sx={{ m: 0, p: 0, mt: 4 }}>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <li sx={{ listStyle: 'none', mb: 3 }} key={node.frontmatter.title}>
+                <article key={node.frontmatter.title}>
+                  <Heading as="h3">
+                    <Link
+                      sx={theme.styles.a}
+                      to={node.frontmatter.path}
+                    >
+                      {node.frontmatter.title}
+                    </Link>
+                  </Heading>
+                  <p sx={{ mt: 2 }}>{node.frontmatter.snippet}</p>
+                </article>
+              </li>
+            ))}
+          </ul>
+          <Link sx={theme.styles.a} to="/blog">More Blog Posts →</Link>
+        </section>
+      </Box>
+
     </Container>
   </Layout >
 );

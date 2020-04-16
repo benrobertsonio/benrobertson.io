@@ -5,7 +5,7 @@ module.exports = {
     description:
       'I\'m Ben Robertson, a senior software engineer at Gatsby Inc who writes about front end development and web accessibility.',
     author: 'Ben Robertson',
-    twitter: '@banquos_ghost',
+    twitter: '@benrobertsonio',
     image: '/ben.jpg',
     siteUrl: 'https://benrobertson.io',
     siteLanguage: 'en-US',

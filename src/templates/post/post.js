@@ -59,7 +59,7 @@ const Post = ({ data: { mdx } }) => {
             }
 
             <br />
-            <p><em>Have any comments or questions about this post? Send them to me via email <Link href="mailto:hi@benrobertson.io">hi@benrobertson.io</Link> or on Twitter <Link href="https://twitter.com/Banquos_Ghost">@banquos_ghost</Link>.</em></p>
+            <p><em>Have any comments or questions about this post? Send them to me via email <Link href="mailto:hi@benrobertson.io">hi@benrobertson.io</Link> or on Twitter <Link href="https://twitter.com/benrobertsonio">@benrobertsonio</Link>.</em></p>
           </div>
         </article>
         <Box p="5" my="5" sx={{ bg: '#efefef', border: '5px solid', borderColor: 'primary', maxWidth: "748px" }}>
