@@ -44,7 +44,7 @@ Overall I think this makes for a much cleaner controlled input.
 
 ## useEffect
 
-The other hook I've been messing with is the useEffect hook. This hook is for performing "side effects" in function components (according to the [React docs](https://reactjs.org/docs/hooks-effect.html)). The docs give a few examples of what a side effect is: data fetching, setting up a subscription, and manually changing the DOM.
+The other hook I've been messing with is the useEffect hook. This hook is for performing "side effects" in function components (according to the [React docs](https://reactjs.org/docs/hooks-effect.html)). The docs give a few examples of what a side effect is: data fetching, setting up a subscription, and manually changing the DOM.
 
 I've found a couple use cases for this hook so far.
 
