@@ -39,7 +39,7 @@ const Post = ({ data: { mdx } }) => {
             <h1 sx={{ color: 'headings', fontSize: [6, 6, 7, 8], lineHeight: 'heading' }} className="post-title p-name" itemProp="name headline">{frontmatter.title}</h1>
           </header>
 
-          <div className="post-content e-content" itemProp="articleBody">
+          <div>
             <PostMeta
               date={frontmatter.date}
               author={frontmatter.author}
@@ -50,7 +50,10 @@ const Post = ({ data: { mdx } }) => {
             {tableOfContents?.items &&
               <TableOfContents items={tableOfContents.items} />
             }
-            <MDXRenderer>{body}</MDXRenderer>
+
+            <div className="post-content e-content" itemProp="articleBody">
+              <MDXRenderer>{body}</MDXRenderer>
+            </div>
             {frontmatter.canonical && (
               <>
                 <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <Link href={frontmatter.canonical}>{frontmatter.canonical.replace(/https:\/\/|http:\/\/|[/]/g, ' ').split(' ')[1]}</Link >.</p>
