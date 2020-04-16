@@ -49,7 +49,7 @@ Make sure the link text accurately reflects the linked content so people can fin
 ### Landmarks
 Perhaps one of the neatest navigation options is the landmarks menu. Screen readers will interpret elements like `<header>`, `<footer>`, `<main>`, `<aside>`, and `<nav>` as landmark elements, and let users navigate directly to them. You can see how these landmarks are displayed and read to users in macOS VoiceOver below.
 
-![An example of the landmarks menu in macOS Voiceover](/assets/img/landmarks.png)
+![An example of the landmarks menu in macOS Voiceover](/img/landmarks.png)
 
 A [thoughtful use of landmarks](/accessibility/understanding-layout-for-screen-readers) can give a website extra organization that will help people find information more easily. Beyond making the site more accessible, making decisions about using landmarks on a site can provide clarity about the true purpose of different elements on a site.
 
@@ -63,7 +63,7 @@ If an alt attribute exists and is empty, the screen reader will skip this image 
 ## 4. Role Attributes and Landmarks
 As was mentioned earlier, screen readers allow people to navigate via landmarks. Here is an example landmarks menu from a site that uses a combination of [landmark elements, role attributes](/accessibility/understanding-layout-for-screen-readers#aria-roles-and-landmarks), and [aria-labels](/accessibility/principles-getting-started-website-accessibility#aria-attributes) to create a clean, easily understandable landmarks menu.
 
-![An example of the landmarks menu in macOS Voiceover](/assets/img/landmarks.png)
+![An example of the landmarks menu in macOS Voiceover](/img/landmarks.png)
 
 Take a `<nav>` element for example, which would be used to define navigation element. The screen reader will note to the user by default that this is a navigation element. This can be taken a step further and provide an aria-label (`<nav aria-label=”Primary Menu”>`) which will tell the user that this is the Primary Menu navigation.
 

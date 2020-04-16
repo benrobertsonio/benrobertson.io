@@ -8,7 +8,7 @@ snippet: "I presented at DrupalCamp Asheville on my personal accessibility princ
 path: /accessibility/common-accessibility-mistakes-and-how-to-avoid-them
 ---
 
-![Ben presenting a slide titled 'Alternatives to Divs' during his session at DrupalCamp Asheville.](/assets/img/dc-asheville-picture.jpg)
+![Ben presenting a slide titled 'Alternatives to Divs' during his session at DrupalCamp Asheville.](/img/dc-asheville-picture.jpg)
 
 This weekend I had the privilege to present a session at [DrupalCamp Asheville](https://www.drupalasheville.com/): **Common Accessibility Mistakes and How to Avoid Them**. It was a lot of fun, and my first time presenting my own session at a web development conference!
 

@@ -14,7 +14,7 @@ We had color swatches in the style tile, but that's a pretty static document and
 
 Really, I wanted something exactly like what Brad Frost has in his site's [Pattern Lab](http://pl.bradfrost.com/):
 
-![The color swatches from Brad Frost's pattern lab](/assets/img/color-swatches/brad-frost-pattern-lab.png)
+![The color swatches from Brad Frost's pattern lab](/img/color-swatches/brad-frost-pattern-lab.png)
 
 I only wanted to add this if it was going to be maintainable though. I didn't want us to have to update storybook separately from any color changes we had to make.
 
@@ -199,7 +199,7 @@ I created a `<ColorGroup />` component that displays a collection of `<Color />`
 
 Here's the display I ended up with in Storybook:
 
-![The color swatches, grouped by type in Storybook.](/assets/img/color-swatches/final-swatches.png)
+![The color swatches, grouped by type in Storybook.](/img/color-swatches/final-swatches.png)
 
 And here's my entire `stories.js` file for reference on how it all comes together:
 

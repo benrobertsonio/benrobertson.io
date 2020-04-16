@@ -98,7 +98,7 @@ How do you know if there is a more semantic element to use?
 
 The Mozilla Development Network has a page of [all HTML elements organized by their purpose](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). (This reference is awesome - use it!)
 
-![Screenshot of the content sectioning table from the MDN documentation](/assets/img/content-sectioning.png)
+![Screenshot of the content sectioning table from the MDN documentation](/img/content-sectioning.png)
 
 Let's look at some of the semantic alternatives we have for `<div>`s.
 
@@ -160,13 +160,13 @@ Let's look at an example of this in action.
 
 I think everyone is likely familiar with the Google sign-in form. It's got a title, the email input, and a couple buttons for Forgot Email, Create Account, and Next.
 
-![The Google sign-in form circa July 2018](/assets/img/google-sign-in.png)
+![The Google sign-in form circa July 2018](/img/google-sign-in.png)
 
 So what happens when we look at it naked?
 
 ### Naked Google Sign-in form
 
-![The Google sign-in form circa July 2018, with styles stripped away](/assets/img/google-sign-in-naked.png)
+![The Google sign-in form circa July 2018, with styles stripped away](/img/google-sign-in-naked.png)
 
 After we remove the styles, we still have the nice Sign in heading, so we know what this page is about.
 

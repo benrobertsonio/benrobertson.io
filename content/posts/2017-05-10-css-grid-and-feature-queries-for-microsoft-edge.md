@@ -62,12 +62,12 @@ It worked great in the latest Chrome, Firefox, Safari, and even in Internet Expl
 
 Checking the screenshot and opening up the page in Edge in Browserstack revealed that the right sidebar was sitting squarely on top of my main content area.
 
-![Screenshot of my sidebar chilling on top of my main content area](/assets/img/grid/edge-grid.png)
+![Screenshot of my sidebar chilling on top of my main content area](/img/grid/edge-grid.png)
 *oh no*
 
 The Edge inspector revealed that my `.layout-grid` was indeed getting the grid styles, but the grid styles for the old, `-ms`-prefixed spec.
 
-![Screenshot of the Microsoft Edge inspector](/assets/img/grid/edge-grid-inspector.png)
+![Screenshot of the Microsoft Edge inspector](/img/grid/edge-grid-inspector.png)
 *¯\\_(ツ)_/¯*
 
 The prefixes are coming from postCSS, so I know why that is getting added. However, I'm still not sure why Edge is detecting that it supports the un-prefixed grid spec. But, in any case, that appears to be what is happening. I decided to throw in the towel and ditch my Grid experiment.

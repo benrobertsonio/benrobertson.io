@@ -56,7 +56,7 @@ And now I'm at Mediacurrent. Mediacurrent is a full-service digital agency, so w
 
 ## CMS & Front End Through the Years
 
-![Sean and Cory from Boy Meets World are best friends and they are happy to see each other.](/assets/img/gatsby-days-2018/boy-meets-world.gif)
+![Sean and Cory from Boy Meets World are best friends and they are happy to see each other.](/img/gatsby-days-2018/boy-meets-world.gif)
 <em>Old friends.</em>
 
 Now, let's do a little story time. I call this story "A personal history of templating".
@@ -71,7 +71,7 @@ Granted, I was still relatively new to web development, and brand new to Drupal.
 
 Anyways. As my work progressed, my theme directory started taking on a structure like this:
 
-![Screengrab of a Drupal theme directory structure with many different templates with very long, specific file names.](/assets/img/gatsby-days-2018/01-drupal-theme-directory.png)
+![Screengrab of a Drupal theme directory structure with many different templates with very long, specific file names.](/img/gatsby-days-2018/01-drupal-theme-directory.png)
 <em>Just look at all the dashes in those file names.</em>
 
 - lots of very specifically named files, with ever increasing specificity
@@ -82,7 +82,7 @@ Anyways. As my work progressed, my theme directory started taking on a structure
 
 Once inside the file, I'd often wonder, where is this data coming from? Why is it nested in so many arrays? What are these preprocess functions? Where do I find them? Where are `$classes` defined?
 
-![Screen grab of a Drupal 7 template file with HTML and PHP inside.](/assets/img/gatsby-days-2018/02-template-overrides.png)
+![Screen grab of a Drupal 7 template file with HTML and PHP inside.](/img/gatsby-days-2018/02-template-overrides.png)
 <em>A Drupal 7 template from yesteryear.</em>
 
 And looking back on this with my 2018 perspective, I start to notice other things, like:
@@ -125,7 +125,7 @@ Each component ends up with its own directory with a Twig file, a SCSS file, and
 
 Drupal 8 uses Twig as its templating system, so now our Node-based style guide can use the same templates as Drupal. And thanks to the Drupal Component Libraries module, we can attach the component JavaScript directly to the individual component and Drupal will create bundles of JavaScript / CSS for the components and smartly include them where they need to be included.
 
-![Topher Grace in a business suit, hooks his hands together a mouths, "Synergy"](/assets/img/gatsby-days-2018/synergy.gif)
+![Topher Grace in a business suit, hooks his hands together a mouths, "Synergy"](/img/gatsby-days-2018/synergy.gif)
 <em>Synergy.</em>
 
 Synergy. Backend and Frontend using the same templates. *Theoretically* front-enders can work exclusively in the style guide and back-enders can focus on the backend.
@@ -204,7 +204,7 @@ To meet these requirements, we built:
  - a customizable RSS feed for the signage
  - a Gatsby site ([https://citysprings.com](https://citysprings.com))
 
-![A diagram that shows Drupal as the center, powering a Gatsby site and the RSS signs.](/assets/img/gatsby-days-2018/04-5-structure.png)
+![A diagram that shows Drupal as the center, powering a Gatsby site and the RSS signs.](/img/gatsby-days-2018/04-5-structure.png)
 
 And just to set the stage a little bit, this was definitely an experimental project for us. We had done decoupled Drupal before and we had some digital signage projects in the works but:
 

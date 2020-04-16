@@ -25,16 +25,16 @@ I'll walk through how to make use of these indicators to make a simple web page 
 
 Here's an example of a page with a pretty simple layout. We've got a header at the top containing a logo and navigation, some body content, a sidebar off to the right with a related posts list and a list of social media sharing links, a search box below the content and a footer containing the contact info of our business.
 
-[![Screenshot of the initial layout. Click on the image to preview the page.](/assets/img/designing-layouts-for-sr/initial-layout.png)](https://mergeweb.github.io/screen-reader-layout-post/)
+[![Screenshot of the initial layout. Click on the image to preview the page.](/img/designing-layouts-for-sr/initial-layout.png)](https://mergeweb.github.io/screen-reader-layout-post/)
 
  - [Preview the initial layout](https://mergeweb.github.io/screen-reader-layout-post/)
  - [View the HTML](https://github.com/mergeweb/screen-reader-layout-post/blob/master/index.html)
 
 Visually, the content is pretty well divided, using a simple grid and background colors to distinguish the different elements. If you fire up VoiceOver on this page, you can navigate through the page pretty well using the next element command. The order of elements in the markup pretty much follows the visual order of elements. First we read the header, then the body copy, then the sidebar, then the search box, then the footer. That's pretty good. If I press `CAPS + U` to pull up the VoiceOver menus, I can get a list of all the headers on the page and all the links, and navigate directly to them.
 
-![VoiceOver will display a navigable list of all headings on a page.](/assets/img/designing-layouts-for-sr/header-menu.png)
+![VoiceOver will display a navigable list of all headings on a page.](/img/designing-layouts-for-sr/header-menu.png)
 
-![VoiceOver will also display a navigable list of all links on a page.](/assets/img/designing-layouts-for-sr/link-menu.png)
+![VoiceOver will also display a navigable list of all links on a page.](/img/designing-layouts-for-sr/link-menu.png)
 
 Just by using well-structured HTML, simple grouping with `<div>` elements and a good use of heading tags we've got a decent experience. It's better than the rambling story websites I mentioned above, but it could be even better.
 
@@ -137,7 +137,7 @@ In this next iteration, I've added the following labels:
 
 Let's fire up VoiceOver again and pull up our Landmark menu with `CAPS+U`. Now we see that the ARIA labels we provided display next to each of our generic menu items. We also have a few extra menu items, because the `<section>` elements we provided labels for (Related Posts, Share Links), now have their own menu items.
 
-![The VoiceOver landmarks menu now shows detailed information about each of the sections on our page, including the aria-labels that we provided.](/assets/img/designing-layouts-for-sr/landmarks-detail.png)
+![The VoiceOver landmarks menu now shows detailed information about each of the sections on our page, including the aria-labels that we provided.](/img/designing-layouts-for-sr/landmarks-detail.png)
 
 Now an assistive technology user has an equal (and maybe even better) conceptual map of the content and actions they can take on this website compared to a non-assistive technology user. They can get a quick overview of everything on the site, easily navigate to the section of the page they want, and quickly find what they are looking for.
 

@@ -91,7 +91,7 @@ But you can't be 100% sure that everyone will be paying attention to the linter.
 
 What we can do as an extra check to prevent inaccessible code from entering the codebase is to add a *pre-commit hook* that runs the linting we set up above every time a developer tries to commit code. If an accessibility error is found, an error message will display with the relevant linting error and location of the error, and the commit will be prevented until the developer resolves the issue.
 
-![lint-staged will run a pre-commit hook that will catch any accessibility errors raised by eslint-plugin-jsx-a11y](/assets/img/myth-react-inaccessible/lint-staged-example.png)
+![lint-staged will run a pre-commit hook that will catch any accessibility errors raised by eslint-plugin-jsx-a11y](/img/myth-react-inaccessible/lint-staged-example.png)
 *lint-staged will run a pre-commit hook that will catch any accessibility errors raised by eslint-plugin-jsx-a11y*
 
 #### Usage
@@ -165,7 +165,7 @@ module.exports = {
 
 Now, when the page renders, the plugin will print any accessibility errors to the browser console. Here's an example, where I've put an `<h5>` directly underneath an `<h1>`:
 
-![React aXe will show accessibility errors in the console while you are developing.](/assets/img/myth-react-inaccessible/react-axe-example.png)
+![React aXe will show accessibility errors in the console while you are developing.](/img/myth-react-inaccessible/react-axe-example.png)
 *React aXe will show accessibility errors in the console while you are developing.*
 
 You can see that in the axe message in the console that it has identified my heading issue: "Heading issues should only increase by one" as a moderate issue. It also includes a link to learn more about *why* this is an issue and how to resolve it: [https://dequeuniversity.com/rules/axe/3.2/heading-order](https://dequeuniversity.com/rules/axe/3.2/heading-order). And lastly, it displays the specific element that is causing the issue for easy identification.
@@ -180,7 +180,7 @@ The last piece of our accessibility workflow has to do with our [component-drive
 
 Besides having a nice workflow and UI, Storybook has an awesome [accessibility add-on](https://github.com/storybooks/storybook/tree/master/addons/a11y) that adds a panel to each component in your component library documenting accessibility issues.
 
-![Our storybook configuration has built-in axe tests for each component and a color blindness simulator, provided by the storybook accessibility add-on.](/assets/img/myth-react-inaccessible/storybook-preview.png)
+![Our storybook configuration has built-in axe tests for each component and a color blindness simulator, provided by the storybook accessibility add-on.](/img/myth-react-inaccessible/storybook-preview.png)
 
 Behind the scenes, the add-on actually also uses aXe for testing. This is really nice, because it means that the testing we are using in development is the same as what we are using in the component library. Having the errors highlighted in the component library also helps everyone on our project teams catch accessibility issues as they are browsing the library, either for QA purposes or design inspiration.
 
@@ -206,7 +206,7 @@ And lastly, add this line in your Storybook `config.js` file to automatically ad
 
 When you run Storybook now, you should now see the accessibility panel ([see a live version here](https://gatsby-starter-accessibility.netlify.com/storybook/?path=/story/header--default)):
 
-![Our storybook configuration has built-in axe tests for each component and a color blindness simulator, provided by the storybook accessibility add-on.](/assets/img/myth-react-inaccessible/storybook-preview.png)
+![Our storybook configuration has built-in axe tests for each component and a color blindness simulator, provided by the storybook accessibility add-on.](/img/myth-react-inaccessible/storybook-preview.png)
 *Our storybook configuration has built-in axe tests for each component and a color blindness simulator, provided by the storybook accessibility add-on.*
 
 As a side note - you can control the order of the tabs in your add-ons panel based on the order that you import add-ons into your `addons.js` file, if you want to have the accessibility panel display by default, make sure it is the first line in your `addons.js`.

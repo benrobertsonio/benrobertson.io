@@ -108,6 +108,10 @@ export default {
         backgroundPositionY: '20%'
       }
     },
+    img: {
+      maxWidth: '100%',
+      height: 'auto'
+    },
     blockquote: {
       my: 3,
       mr: 0,

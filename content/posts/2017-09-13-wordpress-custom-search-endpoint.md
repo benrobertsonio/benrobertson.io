@@ -110,7 +110,7 @@ function namespace_get_search_args() {
 
 I give my argument a little description so that if other people end up working with the API they get some info when requesting this endpoint.
 
-![A preview of the endpoint information returned by WordPress. (Preview generated via the Postman app)](/assets/img/search-endpoint-desc.png)
+![A preview of the endpoint information returned by WordPress. (Preview generated via the Postman app)](/img/search-endpoint-desc.png)
 
 If you wanted to define more arguments, you would do it in this function in the `$args` array.
 
