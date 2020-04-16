@@ -54,6 +54,7 @@ export default {
       borderColor: 'primary',
       border: '1px solid',
       transition: '200ms background-color',
+      fontSize: [2, 2, 2, 2, 3],
       '&:hover': {
         bg: 'secondary',
         cursor: 'pointer',
