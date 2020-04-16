@@ -25,6 +25,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = result.data.allMdx.edges;
   // you'll call `createPage` for each result
   posts.forEach(({ node }, index) => {
+    console.log(node.frontmatter);
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)

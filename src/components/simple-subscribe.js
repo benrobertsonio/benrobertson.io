@@ -16,7 +16,7 @@ const CustomForm = ({ status, message, onValidated, group }) => {
 
   return (
     <>
-      <Flex sx={{ alignItems: 'end', flexWrap: 'wrap' }}>
+      <Flex sx={{ alignItems: 'flex-end', flexWrap: 'wrap' }}>
         <Box mr="3">
           <Label>Your email</Label>
           <Input ref={node => (email = node)} type="email" />
