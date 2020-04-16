@@ -19,7 +19,7 @@ const CustomForm = ({ status, message, onValidated, group }) => {
       <Flex sx={{ alignItems: 'flex-end', flexWrap: 'wrap' }}>
         <Box mr="3">
           <Label for="email">Your email</Label>
-          <Input ref={node => (email = node)} type="email" name="email" />
+          <Input ref={node => (email = node)} type="email" id="email" />
           {group &&
             <input hidden type="checkbox" checked name={group} value="1" />}
         </Box>
