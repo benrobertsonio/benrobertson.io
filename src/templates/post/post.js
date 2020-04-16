@@ -7,7 +7,7 @@ import Layout from '../../components/layout';
 import TableOfContents from '../../components/table-of-contents';
 import PostMeta from './post-meta';
 import SEO from '../../components/seo';
-import SimpleSubscribe from '../../components/simple-subscribe';
+import SimpleSubscribe from '../../components/subscribe/simple';
 
 
 
@@ -73,7 +73,7 @@ const Post = ({ data: { mdx } }) => {
           <Text mb="3">
             {frontmatter.formContent ? frontmatter.formContent : <span>A month long course to help you simplify web accessibility!</span>}
           </Text>
-          <SimpleSubscribe listId={frontmatter.listId} group={frontmatter.interestGroup} />
+          <SimpleSubscribe group={frontmatter.interestGroup} />
         </Box>
       </Container>
     </Layout>

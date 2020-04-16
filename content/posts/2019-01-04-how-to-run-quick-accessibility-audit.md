@@ -6,7 +6,7 @@ date:   2019-01-09 00:00:00 -0500
 categories: accessibility
 snippet: "Run a quick accessibility audit on any website, even if you've never done one before."
 listId: '6e6d0bd232'
-interestGroup: 'group[5103][2]' # Accessibility audit checklist
+interestGroup: '2' # Accessibility audit checklist
 formTitle: "Want the accessibility audit checklist?"
 formContent: "Get the checklist as a PDF - enter your email below and I'll send it right away."
 formCTA: "Send me the checklist"
