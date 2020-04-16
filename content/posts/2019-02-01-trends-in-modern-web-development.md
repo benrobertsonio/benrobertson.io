@@ -15,7 +15,7 @@ I had a blast going out to San Francisco, and all the Gatsby folks were very kin
 I have a habit of writing my presentations out word for word, so I thought I'd share my presentation here as well, for posterity. The slides are on [Notist](https://noti.st/benrobertson/xJwZIr), and embedded [underneath the video](#slides) as well.
 
 ## Introduction
-{:.no_toc}
+
 
 I'm going to be talking about how to move fast without breaking things. Because at the end of the day, that's what every body really wants, right? We want our web projects:
 
@@ -29,7 +29,7 @@ Wouldn't that be great? It's the magical formula for dev, project manager and cl
 And while hitting all these things 100% may be a pipe dream, I think new development practices enabled by technology like [Gatsby](https://www.gatsbyjs.org/) and others can really help get us closer to this pipe dream.
 
 ## Agenda
-{:.no_toc}
+
 So, more specifically, here's what I want to cover:
 
 First I'll just give a little background on me, who I am, the kind of work I do, etc.
@@ -40,8 +40,8 @@ I'll share a case study from a decoupled Drupal and Gatsby project we took on ea
 
 And based on that experience, I want to discuss the different ways decoupling can change things at an organization, including the development process, but even beyond into hiring and client diversity.
 
-* TOC
-{:toc}
+
+
 
 
 ## About Me
@@ -354,14 +354,14 @@ Beyond the budget aspect, working in Gatsby gives all our developers more experi
 So just to wrap up, I think leveraging the advantages I've outlined of decoupling front end from the content management system is going to really change the way we work at Mediacurrent and how a lot of people are working on the web. I know for us it has helped speed up our development process. We are moving faster, building more reliable sites, doing them for less money while remaining profitable, getting into new kinds of work, and doing it on budget.
 
 ## Video Recording
-{:.no_toc}
+
 
 <div class="responsive-iframe">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QiocnDGnKfs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Slides
-{:.no_toc}
+
 <div class="responsive-iframe">
 <iframe src="https://noti.st/benrobertson/xJwZIr/embed" frameborder="0" width="960" height="540" allowfullscreen></iframe>
 </div>

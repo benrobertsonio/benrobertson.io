@@ -13,7 +13,7 @@ If you want to have an accessible website you *have* to make sure it works with 
 What is a screen reader, you ask? A **screen reader** is a piece of software that reads the contents of a computer screen out loud to a person and lets that person interact with the content via their keyboard.
 
 ## Why does it matter?
-{:.no_toc}
+
 
 Why must websites work with a screen reader? Screen reader software gives people with visual impairments access to the wealth of information on the internet. If you want to build the internet the way it was meant to be, then you want your websites to be [accessible to as many people as possible](/accessibility/what-is-website-accessibility). Web design after all, is [so much more than just visual design](/accessibility/principles-getting-started-website-accessibility#principle-1-web-design-is-more-than-graphic-design).
 
@@ -25,8 +25,8 @@ When we developers write bad HTML ([and JavaScript](/accessibility/javascript-ac
 
 Since HTML is accessible to screen readers by default, using semantic HTML will go a long way in making any site usable for people who use screen readers. To ensure an excellent experience for people using screen readers, follow these four tips:
 
-* TOC
-{:toc}
+
+
 
 ## 1. Pay attention to the title tag
 The title tag is the first thing a screen reader user will hear when they reach a page. It helps people know what the page is about, and whether they are in the right place. When they come back to the browser tab later, they will know what page they are on.
@@ -93,7 +93,7 @@ There are workarounds for making divs more accessible, but the fastest route is 
 (Need help styling your buttons? [Andy Bell's Button Pal is a great CSS resource](https://codepen.io/hankchizljaw/pen/Vxpjvo)!)
 
 ## It's not too scary, right?
-{:.no_toc}
+
 I hope you see from these 5 tips that starting on accessibility doesn't have to be scary. For the most part, *accessibility is about doing the simple things the right way*. We want to make the web easier to use and understand for everybody, no matter what.
 
 When you get to the bottom of it, this is the core of web accessibility, and really the driving principle of the web in general: ensuring that anybody can access, use, and understand the information, regardless of the method they use to interact with the internet.

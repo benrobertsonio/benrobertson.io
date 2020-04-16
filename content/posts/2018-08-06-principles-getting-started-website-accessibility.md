@@ -19,7 +19,7 @@ What would have helped me at the beginning were a few practical principles to he
 So let me share with you:
 
 ## Ben's Homegrown Web Accessibility Principles
-{:.no_toc}
+
 
 They're not rules.
 
@@ -27,8 +27,8 @@ They are mental shifts that I had to make when I started developing accessible w
 
 Let's get into it.
 
-* TOC
-{:toc}
+
+
 
 ## Principle 1: Web Design is more than Graphic Design
 
@@ -258,7 +258,7 @@ ARIA-live lets the computer know that an area of the page will be updated later.
 Using these attributes, you are giving the browser extra context so it can have a better idea of what functionality a certain element may have and more context to users of screen readers and other assistive technologies.
 
 ## The Principles: A Refresher
-{:.no_toc}
+
 
 That wraps up my four simple principles.
 

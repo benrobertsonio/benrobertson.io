@@ -15,8 +15,8 @@ Maybe a key image on your site is missing an alt description. Maybe the headings
 
 Identifying these issues is important, which is why there is a whole slew of web accessibility checkers available to help identify these problems. I want to introduce you to a few tools that you might find helpful in identifying accessibility issues. Just remember though, that [automated tests can only catch a portion of all issues](https://www.mediacurrent.com/blog/manual-accessibility-testing-why-how/).
 
-* TOC
-{:toc}
+
+
 
 ## WAVE: Website Accessibility Evaluation Tool
 Perhaps the most well known name in accessibility testing, the WAVE ([Website Accessibility Evaluation](http://wave.webaim.org/) Tool) suite of products is developed and maintained by WebAIM, an organization devoted to making web content accessible to people with disabilities.

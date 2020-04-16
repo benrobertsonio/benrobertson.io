@@ -16,8 +16,8 @@ Recently though, I needed to implement this feature across several post types. I
 
 I implemented this in my themes `functions.php` file, but you could also do this in a custom plugin.
 
-* TOC
-{:toc}
+
+
 
 ## Register a Custom Route
 Our first step is to register a custom route. I used the [register_rest_route()](https://developer.wordpress.org/reference/functions/register_rest_route/) function to do this.
