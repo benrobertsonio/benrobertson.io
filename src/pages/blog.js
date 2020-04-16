@@ -10,7 +10,7 @@ export default function blog({ data: { allMarkdownRemark: { nodes } } }) {
 
   return (
     <Layout>
-      <Container variant="narrow">
+      <Container>
         <Heading as="h1" sx={{ mt: 5, mb: 5, fontSize: 7 }}>Blog</Heading>
         <section>
           <ul sx={{ p: 0, m: 0, listStyle: 'none' }}>
