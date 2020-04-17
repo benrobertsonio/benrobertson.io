@@ -17,7 +17,7 @@ const BrainNote = ({ note }) => {
     if (references.length > 0) {
       referenceBlock = (
         <>
-          <Heading>Linked References</Heading>
+          <Heading sx={{ textTransform: 'capitalize' }}>{note.title}: Linked References</Heading>
           <ul>{references}</ul>
         </>
       );
