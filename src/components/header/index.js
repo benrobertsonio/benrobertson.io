@@ -16,6 +16,10 @@ const menu = [
     title: 'Blog'
   },
   {
+    to: '/notes',
+    title: 'Notes'
+  },
+  {
     to: '/courses/common-accessibility-mistakes/',
     title: 'Email Course'
   },

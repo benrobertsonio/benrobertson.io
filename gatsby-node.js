@@ -6,7 +6,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogPostTemplate = path.resolve('src/templates/post/post.js');
   const result = await graphql(`
   query {
-    allMdx {
+    allMdx(filter: {frontmatter: {path: {ne: "null"}}}) {
       edges {
         node {
           id
@@ -25,6 +25,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = result.data.allMdx.edges;
   // you'll call `createPage` for each result
   posts.forEach(({ node }) => {
+    if (!node.frontmatter.path) return;
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)

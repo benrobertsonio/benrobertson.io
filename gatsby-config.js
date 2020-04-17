@@ -45,6 +45,15 @@ module.exports = {
       },
     },
     {
+      resolve: '@aengusm/gatsby-theme-brain',
+      options: {
+        notesDirectory: 'content/notes/',
+        rootPath: 'notes',
+        rootNote: 'index',
+        mdxOtherwiseConfigured: true
+      }
+    },
+    {
 
       resolve: 'gatsby-plugin-feed-mdx',
       options: {
