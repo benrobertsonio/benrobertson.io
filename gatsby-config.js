@@ -3,7 +3,7 @@ module.exports = {
     title: 'Ben Robertson',
     titleTemplate: '%s | Ben Robertson',
     description:
-      "I'm Ben Robertson, a senior software engineer at Gatsby Inc who writes about front end development and web accessibility.",
+      "I'm Ben Robertson, a senior software engineer at Gatsby who writes about front end development and web accessibility.",
     author: 'Ben Robertson',
     twitter: '@benrobertsonio',
     image: '/ben.jpg',
