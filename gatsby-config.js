@@ -7,7 +7,7 @@ module.exports = {
     author: 'Ben Robertson',
     twitter: '@benrobertsonio',
     image: '/ben.jpg',
-    siteUrl: 'https://stage.benrobertson.io',
+    siteUrl: 'https://benrobertson.io',
     siteLanguage: 'en-US',
     banner: '/ben.jpg',
     headline: ''
@@ -102,14 +102,30 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Ben Robertson',
+        short_name: 'Ben Robertson',
         start_url: '/',
         background_color: '#ed6a5a',
         theme_color: '#ed6a5a',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['UA-43172667-3'],
+        gtagConfig: {
+          anonymize_ip: true,
+          transport_type: 'beacon',
+        },
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+          // Setting this parameter is also optional
+          respectDNT: true
+        }
+      }
     },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
