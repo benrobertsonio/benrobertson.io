@@ -7,7 +7,7 @@ import theme from '../gatsby-plugin-theme-ui';
 import SEO from '../components/seo';
 
 
-export default function blog({ data: { allMarkdownRemark: { nodes } } }) {
+export default function blog({ data: { allMdx: { nodes } } }) {
 
   return (
     <Layout>
@@ -37,9 +37,8 @@ export default function blog({ data: { allMarkdownRemark: { nodes } } }) {
 
 export const blogQuery = graphql`
   {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
+    allMdx(filter: {frontmatter: {path: {ne: null}}},  sort: { fields: frontmatter___date, order: DESC })
+    {
       nodes {
         timeToRead
         frontmatter {
