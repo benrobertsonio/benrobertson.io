@@ -8,6 +8,7 @@ Some of the most common topics are:
 
 - [[Accessibility]]
 - [[Code]]
+- [[Gatsby]]
 - [[Drafts]]
 - [[Career]]
 - [[Writing]]
