@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO
       title="Home"
-      desc="I\'m Ben Robertson, a senior software engineer at Gatsby Inc who
+      desc="I'm Ben Robertson, a senior software engineer at Gatsby who
       writes about front end development and web accessibility."
     />
     <Container>
