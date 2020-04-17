@@ -11,7 +11,7 @@ export default function blog({ data: { allMarkdownRemark: { nodes } } }) {
 
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Blog | Ben Robertson" />
       <Container>
         <Heading as="h1" sx={{ mt: 5, mb: 5, fontSize: 7 }}>Blog</Heading>
         <section>
