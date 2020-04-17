@@ -4,12 +4,14 @@ import { graphql, Link } from 'gatsby';
 import { jsx, Container, Text, Heading, Flex } from 'theme-ui';
 import Layout from '../components/layout';
 import theme from '../gatsby-plugin-theme-ui';
+import SEO from '../components/seo';
 
 
 export default function blog({ data: { allMarkdownRemark: { nodes } } }) {
 
   return (
     <Layout>
+      <SEO title="Blog" />
       <Container>
         <Heading as="h1" sx={{ mt: 5, mb: 5, fontSize: 7 }}>Blog</Heading>
         <section>
