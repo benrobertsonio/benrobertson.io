@@ -63,7 +63,7 @@ const IndexPage = ({ data }) => (
             <Divider />
           </header>
           <ul sx={{ m: 0, p: 0, mt: 4 }}>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
+            {data.allMdx.edges.map(({ node }) => (
               <li sx={{ listStyle: 'none', mb: 3 }} key={node.frontmatter.title}>
                 <article key={node.frontmatter.title}>
                   <Heading as="h3">
@@ -95,20 +95,22 @@ export default IndexPage;
 
 export const indexQuery = graphql`
   {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
+    allMdx(
+      filter: {frontmatter: {path: {ne: null}}},
+      sort: { fields: frontmatter___date, order: DESC },
       limit: 5
-    ) {
+      )
+    {
       edges {
         node {
           timeToRead
           frontmatter {
             title
             path
-            date
+            date(formatString: "MMMM DD, YYYY")
             snippet
           }
-        }
+         }
       }
     }
   }
