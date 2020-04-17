@@ -1,8 +1,7 @@
 {
   "name": "ben-robertson-io-gatsby",
-  "private": true,
   "description": "My personal site, now running on Gatsby.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Ben Robertson <hi@benrobertson.io>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.8",
@@ -39,7 +38,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby clean && gatsby build",
+    "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
