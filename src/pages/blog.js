@@ -11,7 +11,7 @@ export default function blog({ data: { allMdx: { nodes } } }) {
 
   return (
     <Layout>
-      <SEO title="Blog | Ben Robertson" />
+      <SEO title="Blog" />
       <Container>
         <Heading as="h1" sx={{ mt: 5, mb: 5, fontSize: 7 }}>Blog</Heading>
         <section>

@@ -13,7 +13,7 @@ import SimpleSubscribe from '../components/subscribe/simple';
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO
-      title="Ben Robertson | Home"
+      title="Home"
       desc="I'm Ben Robertson, a senior software engineer at Gatsby who
       writes about front end development and web accessibility."
     />
