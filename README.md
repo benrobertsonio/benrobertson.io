@@ -2,7 +2,6 @@
 
 My personal site, [benrobertson.io](https://benrobertson.io), running on Gatsby.
 
-- [benrobertson.io](#benrobertsonio)
   - [Local Dev](#local-dev)
   - [Deployment](#deployment)
   - [Todos](#todos)
