@@ -2,7 +2,8 @@ import React from "react";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import Layout from "../../../components/layout";
 import { Container, Heading, Text } from "theme-ui";
-import { Link } from "gatsby";
+import SEO from "../../../components/seo";
+import Anchor from "../../../components/anchor";
 
 const BrainNote = ({ note }) => {
   let references = [];
@@ -10,7 +11,7 @@ const BrainNote = ({ note }) => {
   if (note.inboundReferences != null) {
     references = note.inboundReferences.map((ref) => (
       <li>
-        <Link to={`/notes/${ref}`}>{ref}</Link>
+        <Anchor to={`/notes/${ref}`}>{ref}</Anchor>
       </li>
     ));
 
@@ -25,9 +26,10 @@ const BrainNote = ({ note }) => {
   }
   return (
     <Layout>
+      <SEO title={note.title} />
       <Container variant="narrow">
         <Text sx={{ fontSize: 1, fontStyle: 'italic', my: 4 }}>
-          These <Link to="/notes">notes</Link> are unpolished collections of thoughts, unfinished ideas, and things I want to remember later. In the spirit of learning in public, I'm sharing them here. Have fun exploring, if you want!
+          These <Anchor to="/notes">notes</Anchor> are unpolished collections of thoughts, unfinished ideas, and things I want to remember later. In the spirit of learning in public, I'm sharing them here. Have fun exploring, if you want!
         </Text>
 
         <div id="brainNote">

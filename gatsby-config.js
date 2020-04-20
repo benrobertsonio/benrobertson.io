@@ -20,6 +20,7 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-robots-txt',
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
