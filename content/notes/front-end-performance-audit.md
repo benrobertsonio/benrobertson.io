@@ -1,6 +1,6 @@
 # Front End Performance Audit
 
-Tags: [[Code]] [[Drafts]]
+Tags: [[Code]] [[Drafts]] [[Performance]]
 
 How to do a front end performance audit and some resources.
 
