@@ -43,7 +43,11 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "slugify": "slugify './content/notes/*.md'",
     "serve:prod": "gatsby build && gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "devDependencies": {
+    "slugify-files": "^2.1.0"
   }
 }
