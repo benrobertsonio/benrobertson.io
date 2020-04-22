@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'Ben Robertson',
@@ -52,6 +56,24 @@ module.exports = {
         rootPath: 'notes',
         rootNote: 'index',
         mdxOtherwiseConfigured: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: 'benrobertson.io', // webmention.io username
+        identity: {
+          // you need to specify at least one of the identities
+          // to be able to log in webmention.io
+          github: "benrobertsonio",
+          twitter: "benrobertsonio", // no @
+          email: "hi@benrobertson.io"
+        },
+        mentions: true,
+        pingbacks: false,
+        domain: "benrobertson.io",
+        fetchLimit: 10000, // number of webmentions to fetch
+        token: process.env.WEBMENTIONS_TOKEN
       }
     },
     {
