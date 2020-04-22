@@ -7,8 +7,6 @@ categories: accessibility
 snippet: ""
 ---
 
-# 50+ Web Accessibility Resources for Web Developers
-
 Tags: [[Accessibility]] [[Drafts]]
 
 At 57 resources so far

@@ -1,4 +1,6 @@
-# Front End Performance Audit
+---
+title: Front End Performance Audit
+---
 
 Tags: [[Code]] [[Drafts]] [[Performance]]
 

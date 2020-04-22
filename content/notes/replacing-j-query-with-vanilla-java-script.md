@@ -1,4 +1,6 @@
-# Replacing jQuery with Vanilla JavaScript
+---
+title: Replacing jQuery with Vanilla JavaScript
+---
 
 Tags: [[Drafts]] [[Code]] [[Javascript]]
 

@@ -1,4 +1,6 @@
-# Skills you need as a remote developer
+---
+title: Skills you need as a remote developer
+---
 
 Tags: [[Career]] [[Drafts]]
 

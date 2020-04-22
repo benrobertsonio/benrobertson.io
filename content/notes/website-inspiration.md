@@ -1,4 +1,6 @@
-# Website inspiration
+---
+title: Website inspiration
+---
 
 Tags: [[Web dev]] [[Inspiration]] [[Design]] [[Code]]
 

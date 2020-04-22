@@ -1,4 +1,6 @@
-# Technology Will Not Solve Our Accessibility Issues
+---
+title: Technology Will Not Solve Our Accessibility Issues
+---
 
 Tags: [[Accessibility]] [[Drafts]]
 
