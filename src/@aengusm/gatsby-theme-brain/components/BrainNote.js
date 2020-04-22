@@ -14,17 +14,19 @@ const BrainNote = ({ note, linkedNotes }) => {
     references = note.inboundReferences.map((ref, i) => {
       const reference = linkedNotes.find((note) => note.slug === ref);
       return (
-        <Box mb="3">
-          <Heading as="h3">
-            <Anchor
-              to={`/notes/${reference.slug}`}
-              key={`${ref}-${reference.slug}`}
-            >
-              {reference.title}
-            </Anchor>
-          </Heading>
-          <Text>{reference.childMdx.excerpt}</Text>
-        </Box>
+        <li>
+          <Box mb="3">
+            <Heading as="h3">
+              <Anchor
+                to={`/notes/${reference.slug}`}
+                key={`${ref}-${reference.slug}`}
+              >
+                {reference.title}
+              </Anchor>
+            </Heading>
+            <Text>{reference.childMdx.excerpt}</Text>
+          </Box>
+        </li>
       );
     });
 
@@ -60,11 +62,13 @@ const BrainNote = ({ note, linkedNotes }) => {
               <Portal>
                 <div
                   sx={{
-                    // position: 'fixed',
+                    position: 'fixed',
                     width: 250,
-                    p: 3
+                    backgroundColor: 'white',
+                    p: 3,
+                    boxShadow: '0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)'
                   }}
-                  id={ln.slug}
+                  id={`notes/${ln.slug}`}
                 >
                   <Heading as="h4">{ln.title}</Heading>
                   <Text sx={{ fontSize: '0' }}>{ln.childMdx.excerpt}</Text>
