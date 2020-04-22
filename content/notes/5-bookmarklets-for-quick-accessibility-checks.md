@@ -1,4 +1,6 @@
-# 5 Bookmarklets for Quick Accessibility Checks
+---
+title: 5 Bookmarklets for Quick Accessibility Checks
+---
 
 Tags: [[Accessibility]] [[Drafts]]
 
@@ -8,13 +10,13 @@ https://twitter.com/jdjuan/status/1022301088651853824
 
 https://gist.github.com/cfjedimaster/ee4a2fd935318e29bd5364d71ea221c1
 
-```
+```css
 img:not([alt]) {
    filter: grayscale(100%);
 }
 ```
 
-```
+```js
 javascript:(
   function() {
     const images = document.querySelectorAll('img:not([alt])');
