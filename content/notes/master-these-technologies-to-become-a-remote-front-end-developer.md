@@ -1,4 +1,6 @@
-# Master these skills to become a remote front end developer
+---
+title: Master these skills to become a remote front end developer
+---
 
 Tags: [[Drafts]] [[Career]]
 

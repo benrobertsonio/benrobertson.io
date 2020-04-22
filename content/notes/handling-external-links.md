@@ -1,4 +1,6 @@
-# Handling External Links
+---
+title: Handling External Links
+---
 
 Tags: [[Accessibility]] [[Drafts]]
 

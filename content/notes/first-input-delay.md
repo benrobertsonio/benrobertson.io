@@ -1,4 +1,6 @@
-# First Input Delay && Gatsby
+---
+title: First Input Delay && Gatsby
+---
 
 Tags: [[Drafts]]
 

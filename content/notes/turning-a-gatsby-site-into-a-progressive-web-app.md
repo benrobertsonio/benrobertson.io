@@ -1,4 +1,6 @@
-# Turning a Gatsby Site into a Progressive Web App
+---
+title: Turning a Gatsby Site into a Progressive Web App
+---
 
 Tags: [[Gatsby]] [[Drafts]]
 
@@ -8,7 +10,7 @@ Tags: [[Gatsby]] [[Drafts]]
 
 Check to see if there are updates:
 
-```
+```js
 const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
     'This application has been updated. ' +

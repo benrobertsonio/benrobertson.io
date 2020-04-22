@@ -1,4 +1,6 @@
-# Gatsby GraphQL Questions
+---
+title: Gatsby GraphQL Questions
+---
 
 Tags: [[Drafts]]
 

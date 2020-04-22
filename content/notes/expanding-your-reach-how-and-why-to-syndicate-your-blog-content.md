@@ -1,4 +1,6 @@
-# Expanding Your Reach: How and Why to Syndicate Your Blog Content
+---
+title: Expanding Your Reach, How and Why to Syndicate Your Blog Content
+---
 
 Tags: [[Drafts]] [[Writing]]
 

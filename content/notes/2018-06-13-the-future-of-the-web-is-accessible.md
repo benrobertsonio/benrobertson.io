@@ -7,8 +7,6 @@ categories: accessibility
 snippet: ""
 ---
 
-# The Future of the Web is Accessible
-
 Tags: [[Accessibility]] [[Drafts]]
 
 For the last 8 years, we've been focused on building [responsive websites](http://alistapart.com/article/responsive-web-design): websites with layouts that respond to the size of the screen the user is viewing it on. We've practiced squeezing and stretching our browser viewports as we develop to make sure that  our sites will look flawless on any **_screen_**. But soon, that won't be enough.

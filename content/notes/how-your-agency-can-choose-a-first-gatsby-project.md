@@ -1,4 +1,6 @@
-# How Your Agency Can Choose a First Gatsby Project
+---
+title: How Your Agency Can Choose a First Gatsby Project
+---
 
 Tags: [[Drafts]] [[Gatsby]]
 
