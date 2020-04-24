@@ -42,7 +42,7 @@ const BrainNote = ({ note, linkedNotes }) => {
 
   return (
     <Layout>
-      <SEO title={`${note.title} Notes`} />
+      <SEO title={`Notes on ${note.title}`} />
       <Container variant="narrow">
         <Text sx={{ fontSize: 1, fontStyle: 'italic', my: 4 }}>
           These <Anchor to="/notes">notes</Anchor> are unpolished collections of thoughts, unfinished ideas, and things I want to remember later. In the spirit of learning in public, I'm sharing them here. Have fun exploring, if you want!

@@ -1,4 +1,6 @@
-# Designing layouts for assistive technology
+---
+title: Designing layouts for assistive technology
+---
 
 Tags: [[Accessibility]] [[Drafts]]
 

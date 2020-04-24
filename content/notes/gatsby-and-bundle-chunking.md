@@ -1,4 +1,6 @@
-# Gatsby and Bundle Chunking
+---
+title: Gatsby and Bundle Chunking
+---
 
 Tags: [[Performance]] [[Gatsby]] [[Code]]
 
@@ -9,7 +11,7 @@ This my understand on how Gatsby chunks bundles, based on this [PR by Ward Peete
 Gatsby now has the following bundles:
 
 
-## App 
+## App
 dependencies used across the app, things like Apollo, theming / style libraries, poly fills
 
 > This bundle is produced from production-app.js which will mostly be discussed in this section. It is configured in webpack entry
@@ -34,7 +36,7 @@ Things like  (component--src-pages-index-hash.js, component--src-templates-post-
 
 > This is a separate bundle for each page. The mechanics for how these are split off from the main production app are covered in [Code Splitting](https://gatsbyjs.org/docs/how-code-splitting-works/).
 
-## Granular chunks 
+## Granular chunks
 These are are completely hashed, like this: `4f8ce8a27ecdca4a64741fe9081f6491727e7816-176af1ec8bf65e843533.js`. These are dependencies used in at least two pages -- *actually, I'm not sure if this is the case*.
 
 ![](/img/notes/chunk-bundle.png)

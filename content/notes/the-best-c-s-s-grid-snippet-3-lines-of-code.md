@@ -1,4 +1,6 @@
-# The Best CSS Grid Snippet (3 lines of code!)
+---
+title: The Best CSS Grid Snippet (3 lines of code!)
+---
 
 Tags: [[Snippets]] [[Drafts]] [[Code]] [[CSS]]
 
