@@ -23,7 +23,7 @@ const Subscribe = ({ listId, group = 4, CustomForm }) => (
 Subscribe.propTypes = {
   listId: PropTypes.string,
   group: PropTypes.number,
-  CustomForm: PropTypes.node
+  CustomForm: PropTypes.elementType
 };
 
 export default Subscribe;

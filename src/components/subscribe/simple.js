@@ -18,7 +18,7 @@ const SimpleForm = ({ status, message, onValidated, group }) => {
     <>
       <Flex sx={{ alignItems: 'flex-end', flexWrap: 'wrap' }}>
         <Box mr="3">
-          <Label for="email">Your email</Label>
+          <Label htmlFor="email">Your email</Label>
           <Input ref={node => (email = node)} type="email" id="email" />
         </Box>
         <Button onClick={submit}>

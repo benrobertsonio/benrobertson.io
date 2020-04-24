@@ -76,7 +76,7 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
           gridGap: 2,
           gridTemplateColumns: 'repeat(auto-fill, minmax(325px, 1fr))'
         }}>
-          {testimonials.map(({ text, name }) => <Testimonial text={text} name={name} />)}
+          {testimonials.map(({ text, name }, index) => <Testimonial key={index} text={text} name={name} />)}
         </Box>
       </section>
 

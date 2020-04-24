@@ -49,7 +49,7 @@ const Footer = () => (
       </Flex>
       <Box sx={{ textAlign: 'center', fontSize: 1 }}>
         <p>
-          &copy; {new Date().getFullYear()} <GatsbyLink sx={theme.styles.a} href="/">Ben Robertson</GatsbyLink>
+          &copy; {new Date().getFullYear()} <GatsbyLink sx={theme.styles.a} to="/">Ben Robertson</GatsbyLink>
         </p>
         <p>Proudly built with <Link href="https://www.gatsbyjs.com">Gatsby</Link>.</p>
       </Box>

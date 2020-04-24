@@ -14,7 +14,7 @@ const BrainNote = ({ note, linkedNotes }) => {
     references = note.inboundReferences.map((ref, i) => {
       const reference = linkedNotes.find((note) => note.slug === ref);
       return (
-        <li>
+        <li key={i}>
           <Box mb="3">
             <Heading as="h3">
               <Anchor
@@ -59,7 +59,7 @@ const BrainNote = ({ note, linkedNotes }) => {
               (ln) => !(note.inboundReferences || []).includes(ln.slug) && !!ln.childMdx.excerpt
             )
             .map((ln) => (
-              <Portal>
+              <Portal key={ln.slug}>
                 <div
                   sx={{
                     position: 'fixed',
