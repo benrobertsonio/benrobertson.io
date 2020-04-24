@@ -11,7 +11,7 @@ How to do a front end performance audit and some resources.
 - [Front-End Performance Checklist 2020 - Smashing Mag](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/)
 - [Auditing Performance - Google](https://developers.google.com/web/fundamentals/performance/audit)
 
-## Webpack Bundle Analyzer 
+## Webpack Bundle Analyzer
 Tags: [[Performance]]
 
 Gatsby-config.js:
@@ -28,9 +28,11 @@ Gatsby-config.js:
 },
 ```
 
+[[Gatsby and Bundle Chunking]]
+
 ## Auditing Network Requests
 
-Third party scripts are always going to be a nightmare. 
+Third party scripts are always going to be a nightmare.
 
 But, to ignore them, you can filter by domain in Chrome Dev Tools: `domain:example.com` This will show you all network requests originating from that domain.
 

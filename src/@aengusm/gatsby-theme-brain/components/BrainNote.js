@@ -1,19 +1,34 @@
 import React from "react";
+/** @jsx jsx */
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import Layout from "../../../components/layout";
-import { Container, Heading, Text } from "theme-ui";
+import { Container, Heading, Text, jsx, Box } from "theme-ui";
 import SEO from "../../../components/seo";
+import Portal from '@reach/portal';
 import Anchor from "../../../components/anchor";
 
-const BrainNote = ({ note }) => {
+const BrainNote = ({ note, linkedNotes }) => {
   let references = [];
   let referenceBlock;
   if (note.inboundReferences != null) {
-    references = note.inboundReferences.map((ref) => (
-      <li>
-        <Anchor to={`/notes/${ref}`}>{ref}</Anchor>
-      </li>
-    ));
+    references = note.inboundReferences.map((ref, i) => {
+      const reference = linkedNotes.find((note) => note.slug === ref);
+      return (
+        <li key={i}>
+          <Box mb="3">
+            <Heading as="h3">
+              <Anchor
+                to={`/notes/${reference.slug}`}
+                key={`${ref}-${reference.slug}`}
+              >
+                {reference.title}
+              </Anchor>
+            </Heading>
+            <Text>{reference.childMdx.excerpt}</Text>
+          </Box>
+        </li>
+      );
+    });
 
     if (references.length > 0) {
       referenceBlock = (
@@ -24,6 +39,7 @@ const BrainNote = ({ note }) => {
       );
     }
   }
+
   return (
     <Layout>
       <SEO title={`Notes on ${note.title}`} />
@@ -33,10 +49,32 @@ const BrainNote = ({ note }) => {
         </Text>
 
         <div id="brainNote">
-          <Heading as="h1">{note.title}</Heading>
+          <Heading as="h1" mb={3} sx={{ textTransform: 'capitalize' }}>{note.title}</Heading>
           <MDXRenderer>{note.childMdx.body}</MDXRenderer>
           {referenceBlock}
         </div>
+        {linkedNotes &&
+          linkedNotes
+            .filter(
+              (ln) => !(note.inboundReferences || []).includes(ln.slug) && !!ln.childMdx.excerpt
+            )
+            .map((ln) => (
+              <Portal key={ln.slug}>
+                <div
+                  sx={{
+                    position: 'fixed',
+                    width: 250,
+                    backgroundColor: 'white',
+                    p: 3,
+                    boxShadow: '0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)'
+                  }}
+                  id={`notes/${ln.slug}`}
+                >
+                  <Heading as="h4">{ln.title}</Heading>
+                  <Text sx={{ fontSize: '0' }}>{ln.childMdx.excerpt}</Text>
+                </div>
+              </Portal>
+            ))}
       </Container>
     </Layout>
   );

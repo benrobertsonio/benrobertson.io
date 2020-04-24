@@ -22,17 +22,17 @@ const ComplexForm = ({ status, message, onValidated, group }) => {
     <>
       <Flex mb='2'>
         <Box mr="3" sx={{ flexGrow: 1 }}>
-          <Label for="fname">First Name</Label>
+          <Label htmlFor="fname">First Name</Label>
           <Input id="fname" type="text" ref={node => (fname = node)} name="FNAME" />
         </Box>
         <Box sx={{ flexGrow: 1 }}>
-          <Label for="lname">Last Name</Label>
+          <Label htmlFor="lname">Last Name</Label>
           <Input id="lname" type="text" ref={node => (lname = node)} name="LNAME" />
         </Box>
       </Flex>
       <Flex sx={{ alignItems: 'end', flexWrap: 'wrap' }}>
         <Box sx={{ width: '100%' }}>
-          <Label for="email">Your email</Label>
+          <Label htmlFor="email">Your email</Label>
           <Input id="email" ref={node => (email = node)} type="email" />
         </Box>
         <Button onClick={submit} sx={{ mt: 3, width: '100%' }}>

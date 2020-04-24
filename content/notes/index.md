@@ -1,5 +1,5 @@
 ---
-title: Notes
+title: About these Notes
 ---
 
 A collection of notes.
