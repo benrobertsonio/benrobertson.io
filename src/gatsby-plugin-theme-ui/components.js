@@ -19,7 +19,8 @@ const AnchorTag = (props) => {
       tooltipRef.current.style.display = 'none';
     }
   };
-  return <a {...props} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />;
+
+  return <a {...props} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onFocus={onMouseEnter} onBlur={onMouseLeave} />;
 };
 
 

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Ben Robertson <hi@benrobertson.io>",
   "dependencies": {
-    "@aengusm/gatsby-theme-brain": "^1.0.4",
+    "@aengusm/gatsby-theme-brain": "^1.0.5",
     "@mdx-js/mdx": "^1.5.8",
     "@mdx-js/react": "^1.5.8",
     "@reach/portal": "^0.10.0",
