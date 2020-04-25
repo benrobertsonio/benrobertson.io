@@ -34,7 +34,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: path.resolve(blogPostTemplate),
       // You can use the values in this context in
       // our page layout component
-      context: { id: node.id },
+      context: {
+        id: node.id,
+        url: `https://benrobertson.io${node.frontmatter.path}`
+      },
     });
   });
 };
