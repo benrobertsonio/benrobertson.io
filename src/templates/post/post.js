@@ -8,11 +8,13 @@ import TableOfContents from '../../components/table-of-contents';
 import PostMeta from './post-meta';
 import SEO from '../../components/seo';
 import SimpleSubscribe from '../../components/subscribe/simple';
+import Likes from '../../components/webmentions/likes';
 
 
 
-const Post = ({ data: { mdx } }) => {
+const Post = ({ data: { mdx, webmentions } }) => {
   const { frontmatter, body, tableOfContents, timeToRead } = mdx;
+
   return (
     <Layout>
       <SEO
@@ -61,6 +63,8 @@ const Post = ({ data: { mdx } }) => {
               </>)
             }
 
+            <Likes mentions={webmentions.nodes} />
+
             <br />
             <p><em>Have any comments or questions about this post? Send them to me via email <Link href="mailto:hi@benrobertson.io">hi@benrobertson.io</Link> or on Twitter <Link href="https://twitter.com/benrobertsonio">@benrobertsonio</Link>.</em></p>
           </div>
@@ -83,7 +87,7 @@ const Post = ({ data: { mdx } }) => {
 export default Post;
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query($path: String!, $url: String!) {
     mdx(frontmatter: {path: {eq: $path } }) {
       body
       tableOfContents(maxDepth: 2)
@@ -105,6 +109,25 @@ export const pageQuery = graphql`
         formCTA
       }
     }
-}
+    webmentions: allWebMentionEntry(filter: {wmTarget: {eq: $url}}) {
+      nodes {
+        likeOf
+        url
+        id
+        bookmarkOf
+        wmTarget
+        wmSource
+        type
+        author {
+          name
+        }
+        inReplyTo
+        content {
+          text
+        }
+        mentionOf
+      }
+    }
+  }
 `
   ;

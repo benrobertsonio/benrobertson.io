@@ -59,7 +59,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-webmention`,
+      resolve: `@benrobertson/gatsby-plugin-webmention`,
       options: {
         username: 'benrobertson.io', // webmention.io username
         identity: {
