@@ -4,18 +4,14 @@ import { Text, Link, jsx } from 'theme-ui';
 
 
 function Author({ author: { name, url } }) {
-  return (
-
-    <Link href={url}>{name}</Link>
-
-  )
+  return <Link href={url}>{name}</Link>
 }
 
 export default function Likes({ mentions }) {
   let likes = mentions.filter(({ likeOf }) => (typeof likeOf === 'string'))
 
   if (likes.length === 1) {
-    return <Text>Liked by <Author author={likes[0].author} /></Text>
+    return <Text sx={{ fontSize: "0" }}>Liked by <Author author={likes[0].author} /></Text>
   }
 
   if (likes.length > 1 && likes.length < 3) {
@@ -23,7 +19,7 @@ export default function Likes({ mentions }) {
     const secondLike = likes[1].author;
 
     return (
-      <Text>Liked by <Author author={firstLike} /> and <Author author={secondLike} /></Text>
+      <Text sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} /> and <Author author={secondLike} /></Text>
     )
   }
 
@@ -33,7 +29,7 @@ export default function Likes({ mentions }) {
     const thirdLike = likes[2].author;
 
     return (
-      <Text>Liked by <Author author={firstLike} />, <Author author={secondLike} />, and <Author author={thirdLike} /></Text>
+      <Text sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} />, <Author author={secondLike} />, and <Author author={thirdLike} /></Text>
     )
   }
 

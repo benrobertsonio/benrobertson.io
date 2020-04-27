@@ -63,6 +63,8 @@ const Post = ({ data: { mdx, webmentions } }) => {
               </>)
             }
 
+            <br />
+
             <Likes mentions={webmentions.nodes} />
 
             <br />
@@ -120,6 +122,7 @@ export const pageQuery = graphql`
         type
         author {
           name
+          url
         }
         inReplyTo
         content {

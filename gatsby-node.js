@@ -36,7 +36,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       // our page layout component
       context: {
         id: node.id,
-        url: `https://benrobertson.io${node.frontmatter.path}`
+        url: `https://benrobertson.io${node.frontmatter.path}/`
       },
     });
   });
