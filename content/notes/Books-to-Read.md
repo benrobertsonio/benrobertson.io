@@ -7,6 +7,7 @@ title: Books to read
 - Badass: Making Users Awesome 
 - Apprenticeship patterns
 - [How to take smart notes](https://www.amazon.com/How-Take-Smart-Notes-Nonfiction-ebook/dp/B06WVYW33Y)
+- Nonviolent Communication - Marshall Rosenberg (recommended by Brooklynn)
 
 ## Customer success
 
