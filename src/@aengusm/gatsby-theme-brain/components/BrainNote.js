@@ -10,32 +10,24 @@ import Anchor from "../../../components/anchor";
 const BrainNote = ({ note, linkedNotes }) => {
   let references = [];
   let referenceBlock;
-  if (note.inboundReferences != null) {
-    references = note.inboundReferences.map((ref, i) => {
-      const reference = linkedNotes.find((note) => note.slug === ref);
-      return (
-        <li key={i}>
-          <Box mb="3">
-            <Heading as="h3">
-              <Anchor
-                to={`/notes/${reference.slug}`}
-                key={`${ref}-${reference.slug}`}
-              >
-                {reference.title}
-              </Anchor>
-            </Heading>
-            <Text>{reference.childMdx.excerpt}</Text>
-          </Box>
-        </li>
-      );
-    });
+
+  if (note.inboundReferenceNotes != null) {
+
+    references = note.inboundReferenceNotes.map((ref) => (
+      <li key={ref.title}>
+        <Text mb="1">
+          <Anchor to={`/notes/${ref.slug}`}>{ref.title}</Anchor>
+        </Text>
+        <Text mb="3">{ref.childMdx.excerpt}</Text>
+      </li>
+    ));
 
     if (references.length > 0) {
       referenceBlock = (
-        <>
-          <Heading sx={{ textTransform: 'capitalize' }}>{note.title}: References</Heading>
+        <Box mt={6}>
+          <Heading mb={3}>References to this note</Heading>
           <ul>{references}</ul>
-        </>
+        </Box>
       );
     }
   }
