@@ -129,6 +129,23 @@ export default {
         mb: 0
       }
     },
+    table: {
+      borderCollapse: "collapse",
+      my: 4,
+      width: "100%"
+    },
+    td: {
+      padding: ".75rem",
+      verticalAlign: "top",
+      borderTop: "1px solid #dee2e6"
+    },
+    th: {
+      padding: ".75rem",
+      verticalAlign: "bottom",
+      borderTop: "2px solid #dee2e6",
+      borderBottom: "2px solid #dee2e6",
+      textAlign: "left"
+    },
     pre: {
       p: 3,
       overflowX: 'scroll',
