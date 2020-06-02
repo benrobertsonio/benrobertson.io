@@ -11,6 +11,7 @@ Tags:
 ## Chapter 2: The Customer Success Strategy
 
 Three basic benefits that come from executing customer success well:
+
 1. reduce/manage churn
 2. drive increased contract revenue for existing customers
 3. improve customer experience and satisfaction
@@ -33,21 +34,23 @@ Success vs support:
 too often, because of the similarities, customer success is initially formed inside the support organizaiton
 
 this does not typically lead to success. What usually happens is that customer success becomes a type of premium support offering. examples:
-	- improved SLAs
-	- extended hours of support,
-	- multigeography support
-	- designated points of contact
-	-	direct access to level 2 support
+
+  - improved SLAs
+  - extended hours of support,
+  - multigeography support
+  - designated points of contact
+  - direct access to level 2 support
 
 these are all good things that people should and will pay extra for, but they are not Customer Success
 
-They are primarily reactive to incoming customer support problems and will ultimately be driven by efficiency
+They are primarily *reactive* to incoming customer support problems and will ultimately be driven by efficiency
 
 In contrast, customer success uses data to proactively predict and avoid customers challenges and will usually be measured by retention rates
 
 Customer success *drives revenue*
 
 Customer success is an organization that drives revenue in two ways:
+
 1. renewals (avoidance of churn)
 2. upsells
 
@@ -101,20 +104,27 @@ In many ways, customer success leader will bear a striking resemblance to your V
 ## Chapter 7: Customer Expect You to Make Them Wildly Successful
 
 Delivering wild success requires you to understand three fundamental things:
-**how is your customer measuring success?**
-**is the customer achieving that value?**
-**what has the customer's experience been with you along the way**
+
+1. **how is your customer measuring success?**
+2. **is the customer achieving that value?**
+3. **what has the customer's experience been with you along the way**
+
 define an initial milestone and track that time to first value
+
 you'll need:
-great content (knowledge base, best practices, how-tos)
-and an efficient means for delivering it
+
+- great content (knowledge base, best practices, how-tos)
+- and an efficient means for delivering it
+
 determine what is the key metric or unit of currency that they're using to measure success
+
 A good tool to use to help drive customer direction beyond first value is an [effectiveness model demonstrating value and progress](https://blog.nellofranco.com/2013/07/09/demonstrating-value-and-progress-to-your-customers/)
-If you've worked through a difficult situation collaboratively with a customer and shown your true colors as a partner or if you've accepted responsibility, identified short-term milestones--then met those milestones--regained trust, and made your customer successful, then you'll understand and empathize with the statement: "the strongest steel is forged by the fires of hell"
-build feedback mechanisms into your app:
-ask the user if something is confusing them when they pause for too long on a certain page in the process #onboarding
-if a new user hasn't reached a certain point of value in your application (as defined by you), a triggered email could be the way to stimulate their progress. #onboarding #customerJourney
-requires mapping out the ideal customer journey
+
+> If you've worked through a difficult situation collaboratively with a customer and shown your true colors as a partner or if you've accepted responsibility, identified short-term milestones--then met those milestones--regained trust, and made your customer successful, then you'll understand and empathize with the statement: "the strongest steel is forged by the fires of hell"
+
+build feedback mechanisms into your app: ask the user if something is confusing them when they pause for too long on a certain page in the process #onboarding
+
+if a new user hasn't reached a certain point of value in your application (as defined by you), a triggered email could be the way to stimulate their progress. #onboarding #customerJourney (requires mapping out the ideal customer journey)
 
 
 
