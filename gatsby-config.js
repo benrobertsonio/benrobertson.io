@@ -55,6 +55,7 @@ module.exports = {
         notesDirectory: 'content/notes/',
         rootPath: 'notes',
         rootNote: 'index',
+        linkifyHashtags: true,
         mdxOtherwiseConfigured: true
       }
     },

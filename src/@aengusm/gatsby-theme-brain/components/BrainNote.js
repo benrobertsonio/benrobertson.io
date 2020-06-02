@@ -11,25 +11,35 @@ const BrainNote = ({ note, linkedNotes }) => {
   let references = [];
   let referenceBlock;
 
+  console.log({ note })
+
   if (note.inboundReferenceNotes != null) {
+    references = references.concat(note.inboundReferenceNotes.map((ref) => (
+      <Text mb="4" key={ref.title}>
+        <Anchor to={`/notes/${ref.slug}`}>{ref.title}</Anchor>
+        <Text>{ref.childMdx.excerpt}</Text>
+      </Text>
+    )));
+  }
 
-    references = note.inboundReferenceNotes.map((ref) => (
-      <li key={ref.title}>
-        <Text mb="1">
-          <Anchor to={`/notes/${ref.slug}`}>{ref.title}</Anchor>
-        </Text>
-        <Text mb="3">{ref.childMdx.excerpt}</Text>
-      </li>
-    ));
+  if (note.inboundReferencePreviews != null) {
+    references = references.concat(note.inboundReferencePreviews.map((ref) => (
+      <Box mb={4} as="article">
+        <div dangerouslySetInnerHTML={{ __html: ref.previewHtml }} />
+        <em>source:</em> <Anchor to={`/notes/${ref.source}`}> {ref.source}</Anchor>
+      </Box>
+    )))
+  }
 
-    if (references.length > 0) {
-      referenceBlock = (
-        <Box mt={6}>
-          <Heading mb={3}>References to this note</Heading>
-          <ul>{references}</ul>
-        </Box>
-      );
-    }
+
+
+  if (references.length > 0) {
+    referenceBlock = (
+      <Box mt={6}>
+        <Heading mb={3}>Linked references</Heading>
+        <Box>{references}</Box>
+      </Box>
+    );
   }
 
   return (
