@@ -18,6 +18,10 @@ export const query = graphql`
           excerpt
         }
       }
+      inboundReferencePreviews {
+        source
+        previewHtml
+      }
       inboundReferences
       childMdx {
         body
