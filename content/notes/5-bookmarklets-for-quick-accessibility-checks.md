@@ -62,3 +62,28 @@ javascript:(function() {
 https://codepen.io/svinkle/pen/WgYRxq
 
 ## [Trashy.css](https://github.com/t7/trashy.css/)
+
+## headings!
+
+https://twitter.com/Una/status/1277657662432391168
+
+/* Headers out of order (i.e. h2 before h1, etc.)
+   Result: dotted blue outline
+*/
+h2 ~ h1,
+h3 ~ h1,
+h4 ~ h1,
+h5 ~ h1,
+h6 ~ h1,
+h3 ~ h2,
+h4 ~ h2,
+h5 ~ h2,
+h6 ~ h2,
+h4 ~ h3,
+h5 ~ h3,
+h6 ~ h3,
+h5 ~ h4,
+h6 ~ h4,
+h6 ~ h5 {
+  outline: 2px dotted blue;
+}
