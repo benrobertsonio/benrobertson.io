@@ -28,8 +28,8 @@ Add links to related notes.
 
 For instance:
 
-- [[index.md]]
-- [[writing]]
+- [[About These Notes]]
+- [[Writing]]
 
 Make sure you can find this note by linking it either from an index, or from an entry-point note (a note that is an overview of a set of sub-topics).
 
