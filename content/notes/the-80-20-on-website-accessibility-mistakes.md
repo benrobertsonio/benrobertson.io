@@ -2,6 +2,8 @@
 title: The 80/20 on Website Accessibility Mistakes / 9 Website Accessibility Mistakes and how to fix them
 ---
 
+# The 80/20 on Website Accessibility Mistakes / 9 Website Accessibility Mistakes and how to fix them
+
 ## The Principles: A Refresher
 
 Ok so that wraps up our four principles.
