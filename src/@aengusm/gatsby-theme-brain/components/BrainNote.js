@@ -51,7 +51,7 @@ const BrainNote = ({ note, linkedNotes }) => {
         </Text>
 
         <div id="brainNote">
-          <Heading as="h1" mb={3} sx={{ textTransform: 'capitalize' }}>{note.title}</Heading>
+          {/* <Heading as="h1" mb={3} sx={{ textTransform: 'capitalize' }}>{note.title}</Heading> */}
           <MDXRenderer>{note.childMdx.body}</MDXRenderer>
           {referenceBlock}
         </div>
