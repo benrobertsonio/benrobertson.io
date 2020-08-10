@@ -10,4 +10,10 @@ After an interruption, it takes on average 23 minutes to return fully to the tas
 
 Gloria Mark
 
-Personality can be a major competitive advantage and is much for difficult to imitate than skills or expertise.
+Personality can be a major competitive advantage and is much more difficult to imitate than skills or expertise. This is why it doesn't matter that someone has already written the thing you wrote about.
+
+p 95
+
+Fascination test to identify your personality brand: https://www.howtofascinate.com/store/fascination-advantage-assessment
+
+You want a strong emotional response, nothing bland.
