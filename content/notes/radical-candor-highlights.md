@@ -1,9 +1,13 @@
 # Radical Candor Highlights
 
+Radical Candor: Fully Revised & Updated Edition: Be a Kick-Ass Boss Without Losing Your Humanity
+by Kim Scott
+
 Tags: [[Books Read]] [[Radical Candor]]
 
-Radical Candor: Fully Revised & Updated Edition: Be a Kick-Ass Boss Without Losing Your Humanity
-Kim Scott
+Highlights from my reading of Radical Candor.
+
+
 
 “At Apple we hire people to tell us what to do, not the other way around.”
 LOCATION: 300
