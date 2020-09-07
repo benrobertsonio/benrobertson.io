@@ -17,3 +17,4 @@ p 95
 Fascination test to identify your personality brand: https://www.howtofascinate.com/store/fascination-advantage-assessment
 
 You want a strong emotional response, nothing bland.
+
