@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'theme-ui';
+/** @jsx jsx */
+import { Link, Heading, Box, jsx } from 'theme-ui';
 
 const TableOfContents = ({ items }) => (
-  <ul>
-    {items.map(({ url, title }) => <li key={url}>
-      <Link href={url}>{title}</Link>
-    </li>)}
-  </ul>
+  <Box sx={{
+    '@media screen and (min-width: 1200px)': {
+      position: 'sticky',
+      top: 5,
+      marginLeft: 5
+    }
+  }}>
+    <Heading>Contents</Heading>
+    <ul>
+      {items.map(({ url, title }) => <li key={url}>
+        <Link href={url}>{title}</Link>
+      </li>)}
+    </ul>
+  </Box >
 );
 
 TableOfContents.propTypes = {};
