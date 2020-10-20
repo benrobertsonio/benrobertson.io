@@ -14,7 +14,7 @@ const IndexPage = ({ data: { allMdx } }) => (
   <Layout>
     <SEO
       title="Home"
-      desc="I'm Ben Robertson, a senior software engineer at Gatsby who
+      desc="I'm Ben Robertson, an engineering manager at Gatsby who
     writes about front end development and web accessibility."
     />
     <Container>
@@ -26,7 +26,7 @@ const IndexPage = ({ data: { allMdx } }) => (
     </Heading>
       <p>
         <span aria-label="Tools" role="img">🛠 </span>
-      I'm a senior software engineer at{' '}
+      I'm an engineering manager at{' '}
         <ThemeLink href="https://www.gatsbyjs.com">Gatsby</ThemeLink>.
     </p>
       <p>
