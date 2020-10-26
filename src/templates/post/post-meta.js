@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'theme-ui';
 import VisuallyHidden from '@reach/visually-hidden';
+import LoadTime from '../../components/load-time';
 
 const PostMeta = ({ date, author, permalink, ttr }) => (
   <div>
@@ -23,6 +24,8 @@ const PostMeta = ({ date, author, permalink, ttr }) => (
     <span>{ttr} min read</span>
     <span> • </span>
     <Link href={permalink} className="u-url">Permalink</Link>
+    <span> • </span>
+    <LoadTime />
 
   </div>
 );

@@ -5,6 +5,8 @@ import { Link, Heading, Box, jsx } from 'theme-ui';
 
 const TableOfContents = ({ items }) => (
   <Box sx={{
+    marginTop: 1,
+
     '@media screen and (min-width: 1200px)': {
       position: 'sticky',
       top: 5,
