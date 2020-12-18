@@ -11,8 +11,6 @@ const BrainNote = ({ note, linkedNotes }) => {
   let references = [];
   let referenceBlock;
 
-  console.log({ note })
-
   if (note.inboundReferenceNotes != null) {
     references = references.concat(note.inboundReferenceNotes.map((ref) => (
       <Text mb="4" key={ref.title}>
