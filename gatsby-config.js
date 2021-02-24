@@ -145,25 +145,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-marketing-platform',
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        dataLayer: {
-          // Preset dataLayer values
-          gaPropertyId: 'UA-43172667-3',
-        },
-        tagmanager: {
-          id: 'GTM-NFNHV7',
-        },
+        id: "GTM-NFNHV7",
 
-        analytics: {
-          id: 'UA-43172667-3'
-        },
-        optimize: {
-          id: 'OPT-NHZ7T4Q',
-          timeout: 1000
-        },
+
+
+
       },
     }
+
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
