@@ -153,18 +153,14 @@ module.exports = {
         },
         tagmanager: {
           id: 'GTM-NFNHV7',
-          params: {
-            // GTM URL Parameters
-            // Ex: https://www.googletagmanager.com/gtm.js?id=[ID]&gtm_cookies_win=x
-            gtm_cookies_win: 'x'
-          }
         },
 
         analytics: {
           id: 'UA-43172667-3'
         },
         optimize: {
-          id: 'OPT-NHZ7T4Q'
+          id: 'OPT-NHZ7T4Q',
+          timeout: 1000
         },
       },
     }
