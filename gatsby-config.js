@@ -145,21 +145,29 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-gtag',
+      resolve: 'gatsby-plugin-google-marketing-platform',
       options: {
-        trackingIds: ['UA-43172667-3'],
-        gtagConfig: {
-          anonymize_ip: true,
-          transport_type: 'beacon',
+        dataLayer: {
+          // Preset dataLayer values
+          gaPropertyId: 'UA-43172667-3',
         },
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: false,
-          // Setting this parameter is also optional
-          respectDNT: true
-        }
-      }
-    },
+        tagmanager: {
+          id: 'GTM-NFNHV7',
+          params: {
+            // GTM URL Parameters
+            // Ex: https://www.googletagmanager.com/gtm.js?id=[ID]&gtm_cookies_win=x
+            gtm_cookies_win: 'x'
+          }
+        },
+
+        analytics: {
+          id: 'UA-43172667-3'
+        },
+        optimize: {
+          id: 'OPT-NHZ7T4Q'
+        },
+      },
+    }
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
