@@ -13,10 +13,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 {'${containerId}':true});`,
 });
 const customHeadComponents = [
-  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NHZ7T4Q"></script>,
   <script dangerouslySetInnerHTML={createDataLayer()} />,
   <style dangerouslySetInnerHTML={optimizeAntiFlickerStyle()} />,
   <script dangerouslySetInnerHTML={optimizeAntiFlickerScript(`GTM-NFNHV7`)} />,
+  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NHZ7T4Q"></script>,
 ];
 export const onPreRenderHTML = ({
   getHeadComponents,
