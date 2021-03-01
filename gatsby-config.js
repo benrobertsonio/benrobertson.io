@@ -25,6 +25,7 @@ module.exports = {
     'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-gatsby-cloud',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
