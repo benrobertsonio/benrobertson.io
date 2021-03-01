@@ -3,7 +3,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 import { jsx, Container } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import Nav from '../nav';
 
 const menu = [
@@ -48,28 +48,24 @@ const Header = () => (
             background: 'none'
           }}>
             <StaticQuery
-              query={graphql`
-                query {
-                  placeholderImage: file(relativePath: { eq: "ben.jpg" }) {
-                    childImageSharp {
-                      fixed(width: 110, height: 110) {
-                        ...GatsbyImageSharpFixed
-                      }
-                    }
+              query={graphql`{
+                placeholderImage: file(relativePath: {eq: "ben.jpg"}) {
+                  childImageSharp {
+                    gatsbyImageData(width: 110, height: 110, layout: FIXED)
                   }
                 }
-              `}
+              }
+            `}
               render={data =>
-                <Img
-                  fixed={data.placeholderImage.childImageSharp.fixed}
+                <GatsbyImage
+                  image={data.placeholderImage.childImageSharp.gatsbyImageData}
                   alt="Ben Robertson"
                   sx={{
                     height: '5rem',
                     width: '5rem',
                     marginRight: '1em',
                     borderRadius: '50%'
-                  }}
-                />}
+                  }} />}
             />
             <div sx={{
               color: 'secondary',
