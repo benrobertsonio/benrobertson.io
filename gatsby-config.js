@@ -7,7 +7,7 @@ module.exports = {
     title: 'Ben Robertson',
     titleTemplate: '%s | Ben Robertson',
     description:
-      "I'm Ben Robertson, a senior software engineer at Gatsby who writes about front end development and web accessibility.",
+      "I'm Ben Robertson, an engineering manager at Gatsby who writes about front end development and web accessibility.",
     author: 'Ben Robertson',
     twitter: '@benrobertsonio',
     image: '/ben.jpg',
@@ -145,19 +145,20 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        id: "GTM-NFNHV7",
-
-
-
-
-      },
+        trackingIds: ['UA-43172667-3'],
+        gtagConfig: {
+          anonymize_ip: true,
+          transport_type: 'beacon',
+        },
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+          // Setting this parameter is also optional
+          respectDNT: true
+        }
+      }
     }
-
-
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 };
