@@ -26,6 +26,8 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -98,33 +100,35 @@ module.exports = {
           {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(edge => {
+
+
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + '/blog' + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  custom_elements: [{ 'content:encoded': edge.node.html }]
                 });
               });
             },
             query: `
-                {
-                  allMdx(
-                    sort: { order: DESC, fields: [frontmatter___date] },
-                  ) {
-                    edges {
-                      node {
-                        excerpt
-                        html
-                        frontmatter {
-                          title
-                          date
-                          path
-                        }
-                      }
+            {
+              allMdx(
+                sort: {order: DESC, fields: [frontmatter___date]}
+                filter: {slug: {ne: null}}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    frontmatter {
+                      title
+                      date
+                      path
                     }
                   }
                 }
+              }
+            }
+
               `,
             output: '/feed.xml',
             title: 'Ben Robertson\'s RSS Feed',
