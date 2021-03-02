@@ -26,6 +26,7 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
