@@ -3,6 +3,9 @@ require("dotenv").config({
 })
 
 module.exports = {
+  flags: {
+    PARALLEL_QUERY_RUNNING: true,
+  },
   siteMetadata: {
     title: 'Ben Robertson',
     titleTemplate: '%s | Ben Robertson',
@@ -62,24 +65,24 @@ module.exports = {
         mdxOtherwiseConfigured: true
       }
     },
-    {
-      resolve: `@benrobertson/gatsby-plugin-webmention`,
-      options: {
-        username: 'benrobertson.io', // webmention.io username
-        identity: {
-          // you need to specify at least one of the identities
-          // to be able to log in webmention.io
-          github: "benrobertsonio",
-          twitter: "benrobertsonio", // no @
-          email: "hi@benrobertson.io"
-        },
-        mentions: true,
-        pingbacks: false,
-        domain: "benrobertson.io",
-        fetchLimit: 10000, // number of webmentions to fetch
-        token: process.env.WEBMENTIONS_TOKEN
-      }
-    },
+    // {
+    //   resolve: `@benrobertson/gatsby-plugin-webmention`,
+    //   options: {
+    //     username: 'benrobertson.io', // webmention.io username
+    //     identity: {
+    //       // you need to specify at least one of the identities
+    //       // to be able to log in webmention.io
+    //       github: "benrobertsonio",
+    //       twitter: "benrobertsonio", // no @
+    //       email: "hi@benrobertson.io"
+    //     },
+    //     mentions: true,
+    //     pingbacks: false,
+    //     domain: "benrobertson.io",
+    //     fetchLimit: 10000, // number of webmentions to fetch
+    //     token: process.env.WEBMENTIONS_TOKEN
+    //   }
+    // },
     {
 
       resolve: 'gatsby-plugin-feed-mdx',

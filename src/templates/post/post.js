@@ -12,7 +12,7 @@ import Likes from '../../components/webmentions/likes';
 
 
 
-const Post = ({ data: { mdx, webmentions } }) => {
+const Post = ({ data: { mdx } }) => {
   const { frontmatter, body, tableOfContents, timeToRead } = mdx;
 
   return (
@@ -76,7 +76,7 @@ const Post = ({ data: { mdx, webmentions } }) => {
 
                 <br />
 
-                <Likes mentions={webmentions.nodes} />
+                {/* <Likes mentions={webmentions.nodes} /> */}
 
                 <br />
                 <p><em>Have any comments or questions about this post? Send them to me via email <Link href="mailto:hi@benrobertson.io">hi@benrobertson.io</Link> or on Twitter <Link href="https://twitter.com/benrobertsonio">@benrobertsonio</Link>.</em></p>
@@ -102,7 +102,7 @@ const Post = ({ data: { mdx, webmentions } }) => {
 export default Post;
 
 export const pageQuery = graphql`
-  query($path: String!, $url: String!) {
+  query($path: String!) {
     mdx(frontmatter: {path: {eq: $path } }) {
       body
       tableOfContents(maxDepth: 2)
@@ -124,26 +124,26 @@ export const pageQuery = graphql`
         formCTA
       }
     }
-    webmentions: allWebMentionEntry(filter: {wmTarget: {eq: $url}}) {
-      nodes {
-        likeOf
-        url
-        id
-        bookmarkOf
-        wmTarget
-        wmSource
-        type
-        author {
-          name
-          url
-        }
-        inReplyTo
-        content {
-          text
-        }
-        mentionOf
-      }
-    }
+    # webmentions: allWebMentionEntry(filter: {wmTarget: {eq: $url}}) {
+    #   nodes {
+    #     likeOf
+    #     url
+    #     id
+    #     bookmarkOf
+    #     wmTarget
+    #     wmSource
+    #     type
+    #     author {
+    #       name
+    #       url
+    #     }
+    #     inReplyTo
+    #     content {
+    #       text
+    #     }
+    #     mentionOf
+    #   }
+    # }
   }
 `
   ;
