@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
         paddingTop: '5em'
       }}>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main sx={{ minHeight: '60vh' }}>{children}</main>
+        <main sx={{ minHeight: '75vh' }}>{children}</main>
         <Footer />
       </div>
     )}
