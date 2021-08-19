@@ -1,7 +1,7 @@
 const path = require('path');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   const blogPostTemplate = path.resolve('src/templates/post/post.js');
   const result = await graphql(`
@@ -40,4 +40,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  createRedirect({
+    fromPath: `/notes/test/notes`,
+    toPath: `/notes`,
+    statusCode: 200
+  })
 };
