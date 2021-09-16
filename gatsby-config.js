@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+console.log(`gatsby-config`, process.env.GATSBY_IS_PREVIEW)
+
 module.exports = {
   flags: {
     PARALLEL_QUERY_RUNNING: true,
