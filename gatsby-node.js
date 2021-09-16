@@ -6,7 +6,7 @@ require("dotenv").config({
 
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   console.log(`gatsby-node createPages`, process.env.GATSBY_IS_PREVIEW)
 
@@ -47,4 +47,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  createRedirect({
+    fromPath: `/notes/test/notes`,
+    toPath: `/notes`,
+    statusCode: 200
+  })
 };
