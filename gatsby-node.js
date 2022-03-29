@@ -3,12 +3,14 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const { copyLibFiles } = require('@builder.io/partytown/utils');
+exports.onPreBuild = async () => {
+  await copyLibFiles(path.join(__dirname, 'static', '~partytown'));
+};
 
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage, createRedirect } = actions;
-
-  console.log(`gatsby-node createPages`, { GATSBY_IS_PREVIEW: process.env.GATSBY_IS_PREVIEW })
 
   const blogPostTemplate = path.resolve('src/templates/post/post.js');
   const result = await graphql(`

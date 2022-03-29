@@ -2,7 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log(`gatsby-config`, process.env.GATSBY_IS_PREVIEW)
 
 module.exports = {
   siteMetadata: {
@@ -151,21 +150,5 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-gtag',
-      options: {
-        trackingIds: ['UA-43172667-3'],
-        gtagConfig: {
-          anonymize_ip: true,
-          transport_type: 'beacon',
-        },
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: false,
-          // Setting this parameter is also optional
-          respectDNT: true
-        }
-      }
-    }
   ],
 };
