@@ -5,9 +5,6 @@ require("dotenv").config({
 console.log(`gatsby-config`, process.env.GATSBY_IS_PREVIEW)
 
 module.exports = {
-  flags: {
-    PARALLEL_QUERY_RUNNING: true,
-  },
   siteMetadata: {
     title: 'Ben Robertson',
     titleTemplate: '%s | Ben Robertson',
@@ -27,7 +24,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-theme-ui',
-    'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-gatsby-cloud',
