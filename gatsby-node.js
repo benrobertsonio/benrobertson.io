@@ -62,4 +62,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     toPath: `https://www.googletagmanager.com/*`,
     statusCode: 200,
   })
+  createRedirect({
+    fromPath: `/googleanalytics/*`,
+    toPath: `https://www.google-analytics.com/*`,
+    statusCode: 200,
+  })
 };

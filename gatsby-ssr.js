@@ -4,7 +4,7 @@ import { Partytown } from '@builder.io/partytown/react';
 // You might prefer to add these as an env vars
 
 const ORIGIN = '/gtm';
-const GATSBY_GA_MEASUREMENT_ID = 'UA-43172667-3';
+const GATSBY_GA_MEASUREMENT_ID = 'G-9NQ48H284M';
 export const onRenderBody = ({ setHeadComponents }) => {
   if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null;
   setHeadComponents([
