@@ -26,7 +26,6 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     {
