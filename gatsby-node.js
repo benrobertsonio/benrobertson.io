@@ -45,16 +45,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       // our page layout component
       context: {
         id: node.id,
-        url: `https://benrobertson.io${node.frontmatter.path}/`
+        url: `https://ben.robertson.is${node.frontmatter.path}/`
       },
     });
+
+    createRedirect({
+      fromPath: `${node.frontmatter.path}/`,
+      toPath: `https://ben.robertson.is${node.frontmatter.path}/`
+
+    })
   });
 
-  createRedirect({
-    fromPath: `/notes/test/notes`,
-    toPath: `/notes`,
-    statusCode: 200
-  })
+
+
 
   // Reverse proxy for google tag manager & partytown.
   createRedirect({
