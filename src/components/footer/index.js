@@ -1,9 +1,5 @@
 import React from 'react';
-import styles from './footer.module.css';
-/** @jsx jsx */
-import { jsx, Link, Container, Flex, Box } from 'theme-ui';
 import { Link as GatsbyLink } from 'gatsby';
-import theme from '../../gatsby-plugin-theme-ui';
 
 const links = [
   {
@@ -28,10 +24,10 @@ const Footer = () => (
     pt: 5,
     pb: 3
   }}>
-    <Container>
-      <Flex sx={{ justifyContent: 'center' }} as="nav" aria-label="Footer">
+    <div>
+      <nav aria-label="Footer">
         {links.map(({ title, url, icon }) => (
-          <Link
+          <a
             key={title}
             className="u-url"
             href={url}
@@ -43,17 +39,17 @@ const Footer = () => (
           >
             {/* <span className="icon icon--twitter"></span> */}
             <span>{title}</span>
-          </Link>
+          </a>
         ))}
 
-      </Flex>
-      <Box sx={{ textAlign: 'center', fontSize: 1 }}>
+      </nav>
+      <div style={{ textAlign: 'center', fontSize: 1 }}>
         <p>
-          &copy; {new Date().getFullYear()} <GatsbyLink sx={theme.styles.a} to="/">Ben Robertson</GatsbyLink>
+          &copy; {new Date().getFullYear()} <GatsbyLink to="/">Ben Robertson</GatsbyLink>
         </p>
-        <p>Proudly built with <Link href="https://www.gatsbyjs.com">Gatsby</Link>.</p>
-      </Box>
-    </Container>
+        <p>Proudly built with <a href="https://www.gatsbyjs.com">Gatsby</a>.</p>
+      </div>
+    </div>
 
   </footer>
 );

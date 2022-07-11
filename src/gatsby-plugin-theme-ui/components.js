@@ -1,8 +1,5 @@
-import Prism from '@theme-ui/prism';
 import React from 'react';
 import VisuallyHidden from '@reach/visually-hidden'
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 
 const AnchorTag = (props) => {
   const tooltipRef = React.useRef(null);
@@ -66,7 +63,6 @@ const heading = Tag => props => {
 
 const components = {
   pre: props => props.children,
-  code: Prism,
   a: AnchorTag,
   h2: heading('h2'),
   h3: heading('h3'),

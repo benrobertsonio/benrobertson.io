@@ -1,6 +1,4 @@
 import React from 'react';
-/** @jsx jsx */
-import { jsx, Container, Link, Box, Heading, Text, Grid, Flex } from 'theme-ui';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
@@ -27,7 +25,7 @@ const Post = ({ data: { mdx } }) => {
           last_publication_date: frontmatter.updated ? frontmatter.updated : frontmatter.date
         }}
       />
-      <Container>
+      <div>
         <article
           className="post h-entry"
           itemScope
@@ -48,7 +46,7 @@ const Post = ({ data: { mdx } }) => {
 
 
 
-            <Flex sx={{
+            <div sx={{
               flexDirection: "column",
               '@media screen and (min-width: 1200px)': {
                 flexDirection: "row"
@@ -56,12 +54,12 @@ const Post = ({ data: { mdx } }) => {
             }}>
 
               {tableOfContents?.items &&
-                <Box sx={{ '@media screen and (min-width: 1200px)': { order: 1, position: 'sticky' } }} >
+                <div sx={{ '@media screen and (min-width: 1200px)': { order: 1, position: 'sticky' } }} >
                   <TableOfContents items={tableOfContents.items} />
-                </Box>
+                </div>
               }
 
-              <Box sx={{ maxWidth: '748px' }}>
+              <div sx={{ maxWidth: '748px' }}>
 
 
                 <div className="post-content e-content" itemProp="articleBody">
@@ -69,7 +67,7 @@ const Post = ({ data: { mdx } }) => {
                 </div>
                 {frontmatter.canonical && (
                   <>
-                    <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <Link href={frontmatter.canonical}>{frontmatter.canonical.replace(/https:\/\/|http:\/\/|[/]/g, ' ').split(' ')[1]}</Link >.</p>
+                    <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <a href={frontmatter.canonical}>{frontmatter.canonical.replace(/https:\/\/|http:\/\/|[/]/g, ' ').split(' ')[1]}</a >.</p>
                     <br />
                   </>)
                 }
@@ -79,22 +77,22 @@ const Post = ({ data: { mdx } }) => {
                 {/* <Likes mentions={webmentions.nodes} /> */}
 
                 <br />
-                <p><em>Have any comments or questions about this post? Send them to me via email <Link href="mailto:hi@benrobertson.io">hi@benrobertson.io</Link> or on Twitter <Link href="https://twitter.com/benrobertsonio">@benrobertsonio</Link>.</em></p>
-              </Box>
-            </Flex>
+                <p><em>Have any comments or questions about this post? Send them to me via email <a href="mailto:hi@benrobertson.io">hi@benrobertson.io</a> or on Twitter <a href="https://twitter.com/benrobertsonio">@benrobertsonio</a>.</em></p>
+              </div>
+            </div>
           </div>
         </article>
-        <Box p="5" my="5" sx={{ bg: '#efefef', border: '5px solid', borderColor: 'primary', maxWidth: "748px" }}>
-          <Heading mb="3">
+        <div p="5" my="5" sx={{ bg: '#efefef', border: '5px solid', borderColor: 'primary', maxWidth: "748px" }}>
+          <h2 mb="3">
             {frontmatter.formTitle
               ? frontmatter.formTitle
-              : (<span>Free Email Course:<br /> Common Accessibility Mistakes and How to Fix Them</span>)}</Heading>
-          <Text mb="3">
+              : (<span>Free Email Course:<br /> Common Accessibility Mistakes and How to Fix Them</span>)}</h2>
+          <p mb="3">
             {frontmatter.formContent ? frontmatter.formContent : <span>A month long course to help you simplify web accessibility!</span>}
-          </Text>
+          </p>
           <SimpleSubscribe group={frontmatter.interestGroup} />
-        </Box>
-      </Container>
+        </div>
+      </div>
     </Layout >
   );
 };

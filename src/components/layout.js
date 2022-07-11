@@ -1,6 +1,4 @@
 import React from 'react';
-/** @jsx jsx */
-import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import '../fonts/SourceSansPro/source-sans-pro.css';

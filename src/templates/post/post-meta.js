@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'theme-ui';
 import VisuallyHidden from '@reach/visually-hidden';
 
 const PostMeta = ({ date, author, permalink, ttr }) => (
@@ -22,7 +21,7 @@ const PostMeta = ({ date, author, permalink, ttr }) => (
     </VisuallyHidden>
     <span>{ttr} min read</span>
     <span> • </span>
-    <Link href={permalink} className="u-url">Permalink</Link>
+    <a href={permalink} className="u-url">Permalink</a>
     <span> • </span>
 
   </div>

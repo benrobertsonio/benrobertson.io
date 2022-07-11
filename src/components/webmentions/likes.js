@@ -1,17 +1,15 @@
 import React from 'react'
-import { Text, Link, jsx } from 'theme-ui';
-/** @jsx jsx */
 
 
 function Author({ author: { name, url } }) {
-  return <Link href={url}>{name}</Link>
+  return <a href={url}>{name}</a>
 }
 
 export default function Likes({ mentions }) {
   let likes = mentions.filter(({ likeOf }) => (typeof likeOf === 'string'))
 
   if (likes.length === 1) {
-    return <Text sx={{ fontSize: "0" }}>Liked by <Author author={likes[0].author} /></Text>
+    return <p sx={{ fontSize: "0" }}>Liked by <Author author={likes[0].author} /></p>
   }
 
   if (likes.length > 1 && likes.length < 3) {
@@ -19,7 +17,7 @@ export default function Likes({ mentions }) {
     const secondLike = likes[1].author;
 
     return (
-      <Text sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} /> and <Author author={secondLike} /></Text>
+      <p sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} /> and <Author author={secondLike} /></p>
     )
   }
 
@@ -29,7 +27,7 @@ export default function Likes({ mentions }) {
     const thirdLike = likes[2].author;
 
     return (
-      <Text sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} />, <Author author={secondLike} />, and <Author author={thirdLike} /></Text>
+      <p sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} />, <Author author={secondLike} />, and <Author author={thirdLike} /></p>
     )
   }
 
@@ -40,7 +38,7 @@ export default function Likes({ mentions }) {
     const count = likes.length - 2;
 
     return (
-      <Text sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} />, <Author author={secondLike} />, and {count} other people.</Text>
+      <p sx={{ fontSize: "0" }}>Liked by <Author author={firstLike} />, <Author author={secondLike} />, and {count} other people.</p>
     )
   }
 
