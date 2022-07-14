@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const IndexPage = ({ data: { allMdx, accessibility } }) => (
+const IndexPage = ({ data: { accessibilityNotes, accessibilityPosts, remotePosts, frontendNotes, frontendPosts } }) => (
   <Layout>
     <SEO
       title="Home"
@@ -15,61 +15,52 @@ const IndexPage = ({ data: { allMdx, accessibility } }) => (
       <h1>
         Hi, I'm Ben Robertson.
       </h1>
-      <p>
-        <span aria-label="Tools" role="img">🛠 </span>
-        I'm Director of Customer Success at{' '}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>.
-      </p>
-      <p>
-        <span role="img" aria-label="Writing hand">✍️ </span>
-        I write about{' '}
-        <Link to="/blog">front end development</Link>
-        {' '}and{' '}
-        <Link to="/accessibility">web accessibility</Link>.
-      </p>
+      <p>I’m a proactive, kind, and collaborative customer success leader who loves working at the intersection of open source, web publishing and developer tooling.</p>
+      <p>I currently lead the customer success team at <a href="https://www.gatsbyjs.com">Gatsby</a>, where we provide technical support and consulting for teams looking to build fast frontends for their headless web projects.</p>
+      <p>Read more <Link to="/about">about me here</Link>.</p>
     </div>
 
-    <div>
-      <h2>Front End Development</h2>
-      <h2>Remote Work</h2>
-      <h2>Accessibility</h2>
+    <section>
+      <h2>Writing</h2>
+      <h3>Accessibility</h3>
       <ul>
-        {accessibility?.nodes[0].inboundReferenceNotes.map((content) => {
-          return <li><Link to={`/notes/${content.slug}`}>{content.title}</Link></li>
+        {accessibilityPosts?.nodes.map(({ frontmatter }) => {
+          if (!frontmatter.path) return null
+          return <li key={frontmatter.path}><Link to={frontmatter.path}>{frontmatter.title}</Link></li>
+        })}
+        {accessibilityNotes?.nodes[0].inboundReferenceNotes.map((content) => {
+          return <li key={content.slug}><Link to={`/notes/${content.slug}`}>{content.title}</Link></li>
+        })}
+
+      </ul>
+
+      <p>I also have a 10 day free email course about accessibility that you can join <Link to="/courses/common-accessibility-mistakes/">here</Link>.</p>
+
+      <h3>Remote Work</h3>
+      <ul>
+        {remotePosts?.nodes.map(({ frontmatter }) => {
+          if (!frontmatter.path) return null
+          return <li key={frontmatter.path}><Link to={frontmatter.path}>{frontmatter.title}</Link></li>
+        })}
+        {/* {accessibilityNotes?.nodes[0].inboundReferenceNotes.map((content) => {
+        return <li key={content.slug}><Link to={`/notes/${content.slug}`}>{content.title}</Link></li>
+      })} */}
+      </ul>
+      <h3>Front End Development</h3>
+      <ul>
+        {frontendPosts?.nodes.map(({ frontmatter }) => {
+          if (!frontmatter.path) return null
+          return <li key={frontmatter.path}><Link to={frontmatter.path}>{frontmatter.title}</Link></li>
+        })}
+        {frontendNotes?.nodes[0].inboundReferenceNotes.map((content) => {
+          return <li key={content.slug}><Link to={`/notes/${content.slug}`}>{content.title}</Link></li>
         })}
       </ul>
-      {console.log(accessibility.nodes[0].inboundReferenceNotes)}
 
-    </div>
 
-    <div>
-      <div style={{ maxWidth: '70ch' }}>
-        <section>
-          <header>
-            <h2>Recent Writing</h2>
-            <hr />
-          </header>
-          <ul sx={{ m: 0, p: 0, mt: 4 }}>
-            {allMdx.nodes.map(({ frontmatter }) => (
-              <li sx={{ listStyle: 'none', mb: 3 }} key={frontmatter.title}>
-                <article key={frontmatter.title}>
-                  <h3 as="h3">
-                    <Link
-                      to={frontmatter.path}
-                    >
-                      {frontmatter.title}
-                    </Link>
-                  </h3>
-                  <p sx={{ mt: 2 }}>{frontmatter.snippet}</p>
-                </article>
-              </li>
-            ))}
-          </ul>
-          <Link to="/blog">More Blog Posts →</Link>
-        </section>
-      </div>
 
-    </div>
+
+    </section>
   </Layout >
 );
 
@@ -81,32 +72,81 @@ export default IndexPage;
 
 export const indexQuery = graphql`
   {
-    allMdx(
-      filter: {frontmatter: {path: {ne: null}}},
-      sort: { fields: frontmatter___date, order: DESC },
-      limit: 5
-      )
-    {
+    # allMdx(
+    #   filter: {frontmatter: {path: {ne: null}}},
+    #   sort: { fields: frontmatter___date, order: DESC },
+    #   limit: 5
+    #   )
+    # {
+    #   nodes {
+    #     timeToRead
+    #     frontmatter {
+    #       title
+    #       path
+    #       date(formatString: "MMMM DD, YYYY")
+    #       snippet
+    #     }
+    #   }
+    # }
+    accessibilityNotes:  allBrainNote(filter: {slug: {eq: "accessibility"}}) {
       nodes {
-        timeToRead
+        title
+        slug
+        noteTemplate
+        inboundReferenceNotes {
+          title
+          slug
+        }
+      }
+    }
+    accessibilityPosts: allMdx(filter: {frontmatter: {categories: {in: "accessibility"}}}) {
+      nodes {
         frontmatter {
           title
           path
           date(formatString: "MMMM DD, YYYY")
-          snippet
         }
       }
     }
-    accessibility:  allBrainNote(filter: {slug: {eq: "accessibility"}}) {
-    nodes {
-      title
-      slug
-      noteTemplate
-      inboundReferenceNotes {
-        title
-        slug
+    # remoteNotes:  allBrainNote(filter: {slug: {eq: ""}}) {
+    #   nodes {
+    #     title
+    #     slug
+    #     noteTemplate
+    #     inboundReferenceNotes {
+    #       title
+    #       slug
+    #     }
+    #   }
+    # }
+    remotePosts: allMdx(filter: {frontmatter: {categories: {in: "remote"}}}) {
+      nodes {
+        frontmatter {
+          title
+          path
+          date(formatString: "MMMM DD, YYYY")
+        }
       }
     }
-  }
+    frontendNotes:  allBrainNote(filter: {slug: {eq: "front-end"}}) {
+      nodes {
+        title
+        slug
+        noteTemplate
+        inboundReferenceNotes {
+          title
+          slug
+        }
+      }
+    }
+    frontendPosts: allMdx(filter: {frontmatter: {categories: {in: "frontend"}}}) {
+      nodes {
+        frontmatter {
+          title
+          path
+          date(formatString: "MMMM DD, YYYY")
+        }
+      }
+    }
   }
 `;

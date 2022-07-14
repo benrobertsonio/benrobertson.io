@@ -26,34 +26,17 @@ const AnchorTag = (props) => {
 const heading = Tag => props => {
   if (!props.id) return <Tag {...props} />
 
+  // add heading level signifiers (##) to each heading
+  const level = parseInt(Tag.slice(1));
+  let prefix = '';
+  for (let index = 0; index < level; index++) {
+    prefix = prefix.concat('#')
+  }
 
   return (
-    <Tag {...props} sx={{
-      ':hover a': {
-        position: 'relative'
-      }
-    }}>
-      <a href={`#${props.id}`} sx={{
-
-        ':focus': {
-          backgroundColor: 'black',
-          position: "relative",
-          'span': {
-            outline: 'auto 1px'
-          }
-        }
-      }}
-      >
-        <span sx={{
-          position: "absolute",
-          top: '50%',
-          left: 0,
-          transform: "translateX(-100%) translateY(-50%)",
-          paddingRight: "4px",
-          fontSize: 1
-        }}>🔗</span>
-        <VisuallyHidden>{props.children}</VisuallyHidden></a>
-      {props.children}
+    <Tag {...props}>
+      <span>{prefix} </span>
+      <a href={`#${props.id}`}>{props.children}</a>
     </Tag >
   )
 }

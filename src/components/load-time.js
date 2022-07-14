@@ -18,7 +18,7 @@ const LoadTime = () => {
 
   return (
     loadTime && (
-      <>Loaded in {loadTime}s</>
+      <>Initial render in {loadTime} seconds.</>
     )
 
   )

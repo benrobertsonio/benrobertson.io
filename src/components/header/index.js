@@ -10,16 +10,8 @@ const menu = [
     title: 'About'
   },
   {
-    to: '/blog',
-    title: 'Blog'
-  },
-  {
-    to: '/notes',
-    title: 'Notes'
-  },
-  {
-    to: '/courses/common-accessibility-mistakes/',
-    title: 'Email Course'
+    to: '/writing',
+    title: 'Writing'
   },
 ];
 

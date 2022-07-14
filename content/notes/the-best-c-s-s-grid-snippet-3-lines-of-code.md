@@ -4,7 +4,7 @@ title: The Best CSS Grid Snippet (3 lines of code!)
 
 # The Best CSS Grid Snippet (3 lines of code!)
 
-Tags: [[Snippets]] [[Drafts]] [[Code]] [[CSS]]
+Tags: [[Snippets]] [[Drafts]] [[Code]] [[CSS]] [[Front End]]
 
 ```
 .grid {

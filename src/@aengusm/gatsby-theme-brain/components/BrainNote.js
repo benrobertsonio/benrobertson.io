@@ -13,14 +13,14 @@ const BrainNote = ({ note, linkedNotes }) => {
     references = references.concat(note.inboundReferenceNotes.map((ref) => (
       <p mb="4" key={ref.title}>
         <Link to={`/notes/${ref.slug}`}>{ref.title}</Link>
-        <p>{ref.childMdx.excerpt}</p>
+        <span>{ref.childMdx.excerpt}</span>
       </p>
     )));
   }
 
   if (note.inboundReferencePreviews != null) {
     references = references.concat(note.inboundReferencePreviews.map((ref) => (
-      <article mb={4} as="article">
+      <article mb={4} as="article" key={ref.source}>
         <div dangerouslySetInnerHTML={{ __html: ref.previewHtml }} />
         <em>source:</em> <Link to={`/notes/${ref.source}`}> {ref.source}</Link>
       </article>
@@ -42,7 +42,7 @@ const BrainNote = ({ note, linkedNotes }) => {
     <Layout>
       <SEO title={`Notes on ${note.title}`} />
       <div variant="narrow">
-        <p sx={{ fontSize: 1, fontStyle: 'italic', my: 4 }}>
+        <p>
           These <Link to="/notes">notes</Link> are unpolished collections of thoughts, unfinished ideas, and things I want to remember later. In the spirit of learning in public, I'm sharing them here. Have fun exploring, if you want!
         </p>
 
@@ -58,12 +58,13 @@ const BrainNote = ({ note, linkedNotes }) => {
             .map((ln) => (
               <Portal key={ln.slug}>
                 <div
-                  sx={{
+                  style={{
                     position: 'fixed',
                     width: 250,
                     backgroundColor: 'white',
-                    p: 3,
-                    divShadow: '0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)'
+                    padding: '1rem',
+                    boxShadow: '0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)',
+                    display: 'none',
                   }}
                   id={`notes/${ln.slug}`}
                 >

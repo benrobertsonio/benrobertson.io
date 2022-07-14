@@ -1,55 +1,40 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
+import LoadTime from '../load-time';
 
 const links = [
   {
-    title: '@benrobertsonio',
+    title: 'Twitter',
     url: 'https://twitter.com/benrobertsonio',
-    icon: 'twitter'
   },
   {
-    title: 'benrobertsonio',
+    title: 'Github',
     url: 'https://github.com/benrobertsonio',
-    icon: 'github'
   },
   {
-    title: 'rss',
+    title: 'RSS',
     url: '/feed.xml',
-    icon: 'rss'
   },
 ];
 
 const Footer = () => (
-  <footer id="footer" sx={{
-    pt: 5,
-    pb: 3
-  }}>
-    <div>
-      <nav aria-label="Footer">
-        {links.map(({ title, url, icon }) => (
-          <a
-            key={title}
-            className="u-url"
-            href={url}
-            rel="me"
-            sx={{
-              mr: 3,
-              fontSize: 1
-            }}
-          >
-            {/* <span className="icon icon--twitter"></span> */}
-            <span>{title}</span>
-          </a>
+  <footer id="footer">
+    <p>
+      &copy; {new Date().getFullYear()} <GatsbyLink to="/">Ben Robertson</GatsbyLink>
+    </p>
+    <p><LoadTime /></p>
+    <nav aria-label="Footer">
+      <ul>
+        {links.map(({ title, url }) => (
+          <li key={title}><a className="u-url" href={url} rel="me">{title}</a></li>
         ))}
 
-      </nav>
-      <div style={{ textAlign: 'center', fontSize: 1 }}>
-        <p>
-          &copy; {new Date().getFullYear()} <GatsbyLink to="/">Ben Robertson</GatsbyLink>
-        </p>
-        <p>Proudly built with <a href="https://www.gatsbyjs.com">Gatsby</a>.</p>
-      </div>
-    </div>
+      </ul>
+
+    </nav>
+
+    <p>Proudly built with <a href="https://www.gatsbyjs.com">Gatsby</a>.</p>
+
 
   </footer>
 );
