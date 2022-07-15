@@ -25,7 +25,6 @@
     "gatsby-plugin-robots-txt": "^1.7.0",
     "gatsby-plugin-sharp": "^4.10.2",
     "gatsby-plugin-sitemap": "^5.10.2",
-    "gatsby-plugin-theme-ui": "^0.14.1",
     "gatsby-source-filesystem": "^4.10.1",
     "gatsby-transformer-remark": "^5.10.2",
     "gatsby-transformer-sharp": "^4.10.0",

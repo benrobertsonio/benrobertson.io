@@ -69,7 +69,7 @@ const BrainNote = ({ note, linkedNotes }) => {
                   id={`notes/${ln.slug}`}
                 >
                   <h4 as="h4">{ln.title}</h4>
-                  <p sx={{ fontSize: '0' }}>{ln.childMdx.excerpt}</p>
+                  <p>{ln.childMdx.excerpt}</p>
                 </div>
               </Portal>
             ))}

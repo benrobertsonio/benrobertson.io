@@ -1,10 +1,11 @@
 import React from 'react';
 import VisuallyHidden from '@reach/visually-hidden'
 
-const AnchorTag = (props) => {
+export const AnchorTag = (props) => {
   const tooltipRef = React.useRef(null);
 
   const onMouseEnter = (e) => {
+    console.log('test');
     tooltipRef.current = document.getElementById(props.href.replace(/^\//, ''));
     if (tooltipRef.current) {
       const { right, top, height } = e.target.getBoundingClientRect();
@@ -23,7 +24,7 @@ const AnchorTag = (props) => {
   return <a {...props} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onFocus={onMouseEnter} onBlur={onMouseLeave} />;
 };
 
-const heading = Tag => props => {
+export const heading = Tag => props => {
   if (!props.id) return <Tag {...props} />
 
   // add heading level signifiers (##) to each heading
@@ -44,13 +45,13 @@ const heading = Tag => props => {
 
 
 
-const components = {
-  pre: props => props.children,
-  a: AnchorTag,
-  h2: heading('h2'),
-  h3: heading('h3'),
-  h4: heading('h4'),
-  h5: heading('h5'),
-  h6: heading('h6'),
-};
-export default components;
+// const components = {
+//   pre: props => props.children,
+//   a: AnchorTag,
+//   h2: heading('h2'),
+//   h3: heading('h3'),
+//   h4: heading('h4'),
+//   h5: heading('h5'),
+//   h6: heading('h6'),
+// };
+// export default components;
