@@ -46,48 +46,39 @@ const Post = ({ data: { mdx } }) => {
 
 
 
-            <div sx={{
-              flexDirection: "column",
-              '@media screen and (min-width: 1200px)': {
-                flexDirection: "row"
-              }
-            }}>
+            <div>
 
               {tableOfContents?.items &&
-                <div sx={{ '@media screen and (min-width: 1200px)': { order: 1, position: 'sticky' } }} >
-                  <TableOfContents items={tableOfContents.items} />
-                </div>
+                <TableOfContents items={tableOfContents.items} />
               }
 
-              <div sx={{ maxWidth: '748px' }}>
 
 
-                <div className="post-content e-content" itemProp="articleBody">
-                  <MDXRenderer>{body}</MDXRenderer>
-                </div>
-                {frontmatter.canonical && (
-                  <>
-                    <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <a href={frontmatter.canonical}>{frontmatter.canonical.replace(/https:\/\/|http:\/\/|[/]/g, ' ').split(' ')[1]}</a >.</p>
-                    <br />
-                  </>)
-                }
-
-                <br />
-
-                {/* <Likes mentions={webmentions.nodes} /> */}
-
-                <br />
-                <p><em>Have any comments or questions about this post? Send them to me via email <a href="mailto:hi@benrobertson.io">hi@benrobertson.io</a> or on Twitter <a href="https://twitter.com/benrobertsonio">@benrobertsonio</a>.</em></p>
+              <div className="post-content e-content" itemProp="articleBody">
+                <MDXRenderer>{body}</MDXRenderer>
               </div>
+              {frontmatter.canonical && (
+                <>
+                  <p className="post-canonical">The post <b>{frontmatter.title}</b> originally appeared on <a href={frontmatter.canonical}>{frontmatter.canonical.replace(/https:\/\/|http:\/\/|[/]/g, ' ').split(' ')[1]}</a >.</p>
+                  <br />
+                </>)
+              }
+
+              <br />
+
+              {/* <Likes mentions={webmentions.nodes} /> */}
+
+              <br />
+              <p style={{ marginBottom: '5rem' }}><em>Have any comments or questions about this post? Send them to me via email <a href="mailto:ben@robertson.is">ben@robertson.is</a> or on Twitter <a href="https://twitter.com/benrobertsonio">@benrobertsonio</a>.</em></p>
             </div>
           </div>
         </article>
-        <div p="5" my="5" sx={{ bg: '#efefef', border: '5px solid', borderColor: 'primary', maxWidth: "748px" }}>
-          <h2 mb="3">
+        <div>
+          <h2 style={{ marginBottom: '3rem' }}>
             {frontmatter.formTitle
               ? frontmatter.formTitle
               : (<span>Free Email Course:<br /> Common Accessibility Mistakes and How to Fix Them</span>)}</h2>
-          <p mb="3">
+          <p>
             {frontmatter.formContent ? frontmatter.formContent : <span>A month long course to help you simplify web accessibility!</span>}
           </p>
           <SimpleSubscribe group={frontmatter.interestGroup} />

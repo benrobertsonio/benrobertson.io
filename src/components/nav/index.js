@@ -6,10 +6,11 @@ const Nav = ({ links }) => (
   <nav id="nav-main" role="navigation">
     <ul style={{
       listStyleType: 'none',
-      paddingLeft: 0
+      paddingLeft: 0,
+      display: 'flex'
     }}>
       {links.map(({ to, title }) => (
-        <li key={title} style={{ marginRight: 3 }}>
+        <li key={title} style={{ marginLeft: `2rem` }}>
           <Link
             to={to}
           >{title}</Link>

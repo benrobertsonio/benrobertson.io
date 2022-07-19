@@ -49,11 +49,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
 
-    createRedirect({
-      fromPath: `${node.frontmatter.path}/`,
-      toPath: `https://ben.robertson.is${node.frontmatter.path}/`
-
-    })
   });
 
 

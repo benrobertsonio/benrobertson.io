@@ -22,7 +22,6 @@ const PostMeta = ({ date, author, permalink, ttr }) => (
     <span>{ttr} min read</span>
     <span> • </span>
     <a href={permalink} className="u-url">Permalink</a>
-    <span> • </span>
 
   </div>
 );

@@ -69,7 +69,7 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
 
       <section mt={6} mb={6}>
         <h2 sx={{ fontSize: 6, textAlign: 'center' }} mb="4">What people are saying</h2>
-        <div sx={{
+        <div style={{
           display: 'grid',
           gridGap: 2,
           gridTemplateColumns: 'repeat(auto-fill, minmax(325px, 1fr))'

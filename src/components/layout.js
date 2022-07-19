@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import '../fonts/SourceSansPro/source-sans-pro.css';
+import '../fonts/ia-duospace/fonts.css';
 
 import Header from './header';
 import { AnchorTag, heading } from '../theme/components';
@@ -21,12 +21,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div style={{
-        borderTop: '5px solid',
-        borderBottom: '5px solid',
-        borderColor: 'primary',
-        paddingTop: '5em'
-      }}>
+      <>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>
           <MDXProvider
@@ -42,10 +37,13 @@ const Layout = ({ children }) => (
           </MDXProvider>
         </main>
         <Footer />
-      </div>
+      </>
     )}
   />
 );
+
+
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

@@ -20,6 +20,8 @@ const IndexPage = ({ data: { accessibilityNotes, accessibilityPosts, remotePosts
       <p>Read more <Link to="/about">about me here</Link>.</p>
     </div>
 
+    <br />
+
     <section>
       <h2>Writing</h2>
       <h3>Accessibility</h3>
