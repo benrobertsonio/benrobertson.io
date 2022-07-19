@@ -19,6 +19,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true
   })
 
+  createRedirect({
+    fromPath: `/`,
+    toPath: `https://ben.robertson.is/`,
+    isPermanent: true
+  })
 
   // Reverse proxy for google tag manager & partytown.
   createRedirect({
