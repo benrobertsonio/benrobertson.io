@@ -15,8 +15,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createRedirect({
     fromPath: `/*`,
-    toPath: `https://ben.robertson.is/*`
-
+    toPath: `https://ben.robertson.is/*`,
+    isPermanent: true
   })
 
 
