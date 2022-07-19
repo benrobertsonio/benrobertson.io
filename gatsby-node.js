@@ -35,19 +35,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // you'll call `createPage` for each result
   posts.forEach(({ node }) => {
     if (!node.frontmatter.path) return;
-    createPage({
-      // This is the slug you created before
-      // (or `node.frontmatter.slug`)
-      path: node.frontmatter.path,
-      // This component will wrap our MDX content
-      component: path.resolve(blogPostTemplate),
-      // You can use the values in this context in
-      // our page layout component
-      context: {
-        id: node.id,
-        url: `https://ben.robertson.is${node.frontmatter.path}/`
-      },
-    });
 
     createRedirect({
       fromPath: `${node.frontmatter.path}/`,
