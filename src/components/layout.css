@@ -46,6 +46,7 @@ pre {
 
 .site-header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5rem;
@@ -54,6 +55,7 @@ pre {
 .site-logo__link {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 /* html {

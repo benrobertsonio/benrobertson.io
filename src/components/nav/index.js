@@ -7,7 +7,8 @@ const Nav = ({ links }) => (
     <ul style={{
       listStyleType: 'none',
       paddingLeft: 0,
-      display: 'flex'
+      display: 'flex',
+      flexWrap: 'wrap'
     }}>
       {links.map(({ to, title }) => (
         <li key={title} style={{ marginLeft: `2rem` }}>
