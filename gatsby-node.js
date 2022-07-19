@@ -12,38 +12,12 @@ exports.onPreBuild = async () => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage, createRedirect } = actions;
 
-  const blogPostTemplate = path.resolve('src/templates/post/post.js');
-  const result = await graphql(`
-  query {
-    allMdx(filter: {frontmatter: {path: {ne: "null"}}}) {
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-          }
-        }
-      }
-    }
-  }
-`);
-  if (result.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
-  }
-  // Create blog post pages.
-  const posts = result.data.allMdx.edges;
-  // you'll call `createPage` for each result
-  posts.forEach(({ node }) => {
-    if (!node.frontmatter.path) return;
 
-    createRedirect({
-      fromPath: `${node.frontmatter.path}/`,
-      toPath: `https://ben.robertson.is${node.frontmatter.path}/`
+  createRedirect({
+    fromPath: `${node.frontmatter.path}/*`,
+    toPath: `https://ben.robertson.is/*`
 
-    })
-  });
-
-
+  })
 
 
   // Reverse proxy for google tag manager & partytown.
