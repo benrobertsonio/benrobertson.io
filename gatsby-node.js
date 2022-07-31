@@ -4,9 +4,7 @@ require("dotenv").config({
 })
 
 const redirectPages = [
-  'writing',
   'notes',
-  'blog',
   'about',
   'blogroll',
   'front-end-remote-jobs',
@@ -98,6 +96,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({
     fromPath: `/accessibility/understanding-layout-for-screen-readers`,
     toPath: `https://ben.robertson.is/accessibility/designing-layouts-for-screen-readers`
+  })
+  createRedirect({
+    fromPath: `/blog`,
+    toPath: `https://ben.robertson.is/writing`
   })
 };
 
