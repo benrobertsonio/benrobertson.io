@@ -14,7 +14,8 @@ const redirectPages = [
   'accessibility',
   'accessibility-for-web-developers',
   'courses/common-accessibility-mistakes',
-  'sitemap/sitemap-index.xml'
+  'sitemap/sitemap-index.xml',
+  'sitemap/sitemap-0.xml'
 ]
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
