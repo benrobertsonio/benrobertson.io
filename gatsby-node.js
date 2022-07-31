@@ -3,7 +3,18 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-
+const redirectPages = [
+  'writing',
+  'notes',
+  'blog',
+  'about',
+  'blogroll',
+  'front-end-remote-jobs',
+  'privacy-policy',
+  'accessibility',
+  'accessibility-for-web-developers',
+  'courses/common-accessibility-mistakes'
+]
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
@@ -43,19 +54,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
+  redirectPages.forEach((page) => {
+    createRedirect({
+      fromPath: `/${page}`,
+      toPath: `https://ben.robertson.is/${page}`
+    })
+  })
+
   createRedirect({
     fromPath: ``,
     toPath: `https://ben.robertson.is`
   })
-  createRedirect({
-    fromPath: `/blog`,
-    toPath: `https://ben.robertson.is/writing`
-  })
-
-  createRedirect({
-    fromPath: `/notes`,
-    toPath: `https://ben.robertson.is/notes`
-  })
-
-
 };
+
+
