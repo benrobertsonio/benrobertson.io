@@ -32,6 +32,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   posts.forEach(({ node }) => {
     if (!node.frontmatter.path) return;
 
+    console.log(`Creating redirect from https://benrobertson.io${node.frontmatter.path}/ to https://ben.robertson.is${node.frontmatter.path}`);
     createRedirect({
       fromPath: `https://benrobertson.io${node.frontmatter.path}/`,
       toPath: `https://ben.robertson.is${node.frontmatter.path}`
