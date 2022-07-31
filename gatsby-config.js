@@ -79,63 +79,6 @@ module.exports = {
     //   }
     // },
     {
-
-      resolve: 'gatsby-plugin-feed-mdx',
-      options: {
-        query: `
-            {
-              site {
-                siteMetadata {
-                  title
-                  description
-                  siteUrl
-                  site_url: siteUrl
-                }
-              }
-            }
-          `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
-
-
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + '/blog' + edge.node.frontmatter.path,
-                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                });
-              });
-            },
-            query: `
-            {
-              allMdx(
-                sort: {order: DESC, fields: [frontmatter___date]}
-                filter: {slug: {ne: null}}
-              ) {
-                edges {
-                  node {
-                    excerpt
-                    frontmatter {
-                      title
-                      date
-                      path
-                    }
-                  }
-                }
-              }
-            }
-
-              `,
-            output: '/feed.xml',
-            title: 'Ben Robertson\'s RSS Feed',
-          }
-        ]
-      }
-
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Ben Robertson',
