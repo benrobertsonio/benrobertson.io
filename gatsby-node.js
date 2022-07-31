@@ -33,9 +33,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
     }
-    allNotes: allFile(filter: {sourceInstanceName: {eq: "notes"}}) {
+    allFile(filter: {sourceInstanceName: {eq: "notes"}}) {
       nodes {
-        mdx: childrenMdx {
+        childrenMdx {
           slug
         }
       }
@@ -48,11 +48,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 
   const posts = result.data.allMdx.edges;
-  const notes = result.data.allNotes.nodes;
+  const notes = result.data.allFile.nodes;
   posts.forEach(({ node }) => {
     if (!node.frontmatter.path) return;
 
-    console.log(`Creating redirect from ${node.frontmatter.path}/ to https://ben.robertson.is${node.frontmatter.path}`);
     createRedirect({
       fromPath: `${node.frontmatter.path}/`,
       toPath: `https://ben.robertson.is${node.frontmatter.path}`,
@@ -64,11 +63,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       isPermanent: true,
     })
   });
-
   notes.forEach((note) => {
+    const slug = note.childrenMdx[0]?.slug
+    if (!slug) return
+
     createRedirect({
-      fromPath: `/notes/${note.mdx.slug}`,
-      toPath: `https://ben.robertson.is/notes/${note.mdx.slug}`
+      fromPath: `/notes/${slug}`,
+      toPath: `https://ben.robertson.is/notes/${slug}`,
+      isPermanent: true
     })
   })
 
