@@ -64,7 +64,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
   notes.forEach((note) => {
-    const slug = note.childrenMdx[0]?.slug
+    const slug = note.childrenMdx[0]?.slug.toLowerCase()
     if (!slug) return
 
     createRedirect({
