@@ -46,29 +46,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(`Creating redirect from https://benrobertson.io${node.frontmatter.path}/ to https://ben.robertson.is${node.frontmatter.path}`);
     createRedirect({
       fromPath: `https://benrobertson.io${node.frontmatter.path}/`,
-      toPath: `https://ben.robertson.is${node.frontmatter.path}`
+      toPath: `https://ben.robertson.is${node.frontmatter.path}`,
+      isPermanent: true
     })
     createRedirect({
       fromPath: `https://benrobertson.io${node.frontmatter.path}`,
-      toPath: `https://ben.robertson.is${node.frontmatter.path}`
+      toPath: `https://ben.robertson.is${node.frontmatter.path}`,
+      isPermanent: true,
     })
   });
 
   redirectPages.forEach((page) => {
     createRedirect({
       fromPath: `/${page}`,
-      toPath: `https://ben.robertson.is/${page}`
+      toPath: `https://ben.robertson.is/${page}`,
+      isPermanent: true
     })
 
     createRedirect({
       fromPath: `/${page}/`,
-      toPath: `https://ben.robertson.is/${page}`
+      toPath: `https://ben.robertson.is/${page}`,
+      isPermanent: true
     })
   })
 
   createRedirect({
     fromPath: ``,
-    toPath: `https://ben.robertson.is`
+    toPath: `https://ben.robertson.is`,
+    isPermanent: true
   })
 };
 
