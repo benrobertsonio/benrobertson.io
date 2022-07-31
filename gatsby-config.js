@@ -13,7 +13,7 @@ module.exports = {
     author: 'Ben Robertson',
     twitter: '@benrobertsonio',
     image: '/ben.jpg',
-    siteUrl: 'https://benrobertson.io',
+    siteUrl: 'https://ben.robertson.is',
     siteLanguage: 'en-US',
     banner: '/ben.jpg',
     headline: ''
