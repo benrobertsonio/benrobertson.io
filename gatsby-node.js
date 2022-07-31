@@ -32,14 +32,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
     }
+    allNotes: allFile(filter: {sourceInstanceName: {eq: "notes"}}) {
+      nodes {
+        mdx: childrenMdx {
+          slug
+        }
+      }
+    }
   }
 `);
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
-  // Create blog post pages.
+
+
   const posts = result.data.allMdx.edges;
-  // you'll call `createPage` for each result
+  const notes = result.data.allNotes.nodes;
   posts.forEach(({ node }) => {
     if (!node.frontmatter.path) return;
 
@@ -55,6 +63,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       isPermanent: true,
     })
   });
+
+  notes.forEach((note) => {
+    createRedirect({
+      fromPath: `/notes/${note.mdx.slug}`,
+      toPath: `https://ben.robertson.is/notes/${note.mdx.slug}`
+    })
+  })
 
   redirectPages.forEach((page) => {
     createRedirect({

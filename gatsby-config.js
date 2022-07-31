@@ -44,6 +44,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/notes`,
+        name: 'notes',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
@@ -52,16 +59,6 @@ module.exports = {
         },
         remarkPlugins: [require('remark-slug')]
       },
-    },
-    {
-      resolve: '@aengusm/gatsby-theme-brain',
-      options: {
-        notesDirectory: 'content/notes/',
-        rootPath: 'notes',
-        rootNote: 'index',
-        linkifyHashtags: true,
-        mdxOtherwiseConfigured: true
-      }
     },
     // {
     //   resolve: `@benrobertson/gatsby-plugin-webmention`,
