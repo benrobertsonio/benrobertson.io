@@ -13,7 +13,7 @@ const redirectPages = [
   'privacy-policy',
   'accessibility',
   'accessibility-for-web-developers',
-  'courses/common-accessibility-mistakes'
+  'courses/common-accessibility-mistakes',
 ]
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -74,6 +74,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     fromPath: ``,
     toPath: `https://ben.robertson.is`,
     isPermanent: true
+  })
+
+  createRedirect({
+    fromPath: `/accessibility/understanding-layout-for-screen-readers`,
+    toPath: `https://ben.robertson.is/accessibility/designing-layouts-for-screen-readers`
   })
 };
 
