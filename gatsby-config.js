@@ -144,8 +144,8 @@ module.exports = {
         name: 'Ben Robertson',
         short_name: 'Ben Robertson',
         start_url: '/',
-        background_color: '#ed6a5a',
-        theme_color: '#ed6a5a',
+        background_color: '#0FD1A5',
+        theme_color: '#0FD1A5',
         display: 'minimal-ui',
         icon: 'src/images/android-chrome-192x192.png', // This path is relative to the root of the site.
       },
