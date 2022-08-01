@@ -147,7 +147,7 @@ module.exports = {
         background_color: '#ed6a5a',
         theme_color: '#ed6a5a',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/android-chrome-192x192.png', // This path is relative to the root of the site.
       },
     },
   ],
