@@ -15,7 +15,7 @@ My personal site, [benrobertson.io](https://benrobertson.io), running on Gatsby.
 
 ## Deployment
 
-Branches deploy automatically to [Gatsby Cloud](https://www.gatsbyjs.com/get-started), merged PRs will be built with [Gatsby Cloud](https://www.gatsbyjs.com/get-started) and deployed to a CDN (currently Netlify)!
+Branches deploy automatically to [Gatsby Cloud](https://www.gatsbyjs.com/get-started)!
 
 ## Todos
 
