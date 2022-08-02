@@ -1,6 +1,6 @@
 # benrobertson.io
 
-My personal site, [benrobertson.io](https://benrobertson.io), running on Gatsby.
+My personal site, [ben.robertson.is](https://ben.robertson.is), running on Gatsby.
 
   - [Local Dev](#local-dev)
   - [Deployment](#deployment)
