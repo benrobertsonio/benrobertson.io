@@ -36,7 +36,8 @@ const Header = () => (
                 height: '5rem',
                 width: '5rem',
                 marginRight: '1em',
-                borderRadius: '50%'
+                borderRadius: '50%',
+                '-webkitMaskImage': '-webkit-radial-gradient(white, black)'
               }} />}
         />
         <div>
