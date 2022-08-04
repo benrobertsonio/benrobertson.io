@@ -4,6 +4,7 @@ require("dotenv").config({
 
 
 module.exports = {
+  trailingSlash: `never`,
   siteMetadata: {
     title: 'Ben Robertson',
     titleTemplate: '%s | Ben Robertson',
@@ -11,8 +12,8 @@ module.exports = {
       "I'm Ben Robertson, Director of Customer Success at Gatsby who writes about front end development and web accessibility.",
     author: 'Ben Robertson',
     twitter: '@benrobertsonio',
-    image: '/ben.jpg',
-    siteUrl: 'https://benrobertson.io',
+    image: '/profile.jpg',
+    siteUrl: 'https://ben.robertson.is',
     siteLanguage: 'en-US',
     banner: '/ben.jpg',
     headline: ''
@@ -22,7 +23,7 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-theme-ui',
+    // 'gatsby-plugin-theme-ui',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-catch-links',
@@ -143,10 +144,10 @@ module.exports = {
         name: 'Ben Robertson',
         short_name: 'Ben Robertson',
         start_url: '/',
-        background_color: '#ed6a5a',
-        theme_color: '#ed6a5a',
+        background_color: '#0FD1A5',
+        theme_color: '#0FD1A5',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/android-chrome-192x192.png', // This path is relative to the root of the site.
       },
     },
   ],

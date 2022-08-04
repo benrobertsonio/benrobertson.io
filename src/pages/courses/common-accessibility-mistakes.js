@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import SEO from '../../components/seo';
 import Layout from '../../components/layout';
 import ComplexSubscribe from '../../components/subscribe/complex';
-/** @jsx jsx */
-import { jsx, Container, Heading, Link, Grid, Text, Box, Flex } from 'theme-ui';
 
 const Testimonial = ({ text, name }) => (
   <blockquote sx={{
@@ -13,23 +11,23 @@ const Testimonial = ({ text, name }) => (
     borderBottom: '5px solid #ed6a5a',
     boxShadow: '3px 2px 5px 0px rgba(0, 0, 0, 0.25)',
   }}>
-    <Text>{text}</Text>
+    <p>{text}</p>
     <br />
-    <Text>
+    <p>
       <cite>{name}</cite>
-    </Text>
+    </p>
   </blockquote >
 );
 
 const Lesson = ({ title, subtitle, index }) => (
-  <div sx={{
+  <div style={{
     maxWidth: '50%',
     marginLeft: index % 2 ? 'auto' : 0,
     mt: 2,
     mb: 4
   }}>
-    <Heading as="h3">{title}</Heading>
-    <Text>{subtitle}</Text>
+    <h3>{title}</h3>
+    <p>{subtitle}</p>
   </div>
 );
 
@@ -40,23 +38,23 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
       desc="A free introduction to web accessibility course for web developers."
       pathname="/courses/common-accessibility-mistakes"
     />
-    <Container>
-      <Flex sx={{ alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-        <Box sx={{ flexBasis: ['100%', null, '50%'] }}>
-          <Heading as="h1" sx={{ mt: 5, mb: 4, fontSize: 6 }}>{title}</Heading>
+    <div>
+      <div style={{ alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+        <div sx={{ flexBasis: ['100%', null, '50%'] }}>
+          <h1 as="h1" sx={{ mt: 5, mb: 4, fontSize: 6 }}>{title}</h1>
           <p>A free web accessibility course for web developers.</p>
           <p><em>30 days, 10 lessons, 100% fun!</em></p>
-          <p>Ten lessons spread out over a month focused on frequent but easy to fix accessibility mistakes.</p></Box>
-        <Box sx={{ flexBasis: ['100%', null, '50%'], maxWidth: '350px', margin: '0 auto' }}>
+          <p>Ten lessons spread out over a month focused on frequent but easy to fix accessibility mistakes.</p></div>
+        <div sx={{ flexBasis: ['100%', null, '50%'], maxWidth: '350px', margin: '0 auto' }}>
           <ComplexSubscribe />
-        </Box>
-      </Flex>
+        </div>
+      </div>
 
-      <Container variant="narrow" mt={6} mb={6}>
+      <div variant="narrow" mt={6} mb={6}>
         <section className="lessons section l-contain--center l-contain--small">
-          <Heading sx={{ fontSize: 6, textAlign: 'center' }} mb="4">
+          <h2 sx={{ fontSize: 6, textAlign: 'center' }} mb="4">
             Material Covered
-          </Heading>
+          </h2>
           {lessons.map(({ title, subtitle }, index) => (
             <Lesson
               title={title}
@@ -67,32 +65,32 @@ const CommonAccessibilityMistakes = ({ title = 'Common Accessibility Mistakes an
           ))}
 
         </section>
-      </Container>
+      </div>
 
       <section mt={6} mb={6}>
-        <Heading sx={{ fontSize: 6, textAlign: 'center' }} mb="4">What people are saying</Heading>
-        <Box sx={{
+        <h2 sx={{ fontSize: 6, textAlign: 'center' }} mb="4">What people are saying</h2>
+        <div style={{
           display: 'grid',
           gridGap: 2,
           gridTemplateColumns: 'repeat(auto-fill, minmax(325px, 1fr))'
         }}>
           {testimonials.map(({ text, name }, index) => <Testimonial key={index} text={text} name={name} />)}
-        </Box>
+        </div>
       </section>
 
-      <Container variant="narrow" mt={6} mb={6}>
-        <Heading sx={{ fontSize: 6, textAlign: 'center' }} mb="4">About the Author</Heading>
-        <p>Hi, I'm Ben. I'm a self-taught web developer based in Greenville, South Carolina and work as a senior software engineer for <Link href="https://www.gatsbyjs.com">Gatsby Inc</Link>. After learning web development online and a few years working at an agency, I stumbled upon the importance of accessibility for the web, but struggled to find easy to understand resources for getting started. I was inspired to write this course to give others a simple, practical introduction to web accessibility principles.</p>
-      </Container>
+      <div variant="narrow" mt={6} mb={6}>
+        <h2 sx={{ fontSize: 6, textAlign: 'center' }} mb="4">About the Author</h2>
+        <p>Hi, I'm Ben. I'm a self-taught web developer based in Greenville, South Carolina and work as a senior software engineer for <a href="https://www.gatsbyjs.com">Gatsby Inc</a>. After learning web development online and a few years working at an agency, I stumbled upon the importance of accessibility for the web, but struggled to find easy to understand resources for getting started. I was inspired to write this course to give others a simple, practical introduction to web accessibility principles.</p>
+      </div>
 
 
 
-      <Container variant="narrow" sx={{ maxWidth: '450px' }} mb="6">
-        <Heading sx={{ fontSize: 6, textAlign: 'center' }} mb="4">Ready to start?</Heading>
+      <div variant="narrow" sx={{ maxWidth: '450px' }} mb="6">
+        <h2 sx={{ fontSize: 6, textAlign: 'center' }} mb="4">Ready to start?</h2>
         <ComplexSubscribe />
-      </Container>
+      </div>
 
-    </Container>
+    </div>
   </Layout>
 );
 
@@ -153,7 +151,7 @@ const lessons = [
     'subtitle': <p>Every form input needs a label.</p>
   },
   {
-    'title': <span>Lesson 5: <br /> CSS Grid and Flexbox</span >,
+    'title': <span>Lesson 5: <br /> CSS Grid and divbox</span >,
     'subtitle': <p>Use the latest CSS layout features without introducing accessibility mistakes.</p>
   },
   {

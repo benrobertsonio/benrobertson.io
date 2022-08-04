@@ -1,6 +1,4 @@
 import { Link, StaticQuery, graphql } from 'gatsby';
-/** @jsx jsx */
-import { jsx, Container } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -12,86 +10,43 @@ const menu = [
     title: 'About'
   },
   {
-    to: '/blog',
-    title: 'Blog'
-  },
-  {
-    to: '/notes',
-    title: 'Notes'
-  },
-  {
-    to: '/courses/common-accessibility-mistakes/',
-    title: 'Email Course'
+    to: '/writing',
+    title: 'Writing'
   },
 ];
 
 const Header = () => (
-  <header>
-    <Container>
-      <div sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        alignItems: 'center',
-        flexWrap: 'wrap'
-      }}>
-        <div role="banner" sx={{
-          display: 'flex',
-          alignItems: 'center'
-        }}>
-          <Link to="/" rel="home" sx={{
-            display: 'flex',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            textDecoration: 'none',
-            padding: '0.5em',
-            background: 'none'
-          }}>
-            <StaticQuery
-              query={graphql`{
-                placeholderImage: file(relativePath: {eq: "ben.jpg"}) {
+  <header class="site-header">
+    <div role="banner" class="site-logo">
+      <Link to="/" rel="home" class="site-logo__link">
+        <StaticQuery
+          query={graphql`{
+                placeholderImage: file(relativePath: {eq: "profile.jpg"}) {
                   childImageSharp {
                     gatsbyImageData(width: 110, height: 110, layout: FIXED)
                   }
                 }
               }
             `}
-              render={data =>
-                <GatsbyImage
-                  image={data.placeholderImage.childImageSharp.gatsbyImageData}
-                  alt="Ben Robertson"
-                  sx={{
-                    height: '5rem',
-                    width: '5rem',
-                    marginRight: '1em',
-                    borderRadius: '50%'
-                  }} />}
-            />
-            <div sx={{
-              color: 'secondary',
-              fontFamily: 'body',
-              fontWeight: 'bold',
-              fontSize: 5
-            }}>
-              <span sx={{
-                display: 'block',
-                transform: 'rotate(-3deg) translateY(-2px)',
-                lineHeight: '1'
-
-              }}>Ben</span>
-              <span sx={{
-                display: 'block',
-                transform: 'rotate(-3deg) translateY(-2px)',
-                lineHeight: '1'
-
-              }}>Robertson</span>
-            </div>
-          </Link>
+          render={data =>
+            <GatsbyImage
+              image={data.placeholderImage.childImageSharp.gatsbyImageData}
+              alt="Ben Robertson"
+              style={{
+                height: '5rem',
+                width: '5rem',
+                marginRight: '1em',
+                borderRadius: '50%',
+                '-webkitMaskImage': '-webkit-radial-gradient(white, black)'
+              }} />}
+        />
+        <div>
+          Ben Robertson
         </div>
+      </Link>
+    </div>
 
-        <Nav links={menu} />
-      </div>
-    </Container >
+    <Nav links={menu} />
   </header>
 );
 

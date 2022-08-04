@@ -1,20 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-/** @jsx jsx */
-import { jsx } from 'theme-ui';
-import theme from '../../gatsby-plugin-theme-ui';
 
 const Nav = ({ links }) => (
   <nav id="nav-main" role="navigation">
-    <ul sx={{
-      display: 'flex',
+    <ul style={{
       listStyleType: 'none',
-      paddingLeft: 0
+      paddingLeft: 0,
+      display: 'flex',
+      flexWrap: 'wrap'
     }}>
       {links.map(({ to, title }) => (
-        <li key={title} sx={{ marginRight: 3 }}>
-          <Link sx={theme.styles.a}
+        <li key={title} style={{ marginLeft: `2rem` }}>
+          <Link
             to={to}
           >{title}</Link>
         </li>

@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx, Container, Link } from 'theme-ui';
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -8,7 +6,7 @@ const Page = ({ children, pageContext }) => {
   return (
     <Layout>
       <SEO title={pageContext.frontmatter.title} />
-      <Container>
+      <div>
         <article
           sx={{
             maxWidth: '748px'
@@ -26,7 +24,7 @@ const Page = ({ children, pageContext }) => {
             {children}
           </div>
         </article>
-      </Container>
+      </div>
     </Layout>
   );
 };
