@@ -15,7 +15,7 @@ module.exports = {
     image: '/profile.jpg',
     siteUrl: 'https://ben.robertson.is',
     siteLanguage: 'en-US',
-    banner: '/ben.jpg',
+    banner: '/profile.jpg',
     headline: ''
   },
   plugins: [
