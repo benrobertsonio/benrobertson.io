@@ -12,7 +12,6 @@ exports.onPreBuild = async () => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage, createRedirect } = actions;
 
-  const blogPostTemplate = path.resolve('src/templates/post/post.js');
   const result = await graphql(`
   query {
     allMdx(filter: {frontmatter: {path: {ne: "null"}}}) {
@@ -40,7 +39,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       // (or `node.frontmatter.slug`)
       path: node.frontmatter.path,
       // This component will wrap our MDX content
-      component: path.resolve(blogPostTemplate),
+      component: require.resolve('./src/templates/post/post.js'),
       // You can use the values in this context in
       // our page layout component
       context: {
