@@ -5,7 +5,6 @@
   "author": "Ben Robertson <ben@robertson.is>",
   "dependencies": {
     "@benrobertson/gatsby-plugin-webmention": "^0.2.2",
-    "@benrobertson/gatsby-theme-brain": "^2.0.1-canary.0",
     "@builder.io/partytown": "^0.5.1",
     "@emotion/react": "^11.8.2",
     "@mdx-js/mdx": "^1.6.22",
