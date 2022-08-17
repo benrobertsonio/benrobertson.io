@@ -1,6 +1,0 @@
----
-title: Career
----
-
-# Career
-

@@ -1,6 +1,0 @@
----
-title: Performance
----
-
-# Performance
-

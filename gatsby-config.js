@@ -23,7 +23,6 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    // 'gatsby-plugin-theme-ui',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-catch-links',
@@ -53,91 +52,6 @@ module.exports = {
         remarkPlugins: [require('remark-slug')]
       },
     },
-    // {
-    //   resolve: '@benrobertson/gatsby-theme-brain',
-    //   options: {
-    //     notesDirectory: require.resolve('content/notes/'),
-    //     rootPath: 'notes',
-    //     rootNote: 'index',
-    //     linkifyHashtags: true,
-    //     mdxOtherwiseConfigured: true
-    //   }
-    // },
-    // {
-    //   resolve: `@benrobertson/gatsby-plugin-webmention`,
-    //   options: {
-    //     username: 'benrobertson.io', // webmention.io username
-    //     identity: {
-    //       // you need to specify at least one of the identities
-    //       // to be able to log in webmention.io
-    //       github: "benrobertsonio",
-    //       twitter: "benrobertsonio", // no @
-    //       email: "hi@benrobertson.io"
-    //     },
-    //     mentions: true,
-    //     pingbacks: false,
-    //     domain: "benrobertson.io",
-    //     fetchLimit: 10000, // number of webmentions to fetch
-    //     token: process.env.WEBMENTIONS_TOKEN
-    //   }
-    // },
-    {
-
-      resolve: 'gatsby-plugin-feed-mdx',
-      options: {
-        query: `
-            {
-              site {
-                siteMetadata {
-                  title
-                  description
-                  siteUrl
-                  site_url: siteUrl
-                }
-              }
-            }
-          `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
-
-
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + '/blog' + edge.node.frontmatter.path,
-                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                });
-              });
-            },
-            query: `
-            {
-              allMdx(
-                sort: {order: DESC, fields: [frontmatter___date]}
-                filter: {slug: {ne: null}}
-              ) {
-                edges {
-                  node {
-                    excerpt
-                    frontmatter {
-                      title
-                      date
-                      path
-                    }
-                  }
-                }
-              }
-            }
-
-              `,
-            output: '/feed.xml',
-            title: 'Ben Robertson\'s RSS Feed',
-          }
-        ]
-      }
-
-    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -147,7 +61,8 @@ module.exports = {
         background_color: '#0FD1A5',
         theme_color: '#0FD1A5',
         display: 'minimal-ui',
-        icon: require.resolve('./src/images/android-chrome-192x192.png'), // This path is relative to the root of the site.
+        // This path is relative to the root of the site.
+        icon: require.resolve('./src/images/android-chrome-192x192.png'),
       },
     },
   ],

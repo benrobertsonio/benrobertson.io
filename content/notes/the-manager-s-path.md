@@ -1,2 +1,0 @@
-# The Manager's Path
-
