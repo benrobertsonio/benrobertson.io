@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: '@benrobertson/gatsby-theme-brain',
       options: {
-        notesDirectory: 'content/notes/',
+        notesDirectory: require.resolve('content/notes/'),
         rootPath: 'notes',
         rootNote: 'index',
         linkifyHashtags: true,
