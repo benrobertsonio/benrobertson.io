@@ -53,16 +53,16 @@ module.exports = {
         remarkPlugins: [require('remark-slug')]
       },
     },
-    // {
-    //   resolve: '@aengusm/gatsby-theme-brain',
-    //   options: {
-    //     notesDirectory: 'content/notes/',
-    //     rootPath: 'notes',
-    //     rootNote: 'index',
-    //     linkifyHashtags: true,
-    //     mdxOtherwiseConfigured: true
-    //   }
-    // },
+    {
+      resolve: '@benrobertson/gatsby-theme-brain',
+      options: {
+        notesDirectory: 'content/notes/',
+        rootPath: 'notes',
+        rootNote: 'index',
+        linkifyHashtags: true,
+        mdxOtherwiseConfigured: true
+      }
+    },
     // {
     //   resolve: `@benrobertson/gatsby-plugin-webmention`,
     //   options: {
