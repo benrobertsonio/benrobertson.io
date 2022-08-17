@@ -52,83 +52,16 @@ pre {
   margin-bottom: 5rem;
 }
 
+p {
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
 .site-logo__link {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
-
-/* html {
-  font-size: 16px;
-  background-color: #fffff8;
-  color: #000000;
-  box-sizing: border-box;
-}
-
-/*
-
-*,
-*:before, *:after {
-  box-sizing: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  margin-top: 0.75em;
-  margin-bottom: 0.5em;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 3em;
-}
-
-h2 {
-  font-size: 1.75em;
-}
-
-h3 {
-  font-size: 1.33em;
-}
-
-h4 {
-  font-size: 1.25em;
-}
-
-h5 {
-  font-size: 1.1em;
-}
-
-h6 {
-  font-size: 1em;
-}
-
-.content {
-  max-width: 34rem;
-  margin-left: 5rem;
-  margin-bottom: 5rem;
-}
-
-
-
-a {
-  font-weight: bold;
-  text-decoration: none;
-  background-size: 100% 200%;
-  background-position-y: 10%;
-  transition: 200ms background-position-y;
-}
-a:hover, a:focus {
-  background-position-y: 20%;
-}
-
-textarea {
-  max-width: 100%;
 }
 
 .skip-link {
