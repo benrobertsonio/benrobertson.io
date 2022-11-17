@@ -24,7 +24,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Script
-				data-domain="https://ben.robertson.is"
+				data-domain="ben.robertson.is"
         data-api="/data/api/event"
 				src="/data/js/script.js"
 			/>
