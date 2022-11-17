@@ -54,5 +54,8 @@
   },
   "devDependencies": {
     "slugify-files": "^2.1.0"
+  },
+  "volta": {
+    "node": "16.18.1"
   }
 }

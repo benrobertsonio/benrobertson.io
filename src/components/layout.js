@@ -8,6 +8,7 @@ import { AnchorTag, heading } from '../theme/components';
 import './layout.css';
 import Footer from './footer';
 import { MDXProvider } from '@mdx-js/react';
+import { Script } from 'gatsby';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -22,6 +23,11 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <Script
+				data-domain="https://ben.robertson.is"
+        data-api="/data/api/event"
+				src="/data/js/script.js"
+			/>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>
           <MDXProvider

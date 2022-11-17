@@ -65,4 +65,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     toPath: `https://www.google-analytics.com/*`,
     statusCode: 200,
   })
+
+  // Reverse proxy for google tag manager & partytown.
+  createRedirect({
+    fromPath: `/data/js/script.js`,
+    toPath: `https://plausible.io/js/script.js`,
+    statusCode: 200,
+  })
+  createRedirect({
+    fromPath: `/data/api/event`,
+    toPath: `https://plausible.io/api/event`,
+    statusCode: 200,
+  })
 };
