@@ -45,6 +45,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   });
 
+  createRedirect({
+    fromPath: `/front-end-remote-jobs`,
+    toPath: `https://frontendremotejobs.com`,
+    isPermanent: true,
+  })
+
 
   // Reverse proxy for google tag manager & partytown.
   createRedirect({
