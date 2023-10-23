@@ -1,7 +1,6 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
 
 module.exports = {
   trailingSlash: 'never',
@@ -20,6 +19,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-netlify',
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -32,32 +32,32 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/posts`,
-        name: 'posts',
-      },
+        name: 'posts'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/notes`,
-        name: 'notes',
-      },
+        name: 'notes'
+      }
     },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve('./src/templates/page.js'),
+          default: require.resolve('./src/templates/page.js')
         },
         remarkPlugins: [require('remark-slug')]
-      },
+      }
     },
     // {
     //   resolve: `@benrobertson/gatsby-plugin-webmention`,
@@ -86,8 +86,8 @@ module.exports = {
         background_color: '#ed6a5a',
         theme_color: '#ed6a5a',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
-      },
-    },
-  ],
+        icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+      }
+    }
+  ]
 };
