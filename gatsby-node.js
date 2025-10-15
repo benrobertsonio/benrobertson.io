@@ -93,10 +93,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createRedirect({
     fromPath: `/accessibility/understanding-layout-for-screen-readers`,
-    toPath: `https://ben.robertson.is/accessibility/designing-layouts-for-screen-readers`
+    toPath: `https://ben.robertson.is/accessibility/designing-layouts-for-screen-readers`,
+    isPermanent: true
   });
   createRedirect({
     fromPath: `/blog`,
-    toPath: `https://ben.robertson.is/writing`
+    toPath: `https://ben.robertson.is/writing`,
+    isPermanent: true
+  });
+
+  createRedirect({
+    fromPath: `/accessibility/screen-reader-friendly-code-guide`,
+    toPath: `https://ben.robertson.is/accessibility/guide-to-screen-reader-friendly-code/`,
+    isPermanent: true
+  });
+
+  createRedirect({
+    fromPath: `/accessibility-for-web-developers/`,
+    toPath: `https://ben.robertson.is/accessibility`,
+    isPermanent: true
   });
 };
