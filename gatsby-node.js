@@ -113,4 +113,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     toPath: `https://ben.robertson.is/accessibility`,
     isPermanent: true
   });
+
+  createRedirect({
+    fromPath: `/feed.xml`,
+    toPath: `https://ben.robertson.is/feed.xml`,
+    isPermanent: true
+  });
 };
